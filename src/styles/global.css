@@ -1,5 +1,6 @@
 @import "tailwindcss";
-
+@import "../../public/assets/tpl-common/common/css/bootstrap.min.css" layer(base);
+@import "../../public/css/base.css" layer(base);
 /* ===== TARGET MAKİNA Design Tokens ===== */
 @theme {
   --color-primary: #C93715;
@@ -85,4 +86,90 @@
 @keyframes slideInRight {
   from { opacity: 0; transform: translateX(30px); }
   to { opacity: 1; transform: translateX(0); }
+}
+/* ===== SITE-WIDE UNIFIED PREMIUM RED GRADIENT HERO STYLES ===== */
+.page-hero,
+.about-hero,
+.contact-hero,
+.machine-hero {
+  background: linear-gradient(135deg, #C93715 0%, #e04a28 100%) !important;
+  color: #ffffff !important;
+  border-bottom: 5px solid #d43315 !important;
+  padding: 80px 0 60px !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+/* Hide conflicting image backgrounds/overlays in Inner Page Heroes */
+.page-hero .hero-bg,
+.page-hero .hero-overlay {
+  display: none !important;
+}
+
+/* Force White Titles & Spans with High Contrast */
+.page-hero h1,
+.about-hero h1,
+.contact-hero h1,
+.machine-hero h1,
+.page-hero h1 span,
+.about-hero h1 span,
+.contact-hero h1 span,
+.machine-hero h1 span {
+  color: #ffffff !important;
+  font-family: var(--font-family-sans) !important;
+  font-weight: 800 !important;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.15) !important;
+}
+
+/* High Contrast Descriptions */
+.page-hero p,
+.about-hero p,
+.contact-hero p,
+.machine-hero p {
+  color: rgba(255, 255, 255, 0.95) !important;
+  font-size: 1.05rem !important;
+  max-width: 700px !important;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.1) !important;
+}
+
+/* High Contrast Breadcrumbs */
+.page-hero .breadcrumb-text,
+.about-hero .breadcrumb-text,
+.contact-hero .breadcrumb-text,
+.machine-hero .breadcrumb-text,
+.page-hero .breadcrumb-nav,
+.about-hero .breadcrumb-nav,
+.contact-hero .breadcrumb-nav,
+.machine-hero .breadcrumb-nav {
+  color: rgba(255, 255, 255, 0.75) !important;
+  font-size: 0.9rem !important;
+  margin-bottom: 15px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+}
+
+.page-hero .breadcrumb-text a,
+.about-hero .breadcrumb-text a,
+.contact-hero .breadcrumb-text a,
+.machine-hero .breadcrumb-text a,
+.page-hero .breadcrumb-nav a,
+.about-hero .breadcrumb-nav a,
+.contact-hero .breadcrumb-nav a,
+.machine-hero .breadcrumb-nav a {
+  color: rgba(255, 255, 255, 0.9) !important;
+  text-decoration: none !important;
+  font-weight: 600 !important;
+  transition: all 0.2s ease !important;
+}
+
+.page-hero .breadcrumb-text a:hover,
+.about-hero .breadcrumb-text a:hover,
+.contact-hero .breadcrumb-text a:hover,
+.machine-hero .breadcrumb-text a:hover,
+.page-hero .breadcrumb-nav a:hover,
+.about-hero .breadcrumb-nav a:hover,
+.contact-hero .breadcrumb-nav a:hover,
+.machine-hero .breadcrumb-nav a:hover {
+  color: #ffffff !important;
+  text-decoration: underline !important;
 }
