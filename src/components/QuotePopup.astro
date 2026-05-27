@@ -1,0 +1,83 @@
+---
+// Quote popup modal — opens via sidebar button or CTA links
+---
+
+<!-- Overlay -->
+<div id="quote-overlay" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[100] hidden transition-opacity"></div>
+
+<!-- Modal -->
+<div id="quote-modal" class="fixed inset-0 z-[101] hidden items-center justify-center p-4">
+  <div class="bg-white rounded-2xl shadow-2xl w-full max-w-lg max-h-[90vh] overflow-y-auto relative">
+    <!-- Close -->
+    <button id="quote-close" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition-colors cursor-pointer" aria-label="Kapat">
+      <svg class="w-4 h-4 text-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+    </button>
+
+    <div class="p-8">
+      <h2 class="text-2xl font-bold text-dark text-center mb-1">Ücretsiz Teklif Alın</h2>
+      <p class="text-sm text-gray text-center mb-6">Temsilcimiz en kısa sürede sizinle iletişime geçecektir.</p>
+
+      <form name="teklif" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="space-y-4">
+        <input type="hidden" name="form-name" value="teklif">
+        <p class="hidden"><label>Bunu doldurmayın: <input name="bot-field"></label></p>
+
+        <div>
+          <label class="block text-sm font-medium text-dark mb-1">E-posta <span class="text-primary">*</span></label>
+          <input type="email" name="email" required placeholder="ornek@firma.com" class="w-full px-4 py-2.5 border border-border rounded-lg text-sm focus:ring-2 focus:ring-primary/30 focus:border-primary outline-none transition-all">
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-dark mb-1">Ad Soyad</label>
+          <input type="text" name="name" placeholder="Adınız Soyadınız" class="w-full px-4 py-2.5 border border-border rounded-lg text-sm focus:ring-2 focus:ring-primary/30 focus:border-primary outline-none transition-all">
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-dark mb-1">Telefon <span class="text-primary">*</span></label>
+          <input type="tel" name="phone" required placeholder="0544 356 39 72" class="w-full px-4 py-2.5 border border-border rounded-lg text-sm focus:ring-2 focus:ring-primary/30 focus:border-primary outline-none transition-all">
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-dark mb-1">Firma Adı</label>
+          <input type="text" name="company" placeholder="Firma adınız" class="w-full px-4 py-2.5 border border-border rounded-lg text-sm focus:ring-2 focus:ring-primary/30 focus:border-primary outline-none transition-all">
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-dark mb-1">Mesaj <span class="text-primary">*</span></label>
+          <textarea name="message" required rows="4" placeholder="Projenizi kısaca açıklayın..." class="w-full px-4 py-2.5 border border-border rounded-lg text-sm focus:ring-2 focus:ring-primary/30 focus:border-primary outline-none transition-all resize-none"></textarea>
+        </div>
+
+        <button type="submit" class="w-full py-3 bg-primary text-white font-semibold rounded-lg hover:bg-primary-hover transition-colors cursor-pointer">
+          Gönder
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+  const overlay = document.getElementById('quote-overlay');
+  const modal = document.getElementById('quote-modal');
+  const closeBtn = document.getElementById('quote-close');
+  const sidebarBtn = document.getElementById('sidebar-quote-btn');
+
+  function openQuote() {
+    overlay?.classList.remove('hidden');
+    modal?.classList.remove('hidden');
+    modal?.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeQuote() {
+    overlay?.classList.add('hidden');
+    modal?.classList.add('hidden');
+    modal?.classList.remove('flex');
+    document.body.style.overflow = '';
+  }
+
+  sidebarBtn?.addEventListener('click', openQuote);
+  closeBtn?.addEventListener('click', closeQuote);
+  overlay?.addEventListener('click', closeQuote);
+
+  // Allow other buttons with class 'quote-trigger' to open
+  document.querySelectorAll('.quote-trigger').forEach(btn => btn.addEventListener('click', openQuote));
+</script>

@@ -1,0 +1,364 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import OptimizedImage from '../components/OptimizedImage.astro';
+
+const title = "İletişim | TARGET MAKİNA - CNC İşleme ve Hassas Üretim";
+const description = "TARGET MAKİNA iletişim bilgileri. Adres: Evka 3 Mahallesi 129/6 Sokak No:17, 35050 Bornova/İzmir. Telefon: 0544 356 39 72. E-posta: info@targetmakina.com.tr";
+const keywords = "Target Makina iletişim, CNC işleme İzmir, Bornova CNC, Target Makina adres, Target Makina telefon, Telerezyon, İzmir Telerezyon, CNC 5 Eksen, Mastar İmalatı, Fikstür İmalatı, Talaşlı İmalat, Hassas Talaşlı imalat";
+---
+
+<BaseLayout title={title} description={description} keywords={keywords}>
+  HERO 
+<div class="contact-hero">
+<div class="container">
+<h1>İletişim</h1>
+<p class="breadcrumb-text"><a href="/">Ana Sayfa</a> » İletişim</p>
+</div>
+</div>
+ CONTACT INFO CARDS 
+<div class="contact-info-section">
+<div class="container">
+<div class="row">
+<div class="col-lg-3 col-md-6">
+<div class="contact-card">
+<div class="contact-card-icon">📍</div>
+<h3>Adresimiz</h3>
+<p>Evka 3 Mahallesi 129/6 Sokak No:17, 35050 Bornova/İzmir</p>
+</div>
+</div>
+<div class="col-lg-3 col-md-6">
+<div class="contact-card">
+<div class="contact-card-icon">📞</div>
+<h3>Telefon</h3>
+<p><a href="tel:+905443563972">0544 356 39 72</a></p>
+<span class="whatsapp-badge">☎ WhatsApp</span>
+</div>
+</div>
+<div class="col-lg-3 col-md-6">
+<div class="contact-card">
+<div class="contact-card-icon">✉</div>
+<h3>E-posta</h3>
+<p><a href="mailto:info@targetmakina.com.tr">info@targetmakina.com.tr</a></p>
+</div>
+</div>
+<div class="col-lg-3 col-md-6">
+<div class="contact-card">
+<div class="contact-card-icon">🕐</div>
+<h3>Çalışma Saatleri</h3>
+<p>Pazartesi - Cumartesi<br/><strong>08:00 - 18:00</strong></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+ MAP & FORM 
+<div class="contact-main">
+<div class="container">
+<div class="row">
+<div class="col-lg-7 mb-4 mb-lg-0">
+<div class="map-container">
+<iframe allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3124.5!2d27.2478!3d38.4672!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzjCsDI4JzAyLjAiTiAyN8KwMTQnNTIuMCJF!5e0!3m2!1str!2str!4v1" title="TARGET MAKİNA Konum"></iframe>
+</div>
+</div>
+<div class="col-lg-5">
+<div class="contact-form-wrapper">
+<h2>Bize Yazın</h2>
+<p class="form-subtitle">Sorularınız için formu doldurun, en kısa sürede dönüş yapalım.</p>
+<form action="javascript:void(0)" method="post">
+<div class="form-row">
+<div class="form-group">
+<label>İsim Soyisim *</label>
+<input name="name" placeholder="Adınız Soyadınız" required="" type="text"/>
+</div>
+<div class="form-group">
+<label>Telefon</label>
+<input name="phone" placeholder="0500 000 00 00" type="tel"/>
+</div>
+</div>
+<div class="form-group">
+<label>E-posta *</label>
+<input name="email" placeholder="ornek@firma.com" required="" type="email"/>
+</div>
+<div class="form-group">
+<label>Konu</label>
+<input name="subject" placeholder="Teklif talebi, bilgi alma vb." type="text"/>
+</div>
+<div class="form-group">
+<label>Mesajınız *</label>
+<textarea name="message" placeholder="Projeniz hakkında kısaca bilgi verin..." required=""></textarea>
+</div>
+<button class="submit-btn" type="submit">Mesaj Gönder</button>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+ CTA 
+<div class="contact-cta">
+<div class="container">
+<h2>Hemen Arayın veya WhatsApp'ı Yazın</h2>
+<p>Projeleriniz için ücretsiz danışmanlık ve teklif alın</p>
+<a class="cta-phone" href="tel:+905443563972">📞 0544 356 39 72</a>
+<a class="whatsapp-link" href="https://api.whatsapp.com/send?phone=905443563972&amp;text=Merhaba%2C%20TARGET%20MAK%C4%B0NA%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." rel="nofollow" target="_blank">☎ WhatsApp ile Yaz</a>
+</div>
+</div>
+</BaseLayout>
+
+<style>
+  .contact-hero {
+            position: relative;
+            background: linear-gradient(135deg, #C93715 0%, #e04a28 100%);
+            padding: 80px 0 60px;
+            color: #fff;
+            overflow: hidden;
+        }
+        .contact-hero::before { display: none; }
+        .contact-hero h1 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            font-family: var(--title-font-family);
+            position: relative;
+        }
+        .contact-hero .breadcrumb-text {
+            color: rgba(255,255,255,0.6);
+            font-size: 15px;
+            position: relative;
+        }
+        .contact-hero .breadcrumb-text a {
+            color: rgba(201,55,21,0.9);
+            text-decoration: none;
+        }
+
+        /* Contact Info Cards */
+        .contact-info-section {
+            padding: 80px 0 40px;
+        }
+        .contact-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 4px 25px rgba(0,0,0,0.06);
+            border: 1px solid #f0f0f0;
+            transition: all 0.3s;
+            margin-bottom: 30px;
+            height: 100%;
+        }
+        .contact-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(201,55,21,0.12);
+            border-color: rgba(201,55,21,0.2);
+        }
+        .contact-card-icon {
+            width: 80px;
+            height: 80px;
+            line-height: 80px;
+            border-radius: 50%;
+            background: rgba(201,55,21,0.1);
+            color: #C93715;
+            font-size: 32px;
+            margin: 0 auto 25px;
+            transition: all 0.3s;
+        }
+        .contact-card:hover .contact-card-icon {
+            background: #C93715;
+            color: #fff;
+        }
+        .contact-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #222;
+            margin-bottom: 15px;
+            font-family: var(--title-font-family);
+        }
+        .contact-card p {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #666;
+            margin: 0;
+        }
+        .contact-card a {
+            color: #C93715;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        .contact-card a:hover {
+            color: #a02e12;
+        }
+        .contact-card .whatsapp-badge {
+            display: inline-block;
+            background: #25D366;
+            color: #fff;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-top: 8px;
+        }
+
+        /* Map & Form Section */
+        .contact-main {
+            padding: 40px 0 80px;
+        }
+        .map-container {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 6px 30px rgba(0,0,0,0.1);
+            height: 100%;
+            min-height: 500px;
+        }
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Contact Form */
+        .contact-form-wrapper {
+            background: #fff;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 6px 30px rgba(0,0,0,0.08);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .contact-form-wrapper h2 {
+            font-size: 26px;
+            font-weight: 700;
+            color: #222;
+            margin-bottom: 8px;
+            font-family: var(--title-font-family);
+        }
+        .contact-form-wrapper .form-subtitle {
+            font-size: 14px;
+            color: #999;
+            margin-bottom: 30px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 18px;
+            border: 2px solid #eee;
+            border-radius: 10px;
+            font-size: 15px;
+            color: #333;
+            transition: border-color 0.3s;
+            background: #fafafa;
+            font-family: inherit;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #C93715;
+            background: #fff;
+        }
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        .form-row {
+            display: flex;
+            gap: 20px;
+        }
+        .form-row .form-group {
+            flex: 1;
+        }
+        .submit-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #C93715 0%, #e04a28 100%);
+            color: #fff;
+            padding: 16px 45px;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+            font-family: inherit;
+        }
+        .submit-btn:hover {
+            background: linear-gradient(135deg, #a02e12 0%, #C93715 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(201,55,21,0.3);
+        }
+
+        /* Working Hours */
+        
+
+        /* CTA */
+        .contact-cta {
+            background: linear-gradient(135deg, #C93715 0%, #e04a28 100%);
+            padding: 60px 0;
+            text-align: center;
+            color: #fff;
+        }
+        .contact-cta h2 {
+            font-size: 30px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            font-family: var(--title-font-family);
+        }
+        .contact-cta p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        .contact-cta .cta-phone {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: #fff;
+            color: #C93715;
+            padding: 16px 40px;
+            border-radius: 30px;
+            font-size: 22px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        .contact-cta .cta-phone:hover {
+            background: #222;
+            color: #fff;
+        }
+        .contact-cta .whatsapp-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #25D366;
+            color: #fff;
+            padding: 16px 40px;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s;
+            margin-left: 15px;
+        }
+        .contact-cta .whatsapp-link:hover {
+            background: #1da851;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .contact-hero h1 { font-size: 28px; }
+            .form-row { flex-direction: column; gap: 0; }
+            .map-container { height: 350px; margin-bottom: 30px; }
+            .contact-cta .cta-phone,
+            .contact-cta .whatsapp-link { display: block; margin: 10px auto; max-width: 300px; margin-left: auto; }
+        }
+</style>

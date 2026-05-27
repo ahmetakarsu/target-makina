@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+/* ===== TARGET MAKİNA Design Tokens ===== */
+@theme {
+  --color-primary: #C93715;
+  --color-primary-hover: #a82d11;
+  --color-primary-light: #fceae8;
+  --color-secondary: #e8694a;
+  --color-dark: #1a1a1a;
+  --color-dark-light: #333333;
+  --color-dark-muted: #555555;
+  --color-gray: #888888;
+  --color-gray-light: #f9f9f9;
+  --color-border: #e5e5e5;
+
+  --font-family-sans: 'Montserrat', ui-sans-serif, system-ui, sans-serif;
+
+  --breakpoint-xs: 480px;
+}
+
+/* ===== Base Styles ===== */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: var(--font-family-sans);
+    color: var(--color-dark-muted);
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--color-dark);
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  a {
+    transition: color 0.2s ease;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* ===== Utility Animations ===== */
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  .animate-slide-in-left {
+    animation: slideInLeft 0.6s ease-out forwards;
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight 0.6s ease-out forwards;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
+}

@@ -1,0 +1,58 @@
+---
+import { Image } from 'astro:assets';
+
+interface Props {
+  src: string;
+  alt: string;
+  class?: string;
+  width?: string | number;
+  height?: string | number;
+  loading?: "lazy" | "eager";
+  fetchpriority?: "high" | "low" | "auto";
+}
+
+const { src, alt, class: className, width, height, loading = "lazy", fetchpriority } = Astro.props;
+
+// Clean leading slashes and resolve path
+let cleanSrc = src;
+if (cleanSrc.startsWith('/')) {
+  cleanSrc = cleanSrc.substring(1);
+}
+
+// Convert "assets/images/..." to "src/assets/images/..."
+if (cleanSrc.startsWith('assets/images/')) {
+  cleanSrc = 'src/assets/images/' + cleanSrc.substring('assets/images/'.length);
+} else if (cleanSrc.startsWith('assets/')) {
+  cleanSrc = 'src/assets/' + cleanSrc.substring('assets/'.length);
+}
+
+// Glob all assets in src/assets
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/**/*.{jpeg,jpg,png,gif,webp,avif}');
+const imageKey = '/' + cleanSrc;
+const hasImage = images[imageKey];
+
+// Parse width/height if they are strings
+const parsedWidth = typeof width === 'string' ? parseInt(width, 10) : width;
+const parsedHeight = typeof height === 'string' ? parseInt(height, 10) : height;
+---
+
+{hasImage ? (
+  <Image 
+    src={images[imageKey]()} 
+    alt={alt} 
+    class={className} 
+    width={parsedWidth} 
+    height={parsedHeight} 
+    loading={loading}
+    fetchpriority={fetchpriority}
+  />
+) : (
+  <img 
+    src={src} 
+    alt={alt} 
+    class={className} 
+    width={width} 
+    height={height} 
+    loading={loading} 
+  />
+)}

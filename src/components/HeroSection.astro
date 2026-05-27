@@ -1,0 +1,62 @@
+---
+export interface Props {
+  title: string;
+  highlight?: string;
+  description?: string;
+  bgImage?: string;
+  cta?: { label: string; href: string };
+  secondaryCta?: { label: string; href: string };
+  overlay?: boolean;
+}
+
+const {
+  title,
+  highlight,
+  description,
+  bgImage,
+  cta,
+  secondaryCta,
+  overlay = true,
+} = Astro.props;
+---
+
+<section
+  class="relative py-24 md:py-32 lg:py-40 flex items-center overflow-hidden"
+  style={bgImage ? `background-image: url('${bgImage}'); background-size: cover; background-position: center;` : ''}
+>
+  {overlay && <div class="absolute inset-0 bg-gradient-to-br from-dark/95 to-dark/80"></div>}
+
+  <div class="max-w-7xl mx-auto px-4 relative z-10 text-white">
+    <div class="max-w-2xl">
+      <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold uppercase leading-tight mb-4">
+        {title}
+        {highlight && <span class="text-primary"> {highlight}</span>}
+      </h1>
+
+      {description && (
+        <p class="text-base md:text-lg text-gray-300 mb-8 leading-relaxed">
+          {description}
+        </p>
+      )}
+
+      {(cta || secondaryCta) && (
+        <div class="flex flex-wrap gap-4">
+          {cta && (
+            <a href={cta.href} class="inline-flex items-center px-7 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-primary-hover transition-colors shadow-lg shadow-primary/30">
+              {cta.label}
+              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </a>
+          )}
+          {secondaryCta && (
+            <a href={secondaryCta.href} class="inline-flex items-center px-7 py-3 border-2 border-white/30 text-white font-semibold rounded-lg hover:bg-white/10 transition-colors">
+              {secondaryCta.label}
+            </a>
+          )}
+        </div>
+      )}
+    </div>
+  </div>
+
+  <!-- Accent bar -->
+  <div class="absolute bottom-0 left-0 right-0 h-1.5 bg-gradient-to-r from-primary to-secondary"></div>
+</section>

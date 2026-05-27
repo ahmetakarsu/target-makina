@@ -1,0 +1,341 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import OptimizedImage from '../components/OptimizedImage.astro';
+
+const title = "Sıkça Sorulan Sorular & Teknik Destek | TARGET MAKİNA";
+const description = "Target Makina - CNC işleme toleransları, tasarım dosyası yükleme, fiyat teklifi alma, teslimat ve ödeme şartları hakkında sıkça sorulan sorular.";
+const keywords = "CNC İşleme SSS, Target Makina Sorular, Teknik Dosya Yükleme, CNC Toleransları, İzmir CNC, Telerezyon, İzmir Telerezyon, CNC 5 Eksen, Mastar İmalatı, Fikstür İmalatı, Talaşlı İmalat, Hassas Talaşlı imalat";
+---
+
+<BaseLayout title={title} description={description} keywords={keywords}>
+  <section class="page-hero">
+<div class="container">
+<div class="row">
+<div class="col-lg-8">
+<p style="font-size: 0.9rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px;">Ana Sayfa • Kaynaklar • SSS</p>
+<h1>Sıkça Sorulan <span>Sorular (FAQ)</span></h1>
+<p>CNC talaşlı imalat, sipariş süreçleri, toleranslar, yüzey işlemleri ve ödeme koşulları hakkında merak ettiğiniz tüm teknik detaylar ve cevapları.</p>
+<a class="btn btn-primary mt-4 cd-popup-trigger" href="javascript:void(0)" style="background-color: #d43315; border-color: #d43315; padding: 12px 30px; font-weight: bold; border-radius: 30px;">Teklif Al →</a>
+</div>
+</div>
+</div>
+</section>
+<section class="stats-bar">
+<div class="container">
+<div class="row">
+<div class="col-md-3 col-6 stat-box">
+<h4>Hızlı Teklif</h4>
+<p>En Geç 24 Saatte</p>
+</div>
+<div class="col-md-3 col-6 stat-box">
+<h4>Destek</h4>
+<p>DFM Tasarım Analizi</p>
+</div>
+<div class="col-md-3 col-6 stat-box mt-4 mt-md-0">
+<h4>Tolerans</h4>
+<p>±0.01 mm Standart</p>
+</div>
+<div class="col-md-3 col-6 stat-box mt-4 mt-md-0">
+<h4>MOQ Limit Yok</h4>
+<p>1 Adet veya Seri Üretim</p>
+</div>
+</div>
+</div>
+</section>
+<section class="faq-section">
+<div class="container">
+<div class="row justify-content-center">
+<div class="col-lg-10">
+<!-- FAQ Categories Navigation (Tabs) -->
+<div class="nav nav-pills justify-content-center faq-tabs" id="faq-tab" role="tablist">
+<!-- 1. YETENEKLER (Eski sırada 2. idi, reorder yapıldı) -->
+<a aria-controls="content-yetenekler" aria-selected="true" class="nav-link active" data-toggle="pill" href="#content-yetenekler" id="tab-yetenekler" role="tab">Yetenekler &amp; CNC İşleme</a>
+<!-- 2. SİPARİŞ & DESTEK (Eski sırada 3. idi) -->
+<a aria-controls="content-siparis" aria-selected="false" class="nav-link" data-toggle="pill" href="#content-siparis" id="tab-siparis" role="tab">Sipariş &amp; Teknik Destek</a>
+<!-- 3. ÜRETİM SÜRECİ (Eski sırada 4. idi) -->
+<a aria-controls="content-uretim" aria-selected="false" class="nav-link" data-toggle="pill" href="#content-uretim" id="tab-uretim" role="tab">Üretim Süreci</a>
+<!-- 4. GENEL SORULAR (Eski sırada 1. idi) -->
+<a aria-controls="content-genel" aria-selected="false" class="nav-link" data-toggle="pill" href="#content-genel" id="tab-genel" role="tab">Genel Sorular</a>
+<!-- 5. ÖDEME & SEVKİYAT (Eski sırada 5. idi) -->
+<a aria-controls="content-odeme" aria-selected="false" class="nav-link" data-toggle="pill" href="#content-odeme" id="tab-odeme" role="tab">Ödeme &amp; Sevkiyat</a>
+</div>
+<!-- FAQ Tab Content Panels -->
+<div class="tab-content" id="faq-tabContent">
+<!-- 1. YETENEKLER PANEL -->
+<div aria-labelledby="tab-yetenekler" class="tab-pane fade show active" id="content-yetenekler" role="tabpanel">
+<div class="accordion" id="accordionYetenekler">
+<div class="card faq-item">
+<div aria-expanded="true" class="card-header" data-target="#col_y1" data-toggle="collapse">
+<h3>Hangi tolerans aralıklarında çalışabiliyorsunuz? <i class="fas fa-chevron-down"></i></h3>
+</div>
+<div class="collapse show" data-parent="#accordionYetenekler" id="col_y1">
+<div class="card-body">
+                                                CNC tornalama ve frezeleme işlemlerinde genel imalat toleransımız ±0.01 mm'dir. Özel hassasiyet gerektiren mil yatağı, bilyalı yatak yerleri gibi bölgelerde çok daha dar tolerans sınırlarını yakalayabiliyoruz.
+                                            </div>
+</div>
+</div>
+<div class="card faq-item">
+<div aria-expanded="false" class="card-header collapsed" data-target="#col_y2" data-toggle="collapse">
+<h3>Hangi metal malzemeleri işleyebilirsiniz? <i class="fas fa-chevron-down"></i></h3>
+</div>
+<div class="collapse" data-parent="#accordionYetenekler" id="col_y2">
+<div class="card-body">
+                                                Alüminyum alaşımları (6061, 7075), paslanmaz çelik (304, 316, 316L), karbon çeliği, alaşımlı çelikler, titanyum, pirinç, bakır, bronz ve magnezyum alaşımlarını hassasiyetle işliyoruz.
+                                            </div>
+</div>
+</div>
+<div class="card faq-item">
+<div aria-expanded="false" class="card-header collapsed" data-target="#col_y3" data-toggle="collapse">
+<h3>Hangi plastik malzemeleri işleyebilirsiniz? <i class="fas fa-chevron-down"></i></h3>
+</div>
+<div class="collapse" data-parent="#accordionYetenekler" id="col_y3">
+<div class="card-body">
+                                                ABS, PC (Polikarbonat), POM (Delrin), PP, PA (Naylon/Poliamid), PMMA (Akrilik), PE, PTFE (Teflon), PEEK ve PPS gibi mühendislik plastiklerini CNC tezgahlarımızda yüksek yüzey kalitesiyle işleyebiliyoruz.
+                                            </div>
+</div>
+</div>
+<div class="card faq-item">
+<div aria-expanded="false" class="card-header collapsed" data-target="#col_y4" data-toggle="collapse">
+<h3>Ne tür yüzey işlemleri sunuyorsunuz? <i class="fas fa-chevron-down"></i></h3>
+</div>
+<div class="collapse" data-parent="#accordionYetenekler" id="col_y4">
+<div class="card-body">
+                                                İşleme sonrası parçalarınıza kumlama, polisaj (ayna parlatma), eloksal (şeffaf, renkli ve sert anotlama), nikel kaplama, krom kaplama, PVD kaplama, karartma (siyah oksit), toz boya ve elektrostatik boyama gibi yüzey işlemleri uygulayabiliyoruz.
+                                            </div>
+</div>
+</div>
+</div>
+</div>
+<!-- 2. SİPARİŞ & DESTEK PANEL -->
+<div aria-labelledby="tab-siparis" class="tab-pane fade" id="content-siparis" role="tabpanel">
+<div class="accordion" id="accordionSiparis">
+<div class="card faq-item">
+<div aria-expanded="true" class="card-header" data-target="#col_s1" data-toggle="collapse">
+<h3>Minimum sipariş miktarınız (MOQ) nedir? <i class="fas fa-chevron-down"></i></h3>
+</div>
+<div class="collapse show" data-parent="#accordionSiparis" id="col_s1">
+<div class="card-body">
+                                                Minimum sipariş limitimiz yoktur. Tek bir adet prototip çalışmasından, binlerce adetlik yüksek adetli seri üretime kadar her sipariş miktarında hizmet vermekteyiz.
+                                            </div>
+</div>
+</div>
+<div class="card faq-item">
+<div aria-expanded="false" class="card-header collapsed" data-target="#col_s2" data-toggle="collapse">
+<h3>Gizlilik Sözleşmesi (NDA) imzalıyor musunuz? <i class="fas fa-chevron-down"></i></h3>
+</div>
+<div class="collapse" data-parent="#accordionSiparis" id="col_s2">
+<div class="card-body">
+                                                Evet, tasarımlarınızın güvenliği bizim için en üst önceliktir. Teklif talep aşamasından veya sipariş onayından önce Gizlilik Sözleşmesi imzalayarak çizimlerinizin ve projelerinizin gizli kalmasını güvence altına alıyoruz.
+                                            </div>
+</div>
+</div>
+<div class="card faq-item">
+<div aria-expanded="false" class="card-header collapsed" data-target="#col_s3" data-toggle="collapse">
+<h3>Siparişlerimin teslim süresi nedir? <i class="fas fa-chevron-down"></i></h3>
+</div>
+<div class="collapse" data-parent="#accordionSiparis" id="col_s3">
+<div class="card-body">
+                                                Teslim sürelerimiz parçaların karmaşıklığına, yüzey işlemlerine ve sipariş adedine göre değişmektedir. Hızlı prototipler için genellikle teslim süremiz 3-7 iş günüdür. Düşük hacimli veya seri üretim projelerinde teslim süresi ortalama 2-3 hafta sürmektedir.
+                                            </div>
+</div>
+</div>
+</div>
+</div>
+<!-- 3. ÜRETİM PANEL -->
+<div aria-labelledby="tab-uretim" class="tab-pane fade" id="content-uretim" role="tabpanel">
+<div class="accordion" id="accordionUretim">
+<div class="card faq-item">
+<div aria-expanded="true" class="card-header" data-target="#col_u1" data-toggle="collapse">
+<h3>Tasarımımın üretime uygun olup olmadığını nasıl anlarım? <i class="fas fa-chevron-down"></i></h3>
+</div>
+<div class="collapse show" data-parent="#accordionUretim" id="col_u1">
+<div class="card-body">
+                                                Bize gönderdiğiniz 3D çizimleri mühendislerimiz detaylıca incelemektedir. Çizimde bulunabilecek ulaşılamayan iç cepler, keskin iç köşeler veya çok ince duvar kalınlıkları gibi üretime zorluk çıkarabilecek detaylar, teklif aşamasında "Üretilebilirlik Tasarımı (DFM)" raporu ile size bildirilir ve düzeltme önerileri sunulur.
+                                            </div>
+</div>
+</div>
+<div class="card faq-item">
+<div aria-expanded="false" class="card-header collapsed" data-target="#col_u2" data-toggle="collapse">
+<h3>Üretilen parçaların kalite kontrolü nasıl sağlanıyor? <i class="fas fa-chevron-down"></i></h3>
+</div>
+<div class="collapse" data-parent="#accordionUretim" id="col_u2">
+<div class="card-body">
+                                                Üretim esnasında ve sonrasında parçalar CMM (Koordinat Ölçüm Cihazı), dijital kumpas ve mikrometreler kullanılarak hassas bir şekilde test edilmektedir. Kalite standartlarımıza göre parçalar ancak tolerans aralıklarında onay aldıktan sonra ambalajlanır ve kalite raporuyla birlikte müşteriye sevk edilir.
+                                            </div>
+</div>
+</div>
+</div>
+</div>
+<!-- 4. GENEL SORULAR PANEL -->
+<div aria-labelledby="tab-genel" class="tab-pane fade" id="content-genel" role="tabpanel">
+<div class="accordion" id="accordionGenel">
+<div class="card faq-item">
+<div aria-expanded="true" class="card-header" data-target="#col_g1" data-toggle="collapse">
+<h3>Target Makina nerededir? <i class="fas fa-chevron-down"></i></h3>
+</div>
+<div class="collapse show" data-parent="#accordionGenel" id="col_g1">
+<div class="card-body">
+                                                İletişim ve mühendislik ofisimiz İzmir Bornova'da (Evka 3 Mahallesi) yer almaktadır. Üretim tesislerimiz ve partner atölyelerimiz ile koordineli olarak tüm siparişleri İzmir merkezli olarak yönetmekteyiz.
+                                            </div>
+</div>
+</div>
+<div class="card faq-item">
+<div aria-expanded="false" class="card-header collapsed" data-target="#col_g2" data-toggle="collapse">
+<h3>Target Makina'dan ne tür parçalar sipariş edebilirim? <i class="fas fa-chevron-down"></i></h3>
+</div>
+<div class="collapse" data-parent="#accordionGenel" id="col_g2">
+<div class="card-body">
+                                                Makine sanayisi, otomotiv, havacılık, savunma sanayisi, kalıpçılık ve tüketim malları gibi hemen her sektöre yönelik özel CNC frezeleme, torna ve sac büküm parçaları sipariş edebilirsiniz.
+                                            </div>
+</div>
+</div>
+<div class="card faq-item">
+<div aria-expanded="false" class="card-header collapsed" data-target="#col_g3" data-toggle="collapse">
+<h3>Teklif ve sipariş için hangi dosya formatlarını destekliyorsunuz? <i class="fas fa-chevron-down"></i></h3>
+</div>
+<div class="collapse" data-parent="#accordionGenel" id="col_g3">
+<div class="card-body">
+                                                3D modeller için STEP, IGES, STP, STL; 2D çizimler ve imalat detayları için DWG, DXF ve PDF formatlarını kabul ediyoruz.
+                                            </div>
+</div>
+</div>
+<div class="card faq-item">
+<div aria-expanded="false" class="card-header collapsed" data-target="#col_g4" data-toggle="collapse">
+<h3>3D dosyam olmadan teklif çalışabilir misiniz? <i class="fas fa-chevron-down"></i></h3>
+</div>
+<div class="collapse" data-parent="#accordionGenel" id="col_g4">
+<div class="card-body">
+                                                Evet. 2D PDF veya teknik ölçülendirilmiş eskiz çizimleri üzerinden teklif alabilirsiniz. Ayrıca mevcut fiziksel parçanızı bize kargo ile gönderirseniz, tersine mühendislik (3D tarama ve modelleme) yöntemleriyle projelendirip üretebiliriz.
+                                            </div>
+</div>
+</div>
+</div>
+</div>
+<!-- 5. ÖDEME & SEVKİYAT PANEL -->
+<div aria-labelledby="tab-odeme" class="tab-pane fade" id="content-odeme" role="tabpanel">
+<div class="accordion" id="accordionOdeme">
+<div class="card faq-item">
+<div aria-expanded="true" class="card-header" data-target="#col_o1" data-toggle="collapse">
+<h3>Ödeme şartlarınız nelerdir? <i class="fas fa-chevron-down"></i></h3>
+</div>
+<div class="collapse show" data-parent="#accordionOdeme" id="col_o1">
+<div class="card-body">
+                                                Prototip ve yeni müşteri çalışmalarımızda sipariş onayında %50 peşinat, kalan %50 teslimat veya onay numunesi öncesinde talep edilmektedir. Uzun vadeli ve sürekli iş ortaklıklarımızda cari hesap / vadeli çalışma koşulları değerlendirilebilir.
+                                            </div>
+</div>
+</div>
+<div class="card faq-item">
+<div aria-expanded="false" class="card-header collapsed" data-target="#col_o2" data-toggle="collapse">
+<h3>Kargo ve teslimat süreçleri nasıl işliyor? <i class="fas fa-chevron-down"></i></h3>
+</div>
+<div class="collapse" data-parent="#accordionOdeme" id="col_o2">
+<div class="card-body">
+                                                Üretimi tamamlanan parçalar darbelere karşı özel koruyucu köpük ambalajlarla paketlenir. İzmir içi siparişler kendi araçlarımızla, İzmir dışındaki kurumsal siparişler ise anlaşmalı kargo firmalarımızla sigortalı olarak tüm Türkiye'ye gönderilmektedir.
+                                            </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="cta-section">
+<div class="container">
+<h3>Merak Ettiğiniz Başka Bir Soru Mu Var?</h3>
+<p style="max-width: 700px; margin: 0 auto 30px; font-size: 1.1rem; opacity: 0.9;">Talaşlı imalat yöntemleri, malzeme seçimi veya teslimat detayları hakkında ek sorularınız için doğrudan teknik ekibimizle iletişime geçebilirsiniz.</p>
+<a class="btn-light-custom" href="/iletisim/">Bizimle İletişime Geçin →</a>
+</div>
+</section>
+</BaseLayout>
+
+<style>
+  .page-hero {
+            background: linear-gradient(135deg, rgba(30,30,30,0.95) 0%, rgba(10,10,10,0.85) 100%), url('assets/images/yuzey/hero.png') center/cover;
+            padding: 100px 0;
+            color: white;
+            border-bottom: 5px solid #d43315;
+        }
+        .page-hero h1 { font-weight: 800; font-size: 3rem; text-transform: uppercase; }
+        .page-hero h1 span { color: #d43315; }
+        .page-hero p { font-size: 1.1rem; max-width: 650px; margin-top: 15px; opacity: 0.9; }
+
+        .stats-bar { background-color: #1a1a1a; padding: 40px 0; color: white; }
+        .stat-box { text-align: center; border-right: 1px solid #333; }
+        .stat-box:last-child { border: none; }
+        .stat-box h4 { color: #d43315; font-size: 2rem; font-weight: bold; margin-bottom: 5px; }
+        .stat-box p { margin: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; color: #aaa; }
+
+        .faq-section {
+            padding: 80px 0;
+            background-color: #f9f9f9;
+        }
+        .faq-tabs {
+            margin-bottom: 40px;
+        }
+        .faq-tabs .nav-link {
+            color: #1a1a1a;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            border-radius: 30px;
+            padding: 10px 20px;
+            margin: 5px;
+            border: 1px solid #ddd;
+            transition: 0.3s;
+        }
+        .faq-tabs .nav-link:hover, .faq-tabs .nav-link.active {
+            background-color: #d43315;
+            color: white;
+            border-color: #d43315;
+        }
+
+        .card.faq-item {
+            border: none;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+            overflow: hidden;
+            border-left: 4px solid #d43315;
+            transition: 0.3s;
+        }
+        .card.faq-item:hover {
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+        .faq-item .card-header {
+            background-color: #fff;
+            padding: 20px;
+            cursor: pointer;
+            border-bottom: none;
+        }
+        .faq-item .card-header h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-item .card-header h3 i {
+            color: #d43315;
+            transition: transform 0.3s;
+        }
+        .faq-item .card-header h3[aria-expanded="true"] i {
+            transform: rotate(180deg);
+        }
+        .faq-item .card-body {
+            padding: 20px;
+            background-color: #fff;
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            border-top: 1px solid #f1f1f1;
+        }
+
+        .cta-section { background-color: #d43315; color: white; padding: 60px 0; text-align: center; }
+        .cta-section h3 { font-weight: 700; margin-bottom: 20px; }
+        .btn-light-custom { background-color: white; color: #d43315; font-weight: bold; padding: 12px 30px; border-radius: 30px; text-decoration: none; display: inline-block; transition: 0.3s; }
+        .btn-light-custom:hover { background-color: #1a1a1a; color: white; }
+</style>

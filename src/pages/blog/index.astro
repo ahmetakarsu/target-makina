@@ -1,0 +1,44 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import OptimizedImage from '../../components/OptimizedImage.astro';
+
+const title = "Blog | TARGET MAKİNA - CNC İşleme ve Talaşlı İmalat Sektöründeki Gelişmeler";
+const description = "TARGET MAKİNA Blog sayfası. Yüksek teknoloji hassas işleme, sanayide CNC parça imalatına olan küresel talep ve talaşlı imalat teknolojilerindeki son gelişmeler hakkında sektörel makaleler.";
+const keywords = "Telerezyon, İzmir Telerezyon, CNC 5 Eksen, Mastar İmalatı, Fikstür İmalatı, Talaşlı İmalat, Hassas Talaşlı imalat, CNC işleme, blog, Target Makina";
+---
+
+<BaseLayout title={title} description={description} keywords={keywords}>
+  <div class="container main">
+<div class="newslist">
+<h1 style="display:none">Blog</h1>
+<ul>
+<li>
+<a class="pic" href="/blog/hassas-isleme/" title="Yüksek Teknoloji İmalatında Hassas İşlemenin Önemi">
+<OptimizedImage alt="Yüksek Teknoloji İmalatında Hassas İşlemenin Önemi" src="assets/images/haberler/blog_precision.png"/>
+</a>
+<div class="t">
+<h5>
+<a href="/blog/hassas-isleme/" title="Yüksek Teknoloji İmalatında Hassas İşlemenin Önemi">Yüksek Teknoloji İmalatında Hassas İşlemenin Önemi</a>
+</h5>
+<span><i class="qico qico-calendar"></i> 18.05.2026 12:16:41</span>
+<p>Hassas işleme, yüksek teknolojiye sahip ürünlerin üretiminde hayati bir rol oynamaktadır. Metal veya plastik gibi malzemelerin son derece hassas bir şekilde kesilmesi, şekillendirilmesi ve yüzeylerinin işlenmesi anlamına gelir. Target Makina olarak...</p>
+<a class="more" href="/blog/hassas-isleme/">DAHA FAZLA OKU</a>
+</div>
+</li>
+<li>
+<a class="pic" href="/blog/cnc-kuresel-talep/" title="Endüstriyel Uygulamalarda CNC ile İşlenmiş Parçalara Küresel Talep">
+<OptimizedImage alt="Endüstriyel Uygulamalarda CNC ile İşlenmiş Parçalara Küresel Talep" src="assets/images/anasayfa/hassas-talasli.png"/>
+</a>
+<div class="t">
+<h5>
+<a href="/blog/cnc-kuresel-talep/" title="Endüstriyel Uygulamalarda CNC ile İşlenmiş Parçalara Küresel Talep">Endüstriyel Uygulamalarda CNC ile İşlenmiş Parçalara Küresel Talep</a>
+</h5>
+<span><i class="qico qico-calendar"></i> 14.05.2026 12:43:28</span>
+<p>Günümüzde CNC işleme sanayi için son derece önemlidir. Bilgisayarlı Sayısal Kontrol (Computer Numerical Control) anlamına gelen bu teknoloji, makinelerin bilgisayar kontrolüyle son derece hassas parçalar üretmesini sağlar. Dünya çapındaki tüm endüstriler...</p>
+<a class="more" href="/blog/cnc-kuresel-talep/">DAHA FAZLA OKU</a>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</BaseLayout>

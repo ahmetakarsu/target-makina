@@ -1,0 +1,248 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import OptimizedImage from '../components/OptimizedImage.astro';
+
+const title = "Kaynaklar & Endüstriyel Çözümler | TARGET MAKİNA";
+const description = "Target Makina - Teknik makaleler, malzeme listeleri, yüzey kaplama seçenekleri ve sıkça sorulan soruların yer aldığı kaynaklar portalımız.";
+const keywords = "CNC Kaynakları, Malzeme Seçenekleri, Yüzey İşlemleri SSS, CNC Vaka Çalışmaları, Target Makina, Telerezyon, İzmir Telerezyon, CNC 5 Eksen, Mastar İmalatı, Fikstür İmalatı, Talaşlı İmalat, Hassas Talaşlı imalat";
+---
+
+<BaseLayout title={title} description={description} keywords={keywords}>
+  <section class="page-hero">
+<div class="container">
+<div class="row">
+<div class="col-lg-8">
+<p style="font-size: 0.9rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px;">Ana Sayfa • Kaynaklar</p>
+<h1>Teknik <span>Kaynaklar</span></h1>
+<p>CNC imalatta malzeme seçiminden toleranslara, yüzey kaplamalardan sektörel vaka çalışmalarına kadar tüm teknik kaynaklarımıza tek bir noktadan ulaşın.</p>
+<a class="btn btn-primary mt-4 cd-popup-trigger" href="javascript:void(0)" style="background-color: #d43315; border-color: #d43315; padding: 12px 30px; font-weight: bold; border-radius: 30px;">Teklif Al →</a>
+</div>
+</div>
+</div>
+</section>
+<section class="stats-bar">
+<div class="container">
+<div class="row">
+<div class="col-md-3 col-6 stat-box">
+<h4>Vaka Çalışmaları</h4>
+<p>Sektörel İncelemeler</p>
+</div>
+<div class="col-md-3 col-6 stat-box">
+<h4>Malzemeler</h4>
+<p>Geniş Bilgi Kütüphanesi</p>
+</div>
+<div class="col-md-3 col-6 stat-box mt-4 mt-md-0">
+<h4>Yüzey İşleme</h4>
+<p>Teknik Kılavuzlar</p>
+</div>
+<div class="col-md-3 col-6 stat-box mt-4 mt-md-0">
+<h4>SSS</h4>
+<p>Hızlı Soru-Cevap</p>
+</div>
+</div>
+</div>
+</section>
+<section class="portal-grid">
+<div class="container">
+<div class="section-title">
+<h2>Bilgi Bankası ve Kaynak Kütüphanesi</h2>
+<p style="color: #666; max-width: 600px; margin: 15px auto 0;">Projelerinizde size rehberlik edecek teknik veriler, üretim vaka analizleri ve merak edilen konular:</p>
+</div>
+<div class="row">
+<!-- 1. VAKA ÇALIŞMALARI -->
+<div class="col-lg-6 col-md-6">
+<div class="portal-card">
+<div class="portal-img-box">
+<a href="/referanslar/">
+<OptimizedImage alt="Vaka Çalışmaları" src="assets/images/otomotiv/hero.png"/>
+</a>
+</div>
+<div class="portal-info">
+<h3>Vaka Çalışmaları</h3>
+<p>Otomotiv, spor ekipmanları, tüketici elektroniği ve makine parçaları için ürettiğimiz özel CNC parçaları ve sektörel projelerimizin detaylı analizleri.</p>
+<a class="portal-btn" href="/referanslar/">Projeleri İncele <i class="fas fa-arrow-right"></i></a>
+</div>
+</div>
+</div>
+<!-- 2. MALZEMELER -->
+<div class="col-lg-6 col-md-6">
+<div class="portal-card">
+<div class="portal-img-box">
+<a href="/sektorler/malzemeler/">
+<OptimizedImage alt="CNC Malzemeleri" src="assets/images/malzemeler/aluminum.jpg"/>
+</a>
+</div>
+<div class="portal-info">
+<h3>Malzeme Kütüphanesi</h3>
+<p>CNC frezeleme, torna ve sac metal büküm işlemlerinde kullandığımız endüstriyel metaller ile mühendislik plastiklerinin detaylı teknik özellikleri.</p>
+<a class="portal-btn" href="/sektorler/malzemeler/">Malzemeleri Gör <i class="fas fa-arrow-right"></i></a>
+</div>
+</div>
+</div>
+<!-- 3. YÜZEY İŞLEMLERİ -->
+<div class="col-lg-6 col-md-6">
+<div class="portal-card">
+<div class="portal-img-box">
+<a href="/hizmetler/yuzey-isleme/">
+<OptimizedImage alt="Yüzey İşlemleri" src="assets/images/yuzey/hero.png"/>
+</a>
+</div>
+<div class="portal-info">
+<h3>Yüzey İşleme Seçenekleri</h3>
+<p>Kumlama, polisaj, eloksal, nikel kaplama gibi parçaların korozyon dayanıklılığını ve görsel kalitesini artıran yüzey işleme çözümlerimiz.</p>
+<a class="portal-btn" href="/hizmetler/yuzey-isleme/">İşlemleri İncele <i class="fas fa-arrow-right"></i></a>
+</div>
+</div>
+</div>
+<!-- 4. SIKÇA SORULAN SORULAR -->
+<div class="col-lg-6 col-md-6">
+<div class="portal-card">
+<div class="portal-img-box">
+<a href="/sss/">
+<OptimizedImage alt="Sıkça Sorulan Sorular" src="assets/images/yuzey/intro.png"/>
+</a>
+</div>
+<div class="portal-info">
+<h3>Sıkça Sorulan Sorular</h3>
+<p>CNC toleransları, sipariş limitleri, Gizlilik Sözleşmesi (NDA) prosedürleri, teklif alma süreçleri ve sevkiyat hakkında merak edilen konular.</p>
+<a class="portal-btn" href="/sss/">Soruları İncele <i class="fas fa-arrow-right"></i></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="cta-section">
+<div class="container">
+<h3>Teknik Ekibimizden Bilgi Alın</h3>
+<p style="max-width: 700px; margin: 0 auto 30px; font-size: 1.1rem; opacity: 0.9;">Talaşlı imalat yöntemleri, tolerans uyumlulukları veya malzeme sertifikasyonları hakkında daha detaylı bilgi için bize ulaşabilirsiniz.</p>
+<a class="btn-light-custom" href="/iletisim/">Bizimle İletişime Geçin →</a>
+</div>
+</section>
+</BaseLayout>
+
+<style>
+  .page-hero {
+            background: linear-gradient(135deg, rgba(30,30,30,0.95) 0%, rgba(10,10,10,0.85) 100%), url('assets/images/yuzey/hero.png') center/cover;
+            padding: 100px 0;
+            color: white;
+            border-bottom: 5px solid #d43315;
+        }
+        .page-hero h1 { font-weight: 800; font-size: 3rem; text-transform: uppercase; }
+        .page-hero h1 span { color: #d43315; }
+        .page-hero p { font-size: 1.1rem; max-width: 650px; margin-top: 15px; opacity: 0.9; }
+
+        .stats-bar { background-color: #1a1a1a; padding: 40px 0; color: white; }
+        .stat-box { text-align: center; border-right: 1px solid #333; }
+        .stat-box:last-child { border: none; }
+        .stat-box h4 { color: #d43315; font-size: 1.8rem; font-weight: bold; margin-bottom: 5px; }
+        .stat-box p { margin: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; color: #aaa; }
+
+        .portal-grid {
+            padding: 80px 0;
+            background-color: #f9f9f9;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #1a1a1a;
+            text-transform: uppercase;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: #d43315;
+        }
+
+        .portal-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            margin-bottom: 40px;
+            transition: all 0.3s ease;
+            height: calc(100% - 40px);
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #eee;
+        }
+        .portal-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+            border-color: #d43315;
+        }
+        .portal-img-box {
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+            background-color: #eaeaea;
+        }
+        .portal-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .portal-card:hover .portal-img-box img {
+            transform: scale(1.08);
+        }
+        .portal-info {
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        .portal-info h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+        }
+        .portal-info p {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            flex-grow: 1;
+        }
+        .portal-btn {
+            align-self: flex-start;
+            color: #d43315;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            text-decoration: none;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+        }
+        .portal-btn i {
+            margin-left: 8px;
+            transition: transform 0.3s;
+        }
+        .portal-card:hover .portal-btn {
+            color: #1a1a1a;
+        }
+        .portal-card:hover .portal-btn i {
+            transform: translateX(5px);
+        }
+
+        .cta-section { background-color: #d43315; color: white; padding: 60px 0; text-align: center; }
+        .cta-section h3 { font-weight: 700; margin-bottom: 20px; }
+        .btn-light-custom { background-color: white; color: #d43315; font-weight: bold; padding: 12px 30px; border-radius: 30px; text-decoration: none; display: inline-block; transition: 0.3s; }
+        .btn-light-custom:hover { background-color: #1a1a1a; color: white; }
+</style>

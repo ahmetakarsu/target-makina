@@ -1,0 +1,209 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "24"
+
+# Statik asset cache (hashed dosyalar - 1 yıl)
+[[headers]]
+  for = "/_astro/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Görseller cache (1 yıl)
+[[headers]]
+  for = "*.webp"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "*.avif"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "*.jpg"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
+
+[[headers]]
+  for = "*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
+
+# Font cache
+[[headers]]
+  for = "/fonts/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# HTML - her zaman taze
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# Security headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# ===== 301 Redirects (eski URL → yeni URL) =====
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/about-us.html"
+  to = "/hakkimizda/"
+  status = 301
+
+[[redirects]]
+  from = "/capabilities.html"
+  to = "/hizmetler/"
+  status = 301
+
+[[redirects]]
+  from = "/contact-us.html"
+  to = "/iletisim/"
+  status = 301
+
+[[redirects]]
+  from = "/news.html"
+  to = "/haberler/"
+  status = 301
+
+[[redirects]]
+  from = "/blog.html"
+  to = "/blog/"
+  status = 301
+
+[[redirects]]
+  from = "/cnc-milling.html"
+  to = "/hizmetler/cnc-frezeleme/"
+  status = 301
+
+[[redirects]]
+  from = "/cnc-turning.html"
+  to = "/hizmetler/cnc-tornalama/"
+  status = 301
+
+[[redirects]]
+  from = "/5-axis-cnc-machining.html"
+  to = "/hizmetler/5-eksen-cnc/"
+  status = 301
+
+[[redirects]]
+  from = "/surface-treatment.html"
+  to = "/hizmetler/yuzey-isleme/"
+  status = 301
+
+[[redirects]]
+  from = "/components-assembly.html"
+  to = "/hizmetler/parca-montaji/"
+  status = 301
+
+[[redirects]]
+  from = "/sheet-metal-fabrication.html"
+  to = "/hizmetler/sac-sekillendirme/"
+  status = 301
+
+[[redirects]]
+  from = "/gear-customization.html"
+  to = "/hizmetler/disli-imalati/"
+  status = 301
+
+[[redirects]]
+  from = "/automobile-components.html"
+  to = "/sektorler/otomotiv/"
+  status = 301
+
+[[redirects]]
+  from = "/daily-consumable.html"
+  to = "/sektorler/tuketim/"
+  status = 301
+
+[[redirects]]
+  from = "/competitive-sports.html"
+  to = "/sektorler/spor/"
+  status = 301
+
+[[redirects]]
+  from = "/machinery-and-transmission.html"
+  to = "/sektorler/makina-transmisyon/"
+  status = 301
+
+[[redirects]]
+  from = "/materials.html"
+  to = "/sektorler/malzemeler/"
+  status = 301
+
+[[redirects]]
+  from = "/makina-parkuru.html"
+  to = "/makina-parkuru/"
+  status = 301
+
+[[redirects]]
+  from = "/dmg-ecomill-600v.html"
+  to = "/makina-parkuru/dmg-ecomill-600v/"
+  status = 301
+
+[[redirects]]
+  from = "/dmg-ecomill-70.html"
+  to = "/makina-parkuru/dmg-ecomill-70/"
+  status = 301
+
+[[redirects]]
+  from = "/hexagon-cmm.html"
+  to = "/makina-parkuru/hexagon-cmm/"
+  status = 301
+
+[[redirects]]
+  from = "/sodick-aq537l.html"
+  to = "/makina-parkuru/sodick-aq537l/"
+  status = 301
+
+[[redirects]]
+  from = "/sodick-vl400q.html"
+  to = "/makina-parkuru/sodick-vl400q/"
+  status = 301
+
+[[redirects]]
+  from = "/case-studies.html"
+  to = "/referanslar/"
+  status = 301
+
+[[redirects]]
+  from = "/resource.html"
+  to = "/kaynaklar/"
+  status = 301
+
+[[redirects]]
+  from = "/faq.html"
+  to = "/sss/"
+  status = 301
+
+[[redirects]]
+  from = "/privacy.html"
+  to = "/gizlilik/"
+  status = 301
+
+[[redirects]]
+  from = "/blog/Precision-Machining-in-High-Tech-Manufacturing.html"
+  to = "/blog/hassas-isleme/"
+  status = 301
+
+[[redirects]]
+  from = "/blog/Global-Demand-for-CNC-Machined-Parts-in-Industrial-Applications.html"
+  to = "/blog/cnc-kuresel-talep/"
+  status = 301
