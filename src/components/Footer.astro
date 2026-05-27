@@ -1,6 +1,5 @@
 ---
 const quickLinks = [
-  { label: 'Hizmetler', href: '/hizmetler/' },
   { label: 'Kaynaklar', href: '/kaynaklar/' },
   { label: 'Haberler', href: '/haberler/' },
   { label: 'Makina Parkuru', href: '/makina-parkuru/' },
@@ -9,14 +8,6 @@ const quickLinks = [
   { label: 'Blog', href: '/blog/' },
 ];
 
-const services = [
-  { label: '5 Eksen CNC İşleme', href: '/hizmetler/5-eksen-cnc/' },
-  { label: 'CNC Frezeleme', href: '/hizmetler/cnc-frezeleme/' },
-  { label: 'CNC Tornalama', href: '/hizmetler/cnc-tornalama/' },
-  { label: 'Parça Montajı', href: '/hizmetler/parca-montaji/' },
-  { label: 'Dişli İmalatı', href: '/hizmetler/disli-imalati/' },
-  { label: 'Sac Şekillendirme', href: '/hizmetler/sac-sekillendirme/' },
-];
 ---
 
 <footer class="bg-dark text-gray-300">
@@ -37,20 +28,6 @@ const services = [
         <h5 class="text-white font-semibold text-base mb-4">Hızlı Bağlantılar</h5>
         <ul class="space-y-2">
           {quickLinks.map((link) => (
-            <li>
-              <a href={link.href} class="text-sm text-gray-400 hover:text-primary transition-colors">
-                {link.label}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      <!-- Hizmetler -->
-      <div>
-        <h5 class="text-white font-semibold text-base mb-4">Hizmetler</h5>
-        <ul class="space-y-2">
-          {services.map((link) => (
             <li>
               <a href={link.href} class="text-sm text-gray-400 hover:text-primary transition-colors">
                 {link.label}

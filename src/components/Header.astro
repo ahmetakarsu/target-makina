@@ -3,18 +3,6 @@ const currentPath = Astro.url.pathname;
 
 const navItems = [
   { label: 'Ana Sayfa', href: '/' },
-  {
-    label: 'Hizmetler', href: '/hizmetler/',
-    children: [
-      { label: 'CNC Frezeleme', href: '/hizmetler/cnc-frezeleme/' },
-      { label: 'CNC Tornalama', href: '/hizmetler/cnc-tornalama/' },
-      { label: '5 Eksen CNC İşleme', href: '/hizmetler/5-eksen-cnc/' },
-      { label: 'Yüzey İşleme', href: '/hizmetler/yuzey-isleme/' },
-      { label: 'Parça Montajı', href: '/hizmetler/parca-montaji/' },
-      { label: 'Sac Şekillendirme', href: '/hizmetler/sac-sekillendirme/' },
-      { label: 'Dişli İmalatı', href: '/hizmetler/disli-imalati/' },
-    ],
-  },
   { label: 'Kaynaklar', href: '/kaynaklar/' },
   { label: 'Haberler', href: '/haberler/' },
   { label: 'Makina Parkuru', href: '/makina-parkuru/' },
