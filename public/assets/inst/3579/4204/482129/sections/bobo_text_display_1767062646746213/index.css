@@ -1,0 +1,59 @@
+.bobo-service1 {
+  padding: 90px 0;
+  background: #fafafa;
+  text-align: center;
+}
+
+.bobo-service1 h3 {
+  font-size: clamp(24px, 1.9vw, 36px);
+  line-height: 1;
+  font-weight: 700;
+}
+
+.bobo-service1 p {
+  margin-top: 40px;
+  font-size: 18px;
+  line-height: 1.8;
+}
+.bobo-service1 table tr p{
+    margin: 0;
+    padding: 10px;
+}
+@media screen and (max-width: 1500px) {
+
+  .bobo-service1 p {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+
+  .bobo-service1 p {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .bobo-service1 {
+    padding: 60px 0;
+  }
+
+  .bobo-service1 p {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+ 
+
+  .bobo-service1 {
+    padding: 30px 0;
+  }
+
+  .bobo-service1 p {
+    margin-top: 20px;
+    font-size: 14px;
+    line-height: 1.3;
+  }
+}
+

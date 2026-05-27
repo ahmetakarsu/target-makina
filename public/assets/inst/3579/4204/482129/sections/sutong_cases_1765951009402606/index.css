@@ -1,0 +1,485 @@
+.sutong-cases {
+  padding: 80px 0;
+  position: relative;
+  background: #fafafa;
+}
+
+.sutong-cases .more1 {
+  padding: 0 40px;
+  height: 64px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #dbe0e3;
+  font-size: 15px;
+  color: var(--title-text-color);
+  font-weight: 700
+}
+
+.sutong-cases .more1 span {
+  width: 13px;
+  height: 12px;
+  background: var(--color-primary);
+  margin-right: 10px
+}
+
+.sutong-cases .more1 span:last-child {
+  margin-right: 27px
+}
+
+.sutong-cases .more1:hover {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #fff
+}
+
+.sutong-cases .more1:hover span {
+  background: #fff
+}
+
+.sutong-cases .tit {
+  text-align: center;
+  height: 75px;
+  overflow: hidden;
+  border-bottom: 1px solid #eaedef
+}
+
+.sutong-cases .tit h4 {
+  color: #fff;
+  font-size: 98px;
+  font-weight: 700;
+  line-height: 1;
+  text-shadow: rgba(210, 217, 221, .75) 1px 0 0, rgba(210, 217, 221, .75) 0 1px 0, rgba(210, 217, 221, .75) -1px 0 0, rgba(210, 217, 221, .75) 0 -1px 0
+}
+
+.sutong-cases .top {
+  margin: 0 !important;
+  display: flex;
+  justify-content: space-between
+}
+
+.sutong-cases .t {
+  width: 685px
+}
+
+.sutong-cases .t h3 {
+  font-size: clamp(24px, 1.9vw, 36px);
+  font-weight: 700;
+  line-height: 1;
+  position: relative;
+  z-index: 20
+}
+
+.sutong-cases .t h3::after {
+  display: block;
+  content: '';
+  width: 80px;
+  height: 4px;
+  background: var(--color-primary);
+  margin: 10px auto 0 0
+}
+
+.sutong-cases .t .more1 {
+  margin: 34px 0 0
+}
+
+.sutong-cases .top .txt {
+  flex: 1;
+  margin-left: 15px;
+  font-size: 17px;
+  line-height: 36px
+}
+
+.sutong-cases ul {
+  margin: 75px -20px 0;
+  display: flex;
+  flex-wrap: wrap
+}
+
+.sutong-cases ul li {
+  width: 33.3333%;
+  padding: 15px 20px
+}
+
+.sutong-cases ul li>a {
+  position: relative;
+  overflow: hidden;
+  display: block
+}
+
+.sutong-cases ul li img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1.2 / 1;
+  object-fit: cover;
+}
+
+.sutong-cases ul li .txt {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 105;
+  padding: 0 34px 29px;
+  transition: opacity .2s, transform .35s;
+  display: flex;
+  justify-content: flex-end;
+  -webkit-flex-direction: column;
+  flex-direction: column
+}
+
+.sutong-cases ul li .txt::after {
+   content: ""; 
+  background: var(--color-primary);
+  opacity: 0.85;
+  height: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: all .3s ease 0s
+}
+
+.sutong-cases ul li .txt>* {
+  position: relative;
+  z-index: 10
+}
+
+.sutong-cases ul li .txt h6 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1
+}
+
+.sutong-cases ul li .txt p {
+  font-size: 15px;
+  color: #fff;
+  line-height: 28px;
+  height: 0;
+  overflow: hidden;
+  transition: all .5s ease 0s;
+  margin: 15px 0 0
+}
+
+.sutong-cases ul li .txt .more {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  margin: 25px 0 0;
+  display: none;
+}
+
+.sutong-cases ul li .txt .more i {
+  color: #fff;
+  font-size: 12px;
+  border-radius: 50%;
+  width: 26px;
+  height: 26px;
+  border: 1px solid #fff;
+  line-height: 24px;
+  display: inline-block;
+  text-align: center;
+  margin-right: 20px
+}
+
+.sutong-cases ul li:hover .txt::after {
+  height: 100%
+}
+
+.sutong-cases ul li:hover .txt p {
+  height: 112px
+}
+
+.sutong-cases ul li:hover .more i {
+  background: #fafbfb;
+  color: var(--color-primary);
+  border-color: #fafbfb
+}
+
+
+@media screen and (max-width: 1600px) {
+
+  .sutong-cases .t,
+  .indexF .t {
+    width: 635px
+  }
+}
+
+@media screen and (max-width: 1500px) {
+
+  .sutong-cases .t {
+    width: 560px
+  }
+}
+
+@media screen and (max-width: 1441px) {
+
+  .sutong-cases .tit h4 {
+    font-size: 90px
+  }
+
+
+
+  .sutong-cases .more1 {
+    padding: 0 35px
+  }
+
+  .sutong-cases .t {
+    width: 540px
+  }
+}
+
+@media screen and (max-width: 1367px) {
+  .sutong-cases .tit h4 {
+    font-size: 80px
+  }
+
+  .sutong-cases .t {
+    width: 520px
+  }
+
+  .sutong-cases .tit {
+    height: 65px
+  }
+
+  .sutong-cases ul {
+    margin: 50px -20px 0
+  }
+
+  .sutong-cases ul li .txt h6 {
+    font-size: 19px
+  }
+
+  .sutong-cases ul li .txt p {
+    line-height: 26px
+  }
+}
+
+@media screen and (max-width: 1281px) {
+
+  .sutong-cases .tit h4 {
+    font-size: 70px
+  }
+
+
+
+  .sutong-cases .tit {
+    height: 60px
+  }
+
+  .sutong-cases .top .txt {
+    line-height: 32px;
+    font-size: 16px;
+  }
+
+  .sutong-cases .t,
+  .indexF .t {
+    width: 500px
+  }
+
+
+  .sutong-cases ul {
+    margin: 48px -15px 0
+  }
+
+  .sutong-cases ul li {
+    padding: 12px 15px
+  }
+
+  .sutong-cases ul li .txt {
+    padding: 0 25px 20px
+  }
+
+  .sutong-cases ul li .txt p {
+    line-height: 23px
+  }
+
+  .sutong-cases ul li .txt .more {
+    margin: 20px 0 0
+  }
+}
+
+@media screen and (max-width: 1171px) {
+
+  .sutong-cases .tit h4 {
+    font-size: 60px
+  }
+
+
+
+  .sutong-cases .tit {
+    height: 50px
+  }
+
+  .sutong-cases .t {
+    width: 480px
+  }
+
+  .sutong-cases .top .txt {
+    line-height: 30px
+  }
+
+
+  .sutong-cases ul li .txt p {
+    margin: 0
+  }
+}
+
+@media screen and (max-width: 992px) {
+
+  .sutong-cases .top .txt {
+    line-height: 30px
+  }
+
+
+  .sutong-cases .t {
+    width: 100%
+  }
+
+  .sutong-cases .t {
+    text-align: center
+  }
+
+  .sutong-cases .t h3::after {
+    margin: 10px auto 0
+  }
+
+  .sutong-cases .top .txt {
+    margin: 15px 0 0;
+    line-height: 28px
+  }
+
+  .sutong-cases ul {
+    margin: 25px -15px 0
+  }
+
+  .sutong-cases ul li .txt {
+    padding: 0 20px 18px
+  }
+
+  .sutong-cases ul li .txt .more {
+    display: none
+  }
+
+  .sutong-cases .top {
+    margin: 45px 0 0;
+    display: block
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .sutong-cases .more1 {
+    padding: 0 30px;
+    height: 50px
+  }
+
+  .sutong-cases .tit h4 {
+    font-size: 50px
+  }
+
+
+  .sutong-cases .tit {
+    height: 45px
+  }
+
+  .sutong-cases .top .txt {
+    line-height: 28px
+  }
+
+
+  .sutong-cases {
+    padding: 40px 0 30px
+  }
+
+  .sutong-cases .top {
+    margin: 30px 0 0
+  }
+
+  .sutong-cases .t h3::after {
+    margin: 15px auto 0
+  }
+
+  .sutong-cases .t .more1 {
+    margin: 25px 0 0
+  }
+
+  .sutong-cases .top .txt {
+    margin: 15px 0 0;
+    font-size: 14px;
+  }
+
+  .sutong-cases ul {
+    margin: 20px -10px 0
+  }
+
+  .sutong-cases ul li {
+    width: 50%;
+    padding: 10px
+  }
+
+  .sutong-cases ul li .txt {
+    padding: 0 15px 15px
+  }
+
+  .sutong-cases ul li .txt h6 {
+    font-size: 18px
+  }
+}
+
+@media screen and (max-width: 768px) {
+
+  .sutong-cases ul li .txt h6 {
+    font-size: 18px
+  }
+}
+
+@media screen and (max-width: 576px) {
+
+
+  .sutong-cases .tit h4 {
+    font-size: 40px
+  }
+
+  .sutong-cases .tit {
+    height: 35px
+  }
+
+
+  .sutong-cases ul li .txt .more {
+    display: none
+  }
+
+  .sutong-cases ul li .txt h6 {
+    font-size: 17px
+  }
+}
+
+@media screen and (max-width: 480px) {
+
+  .sutong-cases .more1 {
+    padding: 0 25px
+  }
+
+
+
+  .sutong-cases .tit h4 {
+    font-size: 30px
+  }
+
+  .sutong-cases .tit {
+    height: 25px
+  }
+
+  .sutong-cases ul {
+    margin: 14px 0 0
+  }
+
+  .sutong-cases ul li {
+    width: 100%;
+    padding: 6px 0
+  }
+}

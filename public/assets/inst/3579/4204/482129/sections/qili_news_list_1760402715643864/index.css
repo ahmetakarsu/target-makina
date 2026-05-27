@@ -1,0 +1,109 @@
+.qili-main {
+  padding-top: 50px;
+  padding-bottom: 60px;
+}
+
+.qili-newslist {}
+.qili-newslist ul li {
+  margin: 0 0 20px;
+  padding: 15px;
+  transition: all 0.3s ease 0s;
+  box-sizing: border-box;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  display: -webkit-flex;
+  display: flex;
+}
+.qili-newslist ul li .pic {
+  width: 380px;
+  display: block;
+  overflow: hidden;
+}
+.qili-newslist ul li .pic img {
+  width: 100%;
+  transition: all 0.3s ease 0s;
+}
+.qili-newslist ul li .t {
+  -webkit-flex: 1;
+  flex: 1;
+  margin: 0 0 0 40px;
+  overflow: hidden;
+}
+.qili-newslist ul li .t h5 {
+  font-size: 22px;
+  text-transform: capitalize;
+  font-weight: 700;
+}
+.qili-newslist ul li .t h5 a {
+  color: #333;
+}
+.qili-newslist ul li .t h5 a:hover {
+  color: var(--active-color);
+}
+.qili-newslist ul li .t span {
+  display: block;
+  font-size: 14px;
+  color: #777;
+  margin: 15px 0 0;
+}
+.qili-newslist ul li .t span i {
+  margin-right: 5px;
+}
+.qili-newslist ul li .t p {
+  color: #666;
+  font-size: 17px;
+  height: 48px;
+  overflow: hidden;
+  margin: 15px 0 0;
+  line-height: 24px;
+}
+
+.qili-newslist ul li .pic:hover img {
+  transform: scale(1.08);
+  -webkit-transform: scale(1.08);
+}
+
+@media screen and (max-width:991px) {
+  .qili-main {
+    padding-top: 25px;
+    padding-bottom: 30px;
+  }
+  .qili-newslist ul li .pic {
+    width: 220px;
+  }
+  .qili-newslist ul li .t {
+    margin: 0 0 0 30px;
+  }
+  .qili-newslist ul li .t h5 {
+    font-size: 18px;
+  }
+  .qili-newslist ul li .t span {
+    font-size: 13px;
+    margin: 10px 0 0;
+    display: inline-block;
+  }
+  .qili-newslist ul li .t p {
+    line-height: 22px;
+  }
+  .qili-newslist ul li .t p {
+    font-size: 15px;
+    height: 44px;
+    margin: 8px 0 0;
+    line-height: 22px;
+  }
+  .qili-newslist ul li .t a.more {
+    display: none;
+  }
+}
+
+@media screen and (max-width:576px) {
+  .qili-newslist ul li {
+    display: block;
+  }
+  .qili-newslist ul li .pic {
+    width: 100%
+  }
+  .qili-newslist ul li .t {
+    margin: 20px 0 0;
+    text-align: center;
+  }
+}

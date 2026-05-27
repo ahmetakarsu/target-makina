@@ -1,0 +1,260 @@
+:root {
+  --bobo-about-title-size: 36px;
+  --bobo-about-text-size: 18px;
+  --bobo-about-content-pr: 70px;
+  --bobo-about-pic-t-size: 20px;
+  --bobo-about-pic-t-p: 30px 38px;
+  --bobo-about-vbox-b: -54px;
+  --bobo-about-btn-size: 52px;
+  --bobo-about-pd: 100px 0;
+}
+
+.bobo-about {
+  padding: var(--bobo-about-pd);
+}
+
+.bobo-about .pic {
+  padding: 0;
+}
+
+.bobo-about .pic .pic-box {
+  position: relative;
+}
+
+.bobo-about .pic .poster {
+  width: 100%;
+  object-fit: cover;
+  aspect-ratio: 3 / 2;
+}
+
+.bobo-about .v-box {
+  position: absolute;
+  right: 0;
+  bottom: var(--bobo-about-vbox-b);
+  background: #ffffffcc;
+  width: 82%;
+  padding: var(--bobo-about-pic-t-p);
+  box-sizing: border-box;
+  box-shadow: 0 2px 20px 0 rgba(227, 230, 230, 0.6)
+}
+
+.bobo-about .v-box p {
+  color: var(--title-text-color);
+  font-size: var(--bobo-about-pic-t-size);
+  line-height: 1.8;
+}
+
+.bobo-about .v-box .v {
+  /* margin: 20px 0 0; */
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.bobo-about .v-box .v h5 {
+  font-size: var(--bobo-about-pic-t-size);
+}
+
+.bobo-about .v-box .v hr {
+  width: 200px;
+  height: 4px;
+  background: #f4f4f4
+}
+
+.bobo-about .v-box .v a {
+  width: var(--bobo-about-btn-size);
+  position: relative;
+  display: block;
+  transition: all 0.3s ease 0s;
+  -webkit-transition: all 0.3s ease 0s;
+  background-color: var(--color-primary);
+  border-radius: 50%;
+}
+
+.bobo-about .v-box .v a::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 50%;
+  border: 1px solid color-mix(in srgb, var(--color-primary) 50%, transparent 25%);
+  animation: scale2 2s linear infinite
+}
+
+@keyframes scale2 {
+  from {
+    -webkit-transform: scale(1);
+    transform: scale(1)
+  }
+
+  50% {
+    -webkit-transform: scale(1.4);
+    transform: scale(1.4)
+  }
+
+  to {
+    -webkit-transform: scale(1);
+    transform: scale(1)
+  }
+}
+
+.bobo-about .txt{ 
+  padding-left: 0;
+  padding-right: var(--bobo-about-content-pr);
+}
+
+.bobo-about .txt h2 {
+  font-size: clamp(24px, 1.9vw, 36px);
+  line-height: 1;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.bobo-about .txt .rich-text p {
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.bobo-about .txt .rich-text strong {
+  color: var(--color-primary);
+}
+
+@media screen and (max-width: 1500px) {
+  :root {
+    --bobo-about-title-size: 32px;
+    --bobo-about-text-size: 16px;
+    --bobo-about-content-pr: 62px;
+    --bobo-about-pic-t-size: 18px;
+    --bobo-about-pic-t-p: 26px 34px;
+    --bobo-about-vbox-b: -48px;
+    --bobo-about-btn-size: 48px;
+    --bobo-about-pd: 85px 0;
+  }
+
+  .bobo-about .v-box .v {
+    margin: 18px 0 0;
+  }
+  .bobo-about .v-box .v hr {
+    width: 180px;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  :root {
+    --bobo-about-title-size: 28px;
+    --bobo-about-text-size: 14px;
+    --bobo-about-content-pr: 54px;
+    --bobo-about-pic-t-size: 16px;
+    --bobo-about-pic-t-p: 22px 30px;
+    --bobo-about-vbox-b: -42px;
+    --bobo-about-btn-size: 44px;
+    --bobo-about-pd: 70px 0;
+  }
+
+  .bobo-about .v-box .v {
+    margin: 16px 0 0;
+  }
+  .bobo-about .v-box .v hr {
+    width: 160px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  :root {
+    --bobo-about-title-size: 24px;
+    --bobo-about-text-size: 14px;
+    --bobo-about-content-pr: 45px;
+    --bobo-about-pic-t-size: 14px;
+    --bobo-about-pic-t-p: 16px 24px;
+    --bobo-about-vbox-b: -36px;
+    --bobo-about-btn-size: 40px;
+    --bobo-about-pd: 55px 0;
+  }
+
+  .bobo-about .v-box .v {
+    margin: 14px 0 0;
+  }
+  .bobo-about .v-box .v hr {
+    width: 140px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  :root {
+    --bobo-about-title-size: 32px;
+    --bobo-about-text-size: 16px;
+    --bobo-about-content-pr: 0;
+    --bobo-about-pic-t-size: 18px;
+    --bobo-about-pic-t-p: 25px 30px;
+    --bobo-about-vbox-b: -48px;
+    --bobo-about-btn-size: 48px;
+    --bobo-about-pd: 60px 0;
+  }
+
+  .bobo-about .pic .poster {
+    margin-top: 20px;
+  }
+
+  .bobo-about .txt h2 {
+    text-align: center;
+  }
+
+  .bobo-about .v-box {
+    position: static;
+    width: 100%;
+  }
+
+  .bobo-about .v-box .v {
+    margin: 20px 0 0;
+  }
+  .bobo-about .v-box .v hr {
+    width: 200px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  :root {
+    --bobo-about-title-size: 28px;
+    --bobo-about-text-size: 16px;
+    --bobo-about-content-pr: 0;
+    --bobo-about-pic-t-size: 16px;
+    --bobo-about-pic-t-p: 20px 28px;
+    --bobo-about-btn-size: 44px;
+    --bobo-about-pd: 45px 0;
+  }
+
+  .bobo-about .v-box .v {
+    margin: 18px 0 0;
+  }
+  .bobo-about .v-box .v hr {
+    width: 180px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  :root {
+    --bobo-about-title-size: 24px;
+    --bobo-about-text-size: 14px;
+    --bobo-about-content-pr: 0;
+    --bobo-about-pic-t-size: 14px;
+    --bobo-about-pic-t-p: 15px 20px;
+    --bobo-about-btn-size: 40px;
+    --bobo-about-pd: 30px 0;
+  }
+
+  .bobo-about .row {
+    padding: 0 15px;
+  }
+
+  .bobo-about .v-box .v {
+    margin: 12px 0 0;
+  }
+  .bobo-about .v-box .v hr {
+    width: 160px;
+  }
+}

@@ -46,6 +46,14 @@ import QuotePopup from '../components/QuotePopup.astro';
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Original CSS files -->
+  <link rel="stylesheet" href="/assets/tpl-common/common/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/tpl-common/common/css/iconfont.css">
+  <link rel="stylesheet" href="/assets/tpl-common/common/css/animate.css" media="screen and (min-width: 768px)">
+  <link rel="stylesheet" href="/css/base.css">
+  
+  <slot name="head" />
 </head>
 <body class="bg-white text-dark-muted antialiased overflow-x-hidden">
   <Header />
@@ -57,5 +65,19 @@ import QuotePopup from '../components/QuotePopup.astro';
   <Footer />
   <Sidebar />
   <QuotePopup />
+
+  <!-- Original JS files -->
+  <script is:inline src="/assets/tpl-common/common/js/jquery.js" defer></script>
+  <script is:inline src="/assets/tpl-common/common/js/popper.min.js" defer></script>
+  <script is:inline src="/assets/tpl-common/common/js/bootstrap.min.js" defer></script>
+  <script is:inline src="/assets/tpl-common/common/js/wow.js" defer></script>
+  <script is:inline src="/assets/tpl-common/common/js/swiper7.js" defer></script>
+  <script is:inline src="/assets/tpl-common/common/js/jquery.counterup.js" defer></script>
+  <script is:inline src="/assets/tpl-common/common/js/jquery.fancybox.js" defer></script>
+  <script is:inline src="/assets/tpl-common/common/js/form.js" defer></script>
+  <script is:inline src="/assets/tpl-common/common/js/bootstrap-select.min.js" defer></script>
+  <script is:inline src="/js/layout.js" defer></script>
+
+  <slot name="scripts" />
 </body>
 </html>

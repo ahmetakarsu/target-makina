@@ -8,6 +8,23 @@ const keywords = "CNC işleme, CNC frezeleme, CNC tornalama, hassas üretim, end
 ---
 
 <BaseLayout title={title} description={description} keywords={keywords}>
+  <Fragment slot="head">
+    <link rel="stylesheet" href="/assets/tpl-common/common/css/swiper7.css">
+    <link rel="stylesheet" href="/assets/tpl-common/common/css/jquery.fancybox.css">
+    <link rel="stylesheet" href="/assets/tpl-common/common/css/form.css">
+    <link rel="stylesheet" href="/assets/inst/3579/4204/482129/sections/huake_banner_1761527394356428/index.css">
+    <link rel="stylesheet" href="/assets/inst/3579/4204/482129/sections/taskoit_service_1760495813395700/index.css">
+    <link rel="stylesheet" href="/assets/inst/3579/4204/482129/sections/sutong_pic_text2_1760403555313057/index.css">
+    <link rel="stylesheet" href="/assets/inst/3579/4204/482129/sections/bobo_company_intro_1760403430795121/index.css">
+    <link rel="stylesheet" href="/assets/inst/3579/4204/482129/sections/bobo_indicator_1760403448459444/index.css">
+    <link rel="stylesheet" href="/assets/inst/3579/4204/482129/sections/song_aboutus_1762830186214216/index.css">
+    <link rel="stylesheet" href="/assets/inst/3579/4204/482129/sections/sung_subscribe_1760403616878437/index.css">
+    <link rel="stylesheet" href="/assets/inst/3579/4204/482129/sections/san_home_choose_1760402498909976/index.css">
+    <link rel="stylesheet" href="/assets/inst/3579/4204/482129/sections/bobo_certificate_1760403740453223/index.css">
+    <link rel="stylesheet" href="/assets/inst/3579/4204/482129/sections/insucom_what_our_1760403798460951/index.css">
+    <link rel="stylesheet" href="/assets/inst/3579/4204/482129/sections/sung_news_1760403655895355/index.css">
+  </Fragment>
+
   ===== Banner Slider (DOKUNULMADI) ===== 
 <div id="huake-banner" style="position: relative;">
 <div class="swiper">
@@ -380,4 +397,7 @@ const keywords = "CNC işleme, CNC frezeleme, CNC tornalama, hassas üretim, end
 </div>
 </div>
 </div>
+  <Fragment slot="scripts">
+    <script is:inline src="/assets/inst/3579/4204/482129/index.js" defer></script>
+  </Fragment>
 </BaseLayout>

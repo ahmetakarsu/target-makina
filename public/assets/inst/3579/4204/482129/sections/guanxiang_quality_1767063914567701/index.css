@@ -1,0 +1,221 @@
+.guanxiang-about-quality {
+  padding: 80px 0;
+  background: #fafafa;
+}
+
+.guanxiang-about-quality .container {
+	display: -webkit-flex;
+	display: flex;
+	-webkit-justify-content: space-between;
+	justify-content: space-between;
+	-webkit-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
+
+.guanxiang-about-quality .swiper-wrapper {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	display: -webkit-flex;
+	display: flex;
+	transition-property: transform;
+	box-sizing: content-box;
+}
+
+.guanxiang-about-quality .swiper-container {
+	width: 100%;
+	overflow: hidden;
+}
+
+.guanxiang-about-quality .swiper-slide {
+	flex-shrink: 0;
+	position: relative;
+	transition-property: transform;
+}
+
+.guanxiang-about-quality .swiper-pagination {
+	position: relative;
+	text-align: center;
+	margin-top: 7px;
+	margin-left: 26px;
+	vertical-align: top;
+	-webkit-transition: .3s;
+	-moz-transition: .3s;
+	-o-transition: .3s;
+	transition: .3s;
+	-webkit-transform: translate3d(0, 0, 0);
+	-ms-transform: translate3d(0, 0, 0);
+	-o-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+	z-index: 10;
+}
+
+.guanxiang-about-quality .swiper-pagination-progressbar {
+	display: inline-block;
+	width: 100%;
+	height: 2px;
+	background: #cbd2d5;
+}
+
+.guanxiang-about-quality .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+	background: var(--color-primary);
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	-webkit-transform: scale(0);
+	-ms-transform: scale(0);
+	-o-transform: scale(0);
+	transform: scale(0);
+	-webkit-transform-origin: left top;
+	-moz-transform-origin: left top;
+	-ms-transform-origin: left top;
+	-o-transform-origin: left top;
+	transform-origin: left top;
+}
+
+.guanxiang-about-quality .title {
+	width: 94%;
+	margin: 0 auto;
+	margin-top: -10px;
+	text-align: center;
+}
+
+.guanxiang-about-quality .title h2,
+.guanxiang-about-quality .title h2 a {
+	color: #212121;
+	font-size: clamp(24px, 1.9vw, 36px);
+	line-height: 52px;
+}
+
+.guanxiang-about-quality p {
+	margin-top: 20px;
+	line-height: 30px;
+	font-size: 18px;
+}
+
+.guanxiang-about-quality .quality-list {
+	margin-top: 40px;
+}
+
+.guanxiang-about-quality .home-scenarioshd {
+	margin: 25px auto 0;
+	text-align: center;
+}
+
+.guanxiang-about-quality .home-ny {
+	display: inline-block;
+	height: 15px;
+	overflow: hidden;
+}
+.guanxiang-about-quality .home-ny .swiper-button-prev:after,.guanxiang-about-quality .home-ny .swiper-rtl .swiper-button-next:after{color:#333;}
+.guanxiang-about-quality .home-ny .swiper-button-next:after,.guanxiang-about-quality .home-ny .swiper-rtl .swiper-button-prev:after{color:#333;}
+.guanxiang-about-quality .home-ny .swiper-button-prev,
+.guanxiang-about-quality .home-ny .swiper-button-next {
+	display: inline-block;
+	width: 20px;
+	height: 15px;
+	cursor: pointer;
+	-webkit-transition: .3s all;
+	-moz-transition: .3s all;
+	-ms-transition: .3s all;
+	transition: .3s all;
+}
+
+.guanxiang-about-quality .home-ny .swiper-button-prev {
+	position: relative;
+	z-index: 1;
+	background: url(pics/left.png) no-repeat center;
+}
+
+.guanxiang-about-quality .home-ny .swiper-button-next {
+	position: relative;
+	z-index: 1;
+	margin-left: 18px;
+	background: url(pics/right.png) no-repeat center;
+}
+
+.guanxiang-about-quality .quality-list li span {
+	display: block;
+	overflow: hidden;
+	border: 1px #3333 solid;
+}
+
+.guanxiang-about-quality .quality-list li span img {
+	width: 100%;
+	transition: 0.3s;
+}
+
+.guanxiang-about-quality .quality-list li span img:hover {
+	-webkit-transform: scale(1.03);
+	-moz-transform: scale(1.03);
+	-ms-transform: scale(1.03);
+	transform: scale(1.03);
+}
+
+.guanxiang-about-quality .quality-list li h3 {
+	margin-top: 24px;
+	color: #212121;
+	font-size: 20px;
+}
+
+@media screen and (max-width: 1580px) {
+  .guanxiang-about-quality {
+    padding-top: 80px;
+  }
+
+  
+  .guanxiang-about-quality p {
+		font-size: 15px;
+		line-height: 26px;
+	}
+}
+
+@media screen and (max-width: 1400px) {
+  .guanxiang-about-quality p {
+		line-height: 24px;
+	}
+
+}
+
+@media screen and (max-width: 1280px) {
+  .guanxiang-about-quality {
+    padding-top: 70px;
+  }
+
+	.guanxiang-about-quality .title h2,
+	.guanxiang-about-quality .title h2 a {
+		line-height: 42px;
+	}
+}
+
+@media screen and (max-width: 960px) {
+  .guanxiang-about-quality {
+    padding-top: 50px;
+  }
+  
+  .guanxiang-about-quality p {
+		margin-top: 16px;
+		font-size: 15px;
+		line-height: 22px;
+	}
+  .guanxiang-about-quality .title {
+		width: 100%;
+	}
+
+	.guanxiang-about-quality .title h2,
+	.guanxiang-about-quality .title h2 a {
+		line-height: 30px;
+	}
+
+	.guanxiang-about-quality h3,
+	.guanxiang-about-quality h3 a {
+		font-size: 18px;
+	}
+
+  .guanxiang-about-quality .swiper-pagination-progress {
+		width: 160px;
+	}
+}

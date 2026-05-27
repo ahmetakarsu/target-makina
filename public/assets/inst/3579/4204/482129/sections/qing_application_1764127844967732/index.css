@@ -1,0 +1,199 @@
+:root {
+  --qing-application-title-size: 56px;
+  --qing-application-sub-title-size: 36px;
+  --qing-application-text-size: 20px;
+}
+.zhiqing-application {
+  background: #e9e9e9;
+  padding: 0 0 70px;
+}
+
+
+@media screen and (max-width:1440px) {
+  .zhiqing-application {
+    padding:0 0 50px;
+  }
+}
+
+@media screen and (max-width:991px) {
+  .zhiqing-application {
+    padding:0 0 30px;
+  }
+}
+
+
+
+
+
+
+.zhiqing-application h3 {
+  font-size: var(--qing-application-title-size);
+  color: var(--title-text-color);
+  line-height: 1;
+  font-family: var(--title-font-family);
+  text-transform: uppercase;
+  text-align: center;
+}
+.zhiqing-application ul li .pic img{
+  width: 100%;
+ 
+}
+.zhiqing-application ul {
+  margin: 0;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.zhiqing-application ul li {
+  display: -webkit-flex;
+  display: flex;
+  border: 1px solid #e5e5e5;
+  /* margin-top: 30px; */
+  display: block;
+  width: 24%; 
+  background: #fff;
+  margin: 7px;
+}
+.zhiqing-application ul li .txt {
+  /* width: 50%; */
+  background: #f2f2f2;
+  flex: 1;
+  text-align: LEFT;
+}
+.zhiqing-application ul li .txt .box {
+  background: #fff;
+  height: 100%;
+  padding: 0 10px;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+.zhiqing-application ul li .txt h5 {
+  font-size: var(--qing-application-sub-title-size);
+  color: var(--title-text-color);
+  line-height: 1;
+  font-family: var(--title-font-family);
+}
+.zhiqing-application ul li .txt .box p {
+  font-size: 15px;
+  color: var(--text-color);
+  line-height: 1.5;
+  margin: 5px 0 0;
+  font-weight: bold;
+}
+.zhiqing-application ul li .pic {
+  width: 100%;
+  overflow: hidden;
+}
+.zhiqing-application ul li .pic .swiper-pagination-bullets {
+  text-align: right;
+  font-size: 0;
+  bottom: 25px;
+  padding: 0 35px;
+}
+.zhiqing-application ul li .pic .swiper-pagination-bullet {
+  height: 16px;
+  width: 16px;
+  margin: 0 5px;
+  background: #fff;
+  border-radius: 50%;
+  opacity: 1;
+}
+.zhiqing-application ul li .pic .swiper-pagination-bullet-active {
+  background: var(--color-primary);
+}
+
+.zhiqing-application ul li:nth-child(2n) {
+  -webkit-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+}
+.zhiqing-application ul li:nth-child(2n)  .txt {
+  text-align:left;
+}
+
+@media screen and (max-width: 1500px) {
+  :root {
+    --qing-application-title-size: 52px;
+    --qing-application-sub-title-size: 34px;
+    --qing-application-text-size: 18px;
+  }
+  .zhiqing-application ul li {
+    width: 23%;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  :root {
+    --qing-application-title-size: 48px;
+    --qing-application-sub-title-size: 32px;
+    --qing-application-text-size: 16px;
+  }
+
+
+}
+
+@media screen and (max-width: 992px) {
+  :root {
+    --qing-application-title-size: 44px;
+    --qing-application-sub-title-size: 30px;
+    --qing-application-text-size: 14px;
+  }
+  .zhiqing-application .txt {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  :root {
+    --qing-application-title-size: 40px;
+    --qing-application-sub-title-size: 28px;
+    --qing-application-text-size: 14px;
+  }
+
+  .zhiqing-application .txt {
+    width: 100%;
+  }
+  .zhiqing-application .txt h3 {
+    text-align: center;
+  }
+
+  .zhiqing-application ul li {
+    display: block;
+    width: 47%;
+  }
+  .zhiqing-application ul li .pic {
+    width: 100%;
+  }
+  .zhiqing-application ul li .txt,
+  .zhiqing-application ul li:nth-child(2n) .txt {
+    width: 100%;
+    padding: 10px;
+    background: #fff;
+  }
+  .zhiqing-application ul li .txt .box {
+    padding: 0 10px;
+  }
+  .zhiqing-application ul li .txt .box p {margin: 5px 0 0;}
+
+  .zhiqing-application ul li .txt .box p{font-size: 14px;}
+}
+
+@media screen and (max-width: 576px) {
+  :root {
+    --qing-application-title-size: 36px;
+    --qing-application-sub-title-size: 26px;
+    --qing-application-text-size: 14px;
+  }
+
+  .zhiqing-application ul li {
+    width: 100%;
+  }
+}
+
+
+
+
+

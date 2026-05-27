@@ -1,0 +1,50 @@
+.bobo-keyword-box {
+    background-color: #f9f9f9;
+    float: left;
+    width: 20%;
+    margin-left: 13%;
+}
+.bobo-keyword-box {
+    padding: 40px 0 10px;
+}
+.bobo-keyword-box h2{}
+.bobo-keyword-box ul{
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+    display: block;
+}
+.bobo-keyword-box ul li{
+    /* border: 2px solid #167FDF; */
+    padding: 10px;
+    margin: 5px;
+    border-radius: 10px;
+    display: block;
+}
+.bobo-keyword-box ul li .section_title{/* text-align: center; */margin: 0;}
+.bobo-keyword-box ul li .section_title a{
+    text-decoration: none;
+}
+.bobo-keyword-box ul li .section_title a h2{
+    font-size: 16px;
+    margin: 0;
+}
+.bobo-keyword-box ul li:hover h2{
+    color: var(--color-primary);
+}
+.main-left-fix{
+    position: fixed;
+    top:10px
+}
+ .affix-bottom {
+  position: absolute;
+}
+
+.bobo-keyword-box.affix {
+  position: fixed;
+  top: 0;
+   
+}
+.bobo-keyword-box.affix-bottom {
+  position: absolute;
+}
+

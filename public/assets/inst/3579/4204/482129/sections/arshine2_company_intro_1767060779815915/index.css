@@ -1,0 +1,160 @@
+:root {
+  --arshine2-company-intro-title: 36px;
+  --arshine2-company-intro-p: 20px;
+}
+
+.arshine2_company_intro {
+  padding: 80px 0;
+  background: #fff;
+  position: relative;
+}
+
+.arshine2_company_intro .container {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.arshine2_company_intro .txt {
+  flex: 1;
+  margin: auto;
+}
+
+.arshine2_company_intro .txt h6{
+  color: var(--color-primary);
+  margin-bottom: 5px;
+}
+
+.arshine2_company_intro .txt h3 {
+  color: #323232;
+  font-size: clamp(24px, 1.9vw, 36px);
+  line-height: 1.5;
+}
+
+.arshine2_company_intro .txt h3 span {
+  color: var(--color-primary);
+}
+
+.arshine2_company_intro .txt .t {
+  font-size: 18px;
+  color: #333;
+  line-height: 2;
+  margin: 20px 0 0;
+}
+
+.arshine2_company_intro .txt .t p {
+   line-height: 1.6;
+}
+.arshine2_company_intro .txt .t p~p {
+  margin-top: 18px;
+}
+
+.arshine2_company_intro .txt .more {
+  margin-top: 25px;
+  display: inline-block;
+  background: var(--color-primary);
+  padding: 10px 60px;
+  
+  font-size: var(--arshine2-company-intro-p);
+  color: #fff;
+  border-radius: var(--button-radius);
+}
+
+.arshine2_company_intro .txt .more:hover {
+  background: none;
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+}
+
+.arshine2_company_intro .pic {
+  width: 50%;
+  margin-left: 10%;
+  /* aspect-ratio: 1 / 1; */
+}
+
+@media screen and (max-width: 1500px) {
+  :root {
+    --arshine2-company-intro-title: 32px;
+    --arshine2-company-intro-p: 18px;
+  }
+  .arshine2_company_intro {
+    padding: 100px 0 60px;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  :root {
+    --arshine2-company-intro-title: 32px;
+    --arshine2-company-intro-p: 16px;
+  }
+  .arshine2_company_intro {
+    padding: 80px 0 50px;
+  }
+  .arshine2_company_intro .txt .more {
+    padding: 10px 50px;
+  }
+  .arshine2_company_intro .txt .t p {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  :root {
+    --arshine2-company-intro-title: 32px;
+    --arshine2-company-intro-p: 16px;
+  }
+  .arshine2_company_intro .txt .more {
+    padding: 10px 35px;
+  }
+
+  .arshine2_company_intro {
+    padding: 60px 0 30px;
+  }
+
+  .arshine2_company_intro .container {
+    display: block;
+  }
+
+  .arshine2_company_intro .txt {
+    text-align: center;
+  }
+
+  .arshine2_company_intro .txt .t {
+    text-align: left;
+  }
+
+  .arshine2_company_intro .pic {
+        width: 100%;
+        margin: 10px 0 0 0;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  :root {
+    --arshine2-company-intro-title: 28px;
+    --arshine2-company-intro-p: 14px;
+  }
+  .arshine2_company_intro .txt .more {
+    padding: 10px 30px;
+  }
+
+  .arshine2_company_intro {
+    padding: 30px 0 10px;
+  }
+
+  .arshine2_company_intro .txt .t p~p {
+    margin-top: 10px;
+  }
+  .arshine2_company_intro .txt .t p {
+    line-height: 24px;
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  :root {
+    --arshine2-company-intro-title: 24px;
+    --arshine2-company-intro-p: 14px;
+  }
+}

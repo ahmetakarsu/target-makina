@@ -1,0 +1,70 @@
+.qili-aframe {
+  position: relative;
+  padding: 60px 0;
+}
+
+.qili-aframe .list {
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.qili-aframe .list .img {
+  overflow: hidden;
+}
+
+.qili-aframe .list .img img {
+  width: 100%;
+}
+
+.qili-aframe .list .txt {
+  overflow: hidden;
+}
+
+.qili-aframe .list .txt h3 {
+  font-size: clamp(24px, 1.9vw, 36px);
+  margin-bottom: calc((15 / 600) * 100%);
+  color: var(--color-primary);
+}
+
+.qili-aframe .list .txt p {
+  font-size: lamp(14px, 1.05vw, 20px);
+  line-height: 1.7;
+}
+
+@media (min-width:1px) and (max-width:991px) {
+  .qili-aframe .list .img {
+    margin-bottom: 20px;
+  }
+.qili-aframe {
+  padding: 30px 0;
+}
+
+}
+
+@media (min-width:992px) {
+  .qili-aframe .list {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .qili-aframe .list .img {
+    width: 50%;
+    margin: 0;
+    padding-right: 35px;
+  }
+
+  .qili-aframe .list .txt {
+    width: 50%;
+    margin: 0;
+  }
+}
+
+@media (min-width:1230px) {
+  .qili-aframe .list {
+    align-items: center;
+  }
+  
+   .qili-aframe .list .img {
+    padding-right: 50px;
+  }
+}

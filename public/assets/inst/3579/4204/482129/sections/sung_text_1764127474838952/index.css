@@ -1,0 +1,79 @@
+.sutong-intro {
+  padding: 70px 0;
+  text-align: center;
+  background: #E9E9E9;
+}
+
+@media screen and (max-width:1440px) {
+  .sutong-intro {
+    padding: 50px 0;
+  }
+}
+
+@media screen and (max-width:991px) {
+  .sutong-intro {
+    padding: 30px 0;
+  }
+}
+
+
+.sutong-intro h5 {
+  font-size: clamp(24px, 1.9vw, 36px);
+  color: var(--title-text-color);
+  line-height: 1.47;
+}
+
+.sutong-intro h5 strong {
+  font-weight: 600;
+}
+
+.sutong-intro .highlighted  {
+  color: var(--color-second);
+}
+
+.sutong-intro .more1 {
+  margin: 34px 0 0;
+  padding: 0 14px;
+  height: 40px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  color: var(--title-text-color);
+  font-weight: 700;
+  border: 1px solid #BEBEBE;
+  position: relative;
+}
+
+.sutong-intro .more1 i {
+  margin-left: 16px;
+}
+
+.sutong-intro .more1:hover {
+  background: var(--color-second);
+  border-color: var(--color-second);
+  color: #fff;
+}
+
+.sutong-intro .highlighted {
+  color: var(--color-second);
+}
+
+@media screen and (max-width: 1500px) {
+
+}
+
+
+
+@media screen and (max-width: 991px) {
+
+
+  .sutong-intro h5 {
+    line-height: 1.2;
+  }
+
+  .sutong-intro .more1 {
+    margin: 25px 0 0;
+  }
+}
+

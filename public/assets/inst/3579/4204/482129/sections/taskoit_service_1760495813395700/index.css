@@ -1,0 +1,104 @@
+/* Service area start */
+
+.taskoit_service_main {
+    padding: 80px 0;
+    background-color: var(--bg-color);
+     
+  }
+  .taskoit_service_main .service_inner{
+  padding: 20px 0;
+}
+  .taskoit_service_main .service_inner .service_top_image{position:relative;overflow:hidden;}
+  .taskoit_service_main .service-item img {
+    width: 100%;
+    /* height: 208px; */
+    object-fit: cover;
+    transition: 0.3s;
+  }
+  .taskoit_service_main .service-item:hover img {transform:scale(1.06)}  
+  .taskoit_service_main .service_page_service {
+    padding-top: 100px;
+    margin-top: 0;
+  }
+  
+  .taskoit_service_main .service_inner .text_box {
+    background-color: #ffffff;
+    border-radius: 0px 0px 8px 8px;
+    padding: 20px 20px 40px 20px;
+  }
+    .taskoit_service_main .service_inner:hover .service-item  h3 a,
+    .taskoit_service_main .service_inner:hover .all_color_service p{color:#ac6d2a}
+  .taskoit_service_main .service_inner .service-item h3 {
+    padding: 15px 0 10px;
+    color: var(--title-text-color);
+    font-family: var(--title-font-family);
+    font-size: clamp(20px, 1.3vw, 24px);
+  }
+
+  .taskoit_service_main .service_inner .service-item h3 a {
+    color: var(--title-text-color);
+  }
+  
+  .taskoit_service_main .service_inner .all_color_service p {
+    padding: 0px 0px 10px 0px;
+    color: var(--text-color);
+    font-family: var(--font-family);
+    height: 180px;
+    font-size: 16px;
+  }
+  
+  .taskoit_service_main .service-btn > a {
+    display: inline-block;
+    transition: 0.5s;
+    padding: 9px 30px;
+    border-radius: var(--button-radius);
+    font-size: 17px;
+    font-weight: 600;
+    color: #ffffff;
+    border: 1px solid var(--color-primary);
+    background-color: var(--color-primary);
+    font-family: var(--title-font-family);
+  }
+  
+  .taskoit_service_main .service-btn a:hover {
+    background-color: var(--color-second);
+    border: 1px solid transparent;
+  }
+
+  .taskoit_service_main .witr_section_title_inner h2 {
+    font-size: clamp(16px, 1.3vw, 24px);
+    font-family: var(--title-font-family);
+    color: var(--color-primary);
+  }
+
+  .taskoit_service_main .witr_section_title_inner h3 {
+    font-size: clamp(24px, 1.98vw, 38px);
+    font-family: var(--title-font-family);
+    color: var(--title-text-color);
+    line-height: 1.2;
+  }
+
+@media(max-width:1500px){
+.taskoit_service_main .service_inner .all_color_service p {height: 220px;}
+.taskoit_service_main .service_inner .all_color_service p {font-size: 15px;}
+}
+
+@media(max-width:1280px){
+.taskoit_service_main {padding: 50px 0;}
+.taskoit_service_main .service_inner .all_color_service p {font-size: 14px;}
+.taskoit_service_main .service_inner .all_color_service p {height: 170px;}
+.taskoit_service_main .service-btn > a {padding: 7px 20px;font-size: 14px;}
+}
+
+@media(max-width:991px){
+.taskoit_service_main {padding: 30px 0;}
+.taskoit_service_main .service_inner .all_color_service p {height: 185px;}
+.mt-5, .my-5 {margin-top: 1rem !important;}
+}
+
+@media(max-width:767px){
+.taskoit_service_main .service_inner .all_color_service p {height: auto;}
+.taskoit_service_main .service_inner {padding: 0;}
+}
+  
+  
