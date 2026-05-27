@@ -10,6 +10,8 @@ const navItems = [
       { label: 'CNC Tornalama', href: '/hizmetler/cnc-tornalama/' },
       { label: '5 Eksen CNC İşleme', href: '/hizmetler/5-eksen-cnc/' },
       { label: 'Yüzey İşleme', href: '/hizmetler/yuzey-isleme/' },
+      { label: 'Mastar & Fikstür İmalatı', href: '/hizmetler/mastar-fikstur/' },
+      { label: 'Hassas Talaşlı İmalat', href: '/hizmetler/hassas-talasli-imalat/' },
       { label: 'Parça Montajı', href: '/hizmetler/parca-montaji/' },
       { label: 'Sac Şekillendirme', href: '/hizmetler/sac-sekillendirme/' },
       { label: 'Dişli İmalatı', href: '/hizmetler/disli-imalati/' },
@@ -73,7 +75,7 @@ const navItems = [
               )}
             </a>
             {item.children && (
-              <ul class="absolute left-0 top-full mt-0 w-56 bg-white shadow-xl rounded-lg py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 border border-gray-100">
+              <ul class="absolute left-0 top-full mt-0 w-64 bg-white shadow-xl rounded-lg py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 border border-gray-100">
                 {item.children.map((child) => (
                   <li>
                     <a href={child.href} class="block px-4 py-2 text-sm text-dark-muted hover:text-primary hover:bg-primary-light transition-colors">
@@ -89,7 +91,7 @@ const navItems = [
 
       <!-- CTA + Mobile Toggle -->
       <div class="flex items-center gap-3">
-        <a href="/iletisim/" class="hidden sm:inline-flex items-center px-5 py-2.5 bg-primary text-white text-sm font-semibold rounded-lg hover:bg-primary-hover transition-colors">
+        <a href="#teklif" class="quote-trigger hidden sm:inline-flex items-center px-5 py-2.5 bg-primary text-white text-sm font-semibold rounded-lg hover:bg-primary-hover transition-colors">
           Teklif Al
         </a>
         <button id="mobile-toggle" class="lg:hidden p-2 text-dark" aria-label="Menüyü aç">
@@ -117,7 +119,7 @@ const navItems = [
             )}
           </div>
         ))}
-        <a href="/iletisim/" class="block w-full text-center px-5 py-2.5 bg-primary text-white text-sm font-semibold rounded-lg hover:bg-primary-hover transition-colors mt-3">
+        <a href="#teklif" class="quote-trigger block w-full text-center px-5 py-2.5 bg-primary text-white text-sm font-semibold rounded-lg hover:bg-primary-hover transition-colors mt-3">
           Teklif Al
         </a>
       </div>

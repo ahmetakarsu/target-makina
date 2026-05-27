@@ -10,7 +10,9 @@ const keywords = "CNC işleme, CNC frezeleme, CNC tornalama, hassas üretim, end
 <BaseLayout title={title} description={description} keywords={keywords}>
 <div class="machine-hero">
 <div class="container">
+<p class="hero-kicker">Üretim Altyapısı</p>
 <h1>Makina Parkuru</h1>
+<p class="hero-lead">Tel erozyon, CNC işleme merkezleri ve CMM ölçüm altyapısıyla hassas üretim projelerini kontrollü şekilde yürütüyoruz.</p>
 <p class="breadcrumb-text"><a href="/">Ana Sayfa</a> » Makina Parkuru</p>
 </div>
 </div>
@@ -21,7 +23,7 @@ const keywords = "CNC işleme, CNC frezeleme, CNC tornalama, hassas üretim, end
             </p>
 </div>
 </div>
- Machine Grid 
+<!-- Machine Grid -->
 <div class="other-machines" style="padding-top: 30px;">
 <div class="container">
 <div class="row">
@@ -93,11 +95,15 @@ const keywords = "CNC işleme, CNC frezeleme, CNC tornalama, hassas üretim, end
 </BaseLayout>
 
 <style>
-  .machine-hero { background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); padding: 60px 0 40px; color: #fff; }
-        .machine-hero h1 { font-size: 36px; font-weight: 700; margin-bottom: 10px; font-family: var(--title-font-family); }
-        .machine-hero .breadcrumb-text { color: rgba(255,255,255,0.7); font-size: 15px; }
-        .machine-hero .breadcrumb-text a { color: rgba(201,55,21,0.9); text-decoration: none; }
-        .machine-hero .breadcrumb-text a:hover { color: #C93715; }
+  .machine-hero { position:relative;overflow:hidden;background:linear-gradient(135deg,#7f1f0d 0%,#C93715 58%,#e04a28 100%);padding:86px 0 70px;color:#fff; }
+        .machine-hero::after { content:'';position:absolute;right:-110px;top:-160px;width:420px;height:420px;border-radius:50%;background:rgba(255,255,255,.1); }
+        .machine-hero .container { position:relative;z-index:1;max-width:840px; }
+        .machine-hero .hero-kicker { margin:0 0 12px;color:rgba(255,255,255,.82);font-size:13px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase; }
+        .machine-hero h1 { color:#fff;font-size:46px;line-height:1.15;font-weight:800;margin:0 0 16px;font-family:var(--title-font-family);text-shadow:0 2px 16px rgba(0,0,0,.22); }
+        .machine-hero .hero-lead { max-width:720px;margin:0 0 18px;color:rgba(255,255,255,.94);font-size:18px;line-height:1.7;text-shadow:0 2px 16px rgba(0,0,0,.18); }
+        .machine-hero .breadcrumb-text { color:rgba(255,255,255,.84); font-size:15px; margin:0; }
+        .machine-hero .breadcrumb-text a { color:#fff; text-decoration:none; }
+        .machine-hero .breadcrumb-text a:hover { color:rgba(255,255,255,.86); }
         .machine-detail { padding: 60px 0; }
         .machine-image { border-radius: 12px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.12); margin-bottom: 30px; }
         .machine-image img { width: 100%; height: auto; display: block; }

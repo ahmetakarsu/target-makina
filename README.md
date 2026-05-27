@@ -1,43 +1,53 @@
-# Astro Starter Kit: Minimal
+# TARGET MAKINA Astro Site
+
+TARGET MAKINA icin hazirlanmis statik kurumsal web sitesi. Proje Astro uzerinde calisir, Netlify'ye statik cikti olarak yayinlanir ve CNC hizmetleri, makina parkuru, sektorler, kaynaklar, blog/haberler ve iletisim sayfalarini icerir.
+
+## Teknoloji
+
+- Astro 6
+- Tailwind CSS 4
+- Eski tasarimdan tasinan Bootstrap/jQuery tabanli bolum CSS ve scriptleri
+- Netlify Forms
+- Netlify redirect ve cache header ayarlari
+
+## Komutlar
 
 ```sh
-npm create astro@latest -- --template minimal
+npm install
+npm run dev
+npm run build
+npm run preview
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
+## Proje Yapisi
 
 ```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+src/
+  components/     Ortak Astro bilesenleri
+  layouts/        Base layout, SEO meta, ortak header/footer
+  pages/          Route ureten Astro sayfalari
+  styles/         Global Tailwind ve ortak stiller
+public/
+  assets/         Eski sablon assetleri ve statik gorseller
+  images/         Logo ve statik gorseller
+  robots.txt
+  sitemap.xml
+netlify.toml      Deploy, header ve 301 redirect ayarlari
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Formlar
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+Aktif formlar Netlify Forms ile calisir:
 
-Any static assets, like images, can be placed in the `public/` directory.
+- `teklif`: Ortak teklif popup formu
+- `iletisim`: Iletisim sayfasi formu
+- `hizli-teklif`: Ana sayfa hizli teklif formu
 
-## 🧞 Commands
+Tum formlar basarili gonderimden sonra `/tesekkurler/` sayfasina yonlenir.
 
-All commands are run from the root of the project, from a terminal:
+## Notlar
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- Eski `.html` URL'ler `netlify.toml` icinde yeni Turkce rotalara 301 ile yonlendirilir.
+- Gorsel optimizasyonu icin `src/assets` altindaki gorseller `OptimizedImage.astro` uzerinden Astro Image pipeline'a girer.
+- Inline CSS icindeki statik public asset referanslari root-relative `/assets/...` olarak yazilmalidir.
+- Yeni sayfa eklendiginde `public/sitemap.xml` de guncellenmelidir.

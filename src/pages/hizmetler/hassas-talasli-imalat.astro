@@ -1,0 +1,136 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import OptimizedImage from '../../components/OptimizedImage.astro';
+
+const title = "Hassas Talaşlı İmalat | TARGET MAKİNA";
+const description = "TARGET MAKİNA hassas talaşlı imalat hizmetleri. CNC frezeleme, CNC tornalama, tel erozyon ve 5 eksen işleme ile prototipten seri üretime hassas parça üretimi.";
+const keywords = "hassas talaşlı imalat, CNC işleme, hassas parça üretimi, CNC frezeleme, CNC tornalama, tel erozyon, 5 eksen CNC, Target Makina";
+---
+
+<BaseLayout title={title} description={description} keywords={keywords}>
+  <section class="detail-hero">
+    <div class="hero-media">
+      <OptimizedImage alt="Hassas Talaşlı İmalat" src="assets/images/anasayfa/hassas-talasli.png" />
+    </div>
+    <div class="hero-shade"></div>
+    <div class="container hero-content">
+      <p class="breadcrumb"><a href="/">Ana Sayfa</a> / <a href="/hizmetler/">Hizmetler</a> / Hassas Talaşlı İmalat</p>
+      <h1>Hassas Talaşlı İmalat</h1>
+      <p>Metal ve mühendislik plastiklerinde, dar toleranslı teknik parçaları prototipten seri üretime kadar kontrollü ve ölçülebilir bir süreçle üretiyoruz.</p>
+      <a class="primary-action quote-trigger" href="#teklif">Teklif Al</a>
+    </div>
+  </section>
+
+  <section class="stats-band">
+    <div class="container stats-grid">
+      <div><strong>5 eksen</strong><span>karmaşık geometri</span></div>
+      <div><strong>±0.005 mm</strong><span>hassas tolerans</span></div>
+      <div><strong>CMM</strong><span>kalite kontrol</span></div>
+      <div><strong>1+</strong><span>adet üretim</span></div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="container split">
+      <div>
+        <span class="eyebrow">Kabiliyet</span>
+        <h2>Dar toleranslı teknik parça üretimi</h2>
+        <p>Hassas talaşlı imalat; parçanın yalnızca şekline değil, ölçü tutarlılığına, yüzey kalitesine, malzeme davranışına ve montaj uyumuna birlikte odaklanan üretim yaklaşımıdır.</p>
+        <p>Target Makina olarak CNC frezeleme, CNC tornalama, tel erozyon, 5 eksen işleme ve CMM ölçüm kabiliyetlerini aynı üretim akışında birleştiriyoruz.</p>
+      </div>
+      <div class="panel">
+        <h3>Uygun üretim alanları</h3>
+        <ul>
+          <li>Makine yedek parçaları ve özel bağlantı elemanları</li>
+          <li>Savunma, otomotiv, ambalaj ve genel makine parçaları</li>
+          <li>Prototip, numune ve küçük seri üretimler</li>
+          <li>Alüminyum, çelik, paslanmaz, pirinç ve mühendislik plastikleri</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="capability-section">
+    <div class="container">
+      <span class="eyebrow">Üretim yöntemi</span>
+      <h2>Tek projede çoklu işlem kabiliyeti</h2>
+      <div class="cap-grid">
+        <a href="/hizmetler/cnc-frezeleme/"><h3>CNC Frezeleme</h3><p>Prizmatik parçalar, cepler, delikler ve hassas yüzeyler.</p></a>
+        <a href="/hizmetler/cnc-tornalama/"><h3>CNC Tornalama</h3><p>Mil, burç, flanş ve döner geometriye sahip parçalar.</p></a>
+        <a href="/hizmetler/5-eksen-cnc/"><h3>5 Eksen CNC</h3><p>Karmaşık geometri ve tek bağlamada çok yüzeyli işleme.</p></a>
+        <a href="/makina-parkuru/sodick-vl400q/"><h3>Tel Erozyon</h3><p>Sert malzemelerde ince kanal, profil ve yüksek hassas kesim.</p></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="container split">
+      <div class="panel">
+        <h3>Kalite yaklaşımı</h3>
+        <ul>
+          <li>Çizim ve tolerans gereksinimlerinin üretim öncesi kontrolü</li>
+          <li>Kritik ölçüler için ara kontrol ve final ölçüm</li>
+          <li>Yüzey kalitesi, çapak alma ve montaj uygunluğu kontrolü</li>
+          <li>Tekrarlanabilir üretim için proses kayıt disiplini</li>
+        </ul>
+      </div>
+      <div>
+        <span class="eyebrow">Teslimat</span>
+        <h2>Prototipten seri üretime aynı hassasiyet</h2>
+        <p>İster tek adet numune ister düzenli seri üretim olsun, üretim planını parça zorluğu, malzeme ve termin ihtiyacına göre kuruyoruz.</p>
+        <p>Teknik çizim, 3D model veya numune üzerinden ilerleyebilir; gerektiğinde üretilebilirlik ve malzeme seçimi konusunda mühendislik desteği sağlayabiliriz.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section muted">
+    <div class="container cta-box">
+      <h2>Hassas talaşlı imalat ihtiyacınız mı var?</h2>
+      <p>CAD dosyanızı, teknik resminizi veya numune parçanızı paylaşın; üretim süreci ve fiyatlandırma için net bir yol haritası çıkaralım.</p>
+      <a class="primary-action quote-trigger" href="#teklif">Hızlı Teklif Al</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .detail-hero{position:relative;min-height:460px;display:flex;align-items:center;overflow:hidden;background:linear-gradient(135deg,#7f1f0d 0%,#C93715 58%,#e04a28 100%)}
+  .hero-media{position:absolute;inset:0}
+  .hero-media img{width:100%;height:100%;object-fit:cover;opacity:.22;filter:saturate(.9) contrast(1.08);mix-blend-mode:multiply}
+  .hero-media :global(img){width:100%;height:100%;object-fit:cover;opacity:.22;filter:saturate(.9) contrast(1.08);mix-blend-mode:multiply}
+  .hero-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(92,18,7,.98),rgba(201,55,21,.9),rgba(201,55,21,.7))}
+  .hero-content{position:relative;color:#fff;max-width:760px;text-shadow:0 2px 16px rgba(0,0,0,.22)}
+  .breadcrumb{font-size:14px;color:rgba(255,255,255,.86);margin-bottom:18px}
+  .breadcrumb a{color:#fff;text-decoration:none}
+  .detail-hero h1{font-size:46px;line-height:1.15;margin:0 0 18px;font-weight:800;color:#fff}
+  .detail-hero p:not(.breadcrumb){font-size:18px;line-height:1.7;margin:0 0 26px;max-width:680px;color:rgba(255,255,255,.94)}
+  .primary-action{display:inline-flex;align-items:center;justify-content:center;background:#C93715;color:#fff;text-decoration:none;font-weight:700;border-radius:6px;padding:14px 28px;transition:background .2s,transform .2s}
+  .primary-action:hover{background:#a82f13;color:#fff;transform:translateY(-1px)}
+  .stats-band{background:#171717;color:#fff;padding:26px 0}
+  .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .stats-grid div{border-left:3px solid #C93715;padding-left:16px}
+  .stats-grid strong{display:block;font-size:24px;margin-bottom:4px}
+  .stats-grid span{font-size:14px;color:#bbb}
+  .content-section{padding:76px 0;background:#fff}
+  .content-section.muted{background:#f7f7f7}
+  .split{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,1fr);gap:44px;align-items:start}
+  .eyebrow{display:inline-block;color:#C93715;font-size:13px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:12px}
+  h2{font-size:32px;line-height:1.25;margin:0 0 18px;color:#1a1a1a}
+  p{color:#555;line-height:1.75}
+  .panel{background:#f7f7f7;border:1px solid #e8e8e8;border-radius:8px;padding:28px}
+  .panel h3{margin:0 0 16px;color:#1a1a1a;font-size:22px}
+  .panel ul{margin:0;padding-left:18px;color:#555;line-height:1.8}
+  .capability-section{padding:76px 0;background:#f7f7f7}
+  .cap-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:28px}
+  .cap-grid a{display:block;background:#fff;border:1px solid #e8e8e8;border-radius:8px;padding:24px;text-decoration:none;min-height:190px;transition:transform .2s,box-shadow .2s}
+  .cap-grid a:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(0,0,0,.08)}
+  .cap-grid h3{font-size:19px;margin:0 0 10px;color:#1a1a1a}
+  .cap-grid p{font-size:14px;margin:0;color:#555}
+  .cta-box{text-align:center;max-width:860px}
+  .cta-box h2{margin-bottom:12px}
+  .cta-box p{margin:0 auto 24px;max-width:680px}
+  @media (max-width: 900px){
+    .detail-hero{min-height:420px}
+    .detail-hero h1{font-size:34px}
+    .stats-grid,.cap-grid,.split{grid-template-columns:1fr}
+  }
+</style>

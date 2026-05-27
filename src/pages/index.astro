@@ -128,9 +128,9 @@ const keywords = "CNC işleme, CNC frezeleme, CNC tornalama, hassas üretim, end
 <OptimizedImage alt="Mastar ve Fikstür İmalatı" height="1024" src="assets/images/anasayfa/mastar-fikstur.png" width="1024"/>
 </div>
 <div class="text_box all_icon_color">
-<h3><a aria-label="Mastar ve Fikstür İmalatı" href="/hizmetler/">Mastar &amp; Fikstür İmalatı</a></h3>
+<h3><a aria-label="Mastar ve Fikstür İmalatı" href="/hizmetler/mastar-fikstur/">Mastar &amp; Fikstür İmalatı</a></h3>
 <p>Üretim hatlarınız için özel mastar, kontrol kalıbı ve bağlama fikstürleri tasarlıyor ve imal ediyoruz. Ölçüm doğruluğu ve tekrarlanabilirlik garantili çözümler.</p>
-<div class="service-btn"><a aria-label="Devamını Oku" href="/hizmetler/">Devamını Oku</a></div>
+<div class="service-btn"><a aria-label="Devamını Oku" href="/hizmetler/mastar-fikstur/">Devamını Oku</a></div>
 </div>
 </div>
 </div>
@@ -143,9 +143,9 @@ const keywords = "CNC işleme, CNC frezeleme, CNC tornalama, hassas üretim, end
 <OptimizedImage alt="Hassas Talaşlı İmalat" height="1024" src="assets/images/anasayfa/hassas-talasli.png" width="1024"/>
 </div>
 <div class="text_box all_icon_color">
-<h3><a aria-label="Hassas Talaşlı İmalat" href="/hizmetler/">Hassas Talaşlı İmalat</a></h3>
+<h3><a aria-label="Hassas Talaşlı İmalat" href="/hizmetler/hassas-talasli-imalat/">Hassas Talaşlı İmalat</a></h3>
 <p>Alüminyum, titanyum, paslanmaz çelik, pirinç ve mühendislik plastikleri dahil geniş malzeme yelpazesinde, en dar toleranslarla parça üretimi. ISO 9001 kalite güvencesiyle.</p>
-<div class="service-btn"><a aria-label="Devamını Oku" href="/hizmetler/">Devamını Oku</a></div>
+<div class="service-btn"><a aria-label="Devamını Oku" href="/hizmetler/hassas-talasli-imalat/">Devamını Oku</a></div>
 </div>
 </div>
 </div>
@@ -217,7 +217,7 @@ const keywords = "CNC işleme, CNC frezeleme, CNC tornalama, hassas üretim, end
 <div class="top">
 <div class="t wow fadeInLeft">
 <h3>Nasıl Çalışıyoruz?</h3>
-<a aria-label="Teklif Al" class="more cd-popup-trigger" href="javascript:void(0)">
+<a aria-label="Teklif Al" class="more quote-trigger" href="#teklif">
 <span></span><span></span><span></span>
                   Teklif Al
                 </a>
@@ -289,12 +289,14 @@ const keywords = "CNC işleme, CNC frezeleme, CNC tornalama, hassas üretim, end
 </ul>
 </div>
 </section>
-<div class="sung-subscribe" style="background-image: url(assets/images/anasayfa/cta-arkaplan.png);">
+<div class="sung-subscribe" style="background-image: url(/assets/images/anasayfa/cta-arkaplan.png);">
 <div class="container">
 <h2 class="col-lg-8">Projeniz İçin Hemen Ücretsiz Teklif Alın</h2>
-<form action="javascript:void(0)" class="col-lg-8 form-box invite-form" data-wow-delay="0.2s">
+<form name="hizli-teklif" action="/tesekkurler/" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="col-lg-8 form-box" data-wow-delay="0.2s">
+<input type="hidden" name="form-name" value="hizli-teklif"/>
+<p class="hidden"><label>Bunu doldurmayın: <input name="bot-field"/></label></p>
 <input class="submit_text" name="email" placeholder="E-posta Adresiniz" required="" type="text"/>
-<button aria-label="Gönder" class="submit_btn create-form-submit" type="submit">
+<button aria-label="Gönder" class="submit_btn" type="submit">
 <i class="qico qico-feiji1"></i>
 </button>
 </form>

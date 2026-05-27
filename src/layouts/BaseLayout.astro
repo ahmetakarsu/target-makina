@@ -5,6 +5,7 @@ export interface Props {
   keywords?: string;
   ogImage?: string;
   canonical?: string;
+  robots?: string;
 }
 
 const {
@@ -13,7 +14,11 @@ const {
   keywords = 'CNC işleme, CNC frezeleme, CNC tornalama, hassas üretim, Target Makina, İzmir CNC',
   ogImage,
   canonical,
+  robots = 'index, follow',
 } = Astro.props;
+
+const siteUrl = Astro.site ?? new URL('https://targetmakina.com.tr');
+const canonicalUrl = canonical ?? new URL(Astro.url.pathname, siteUrl).toString();
 
 import '../styles/global.css';
 import Header from '../components/Header.astro';
@@ -30,9 +35,9 @@ import QuotePopup from '../components/QuotePopup.astro';
   <title>{title}</title>
   <meta name="description" content={description}>
   <meta name="keywords" content={keywords}>
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content={robots}>
   <link rel="shortcut icon" href="/favicon.ico">
-  {canonical && <link rel="canonical" href={canonical}>}
+  <link rel="canonical" href={canonicalUrl}>
 
   <!-- Open Graph -->
   <meta property="og:title" content={title}>
@@ -40,12 +45,17 @@ import QuotePopup from '../components/QuotePopup.astro';
   <meta property="og:type" content="website">
   <meta property="og:locale" content="tr_TR">
   <meta property="og:site_name" content="TARGET MAKİNA">
+  <meta property="og:url" content={canonicalUrl}>
   {ogImage && <meta property="og:image" content={ogImage}>}
 
   <!-- Preload font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  </noscript>
 
   <!-- Original CSS files -->
   <link rel="stylesheet" href="/assets/tpl-common/common/css/iconfont.css">
@@ -74,7 +84,6 @@ import QuotePopup from '../components/QuotePopup.astro';
   <script is:inline src="/assets/tpl-common/common/js/jquery.fancybox.js" defer></script>
   <script is:inline src="/assets/tpl-common/common/js/form.js" defer></script>
   <script is:inline src="/assets/tpl-common/common/js/bootstrap-select.min.js" defer></script>
-  <script is:inline src="/js/layout.js" defer></script>
 
   <slot name="scripts" />
 </body>

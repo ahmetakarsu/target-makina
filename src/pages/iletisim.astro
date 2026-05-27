@@ -1,6 +1,5 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import OptimizedImage from '../components/OptimizedImage.astro';
 
 const title = "İletişim | TARGET MAKİNA - CNC İşleme ve Hassas Üretim";
 const description = "TARGET MAKİNA iletişim bilgileri. Adres: Evka 3 Mahallesi 129/6 Sokak No:17, 35050 Bornova/İzmir. Telefon: 0544 356 39 72. E-posta: info@targetmakina.com.tr";
@@ -14,7 +13,6 @@ const keywords = "Target Makina iletişim, CNC işleme İzmir, Bornova CNC, Targ
 <p class="breadcrumb-text"><a href="/">Ana Sayfa</a> » İletişim</p>
 </div>
 </div>
- CONTACT INFO CARDS 
 <div class="contact-info-section">
 <div class="container">
 <div class="row">
@@ -50,20 +48,22 @@ const keywords = "Target Makina iletişim, CNC işleme İzmir, Bornova CNC, Targ
 </div>
 </div>
 </div>
- MAP & FORM 
 <div class="contact-main">
 <div class="container">
 <div class="row">
-<div class="col-lg-7 mb-4 mb-lg-0">
+<div class="col-12">
 <div class="map-container">
 <iframe allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3124.5!2d27.2478!3d38.4672!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzjCsDI4JzAyLjAiTiAyN8KwMTQnNTIuMCJF!5e0!3m2!1str!2str!4v1" title="TARGET MAKİNA Konum"></iframe>
 </div>
 </div>
+<!--
 <div class="col-lg-5">
 <div class="contact-form-wrapper">
 <h2>Bize Yazın</h2>
 <p class="form-subtitle">Sorularınız için formu doldurun, en kısa sürede dönüş yapalım.</p>
-<form action="javascript:void(0)" method="post">
+<form name="iletisim" action="/tesekkurler/" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+<input type="hidden" name="form-name" value="iletisim"/>
+<p class="hidden"><label>Bunu doldurmayın: <input name="bot-field"/></label></p>
 <div class="form-row">
 <div class="form-group">
 <label>İsim Soyisim *</label>
@@ -90,6 +90,7 @@ const keywords = "Target Makina iletişim, CNC işleme İzmir, Bornova CNC, Targ
 </form>
 </div>
 </div>
+-->
 </div>
 </div>
 </div>
@@ -197,7 +198,7 @@ const keywords = "Target Makina iletişim, CNC işleme İzmir, Bornova CNC, Targ
             margin-top: 8px;
         }
 
-        /* Map & Form Section */
+        /* Map Section */
         .contact-main {
             padding: 40px 0 80px;
         }
@@ -205,13 +206,13 @@ const keywords = "Target Makina iletişim, CNC işleme İzmir, Bornova CNC, Targ
             border-radius: 16px;
             overflow: hidden;
             box-shadow: 0 6px 30px rgba(0,0,0,0.1);
-            height: 100%;
-            min-height: 500px;
+            min-height: 680px;
         }
         .map-container iframe {
             width: 100%;
-            height: 100%;
+            min-height: 680px;
             border: 0;
+            display: block;
         }
 
         /* Contact Form */
@@ -354,8 +355,8 @@ const keywords = "Target Makina iletişim, CNC işleme İzmir, Bornova CNC, Targ
 
         @media (max-width: 768px) {
             .contact-hero h1 { font-size: 28px; }
-            .form-row { flex-direction: column; gap: 0; }
-            .map-container { height: 350px; margin-bottom: 30px; }
+            .map-container,
+            .map-container iframe { min-height: 420px; }
             .contact-cta .cta-phone,
             .contact-cta .whatsapp-link { display: block; margin: 10px auto; max-width: 300px; margin-left: auto; }
         }

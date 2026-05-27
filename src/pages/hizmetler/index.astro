@@ -2,1072 +2,246 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import OptimizedImage from '../../components/OptimizedImage.astro';
 
-const title = "Hizmetler | TARGET MAKİNA - CNC İşleme Kabiliyetleri";
-const description = "Target Makina olarak CNC frezeleme, CNC tornalama, 5 eksen CNC işleme, yüzey işlem ve montaj hizmetleri sunuyoruz. Yüksek hassasiyetli özel parça üretiminde uzmanız.";
-const keywords = "CNC işleme hizmetleri, 5 eksen CNC, CNC frezeleme, CNC tornalama, hassas üretim, yüzey işlem, Target Makina, İzmir CNC, Telerezyon, Mastar İmalatı, Fikstür İmalatı, Talaşlı İmalat";
+const title = "Hizmetler | TARGET MAKİNA - CNC İşleme ve Hassas Üretim";
+const description = "Target Makina; CNC frezeleme, CNC tornalama, 5 eksen CNC işleme, tel erozyon, mastar ve fikstür imalatı, hassas talaşlı imalat ve yüzey işlemleri sunar.";
+const keywords = "CNC işleme hizmetleri, CNC frezeleme, CNC tornalama, 5 eksen CNC, tel erozyon, mastar fikstür imalatı, hassas talaşlı imalat, Target Makina";
+
+const services = [
+  {
+    title: 'Tel Erozyon',
+    href: '/makina-parkuru/sodick-vl400q/',
+    image: 'assets/images/makina-parkuru/sodick-vl400q.png',
+    summary: 'Sertleştirilmiş çelik, karbür ve özel alaşımlarda ince kesitli, yüksek hassasiyetli tel erozyon işlemleri.',
+    points: ['Sodick tezgah altyapısı', 'İnce kanal ve profil kesimi', 'Mikron seviyesinde hassasiyet'],
+  },
+  {
+    title: 'CNC 5 Eksen İşleme',
+    href: '/hizmetler/5-eksen-cnc/',
+    image: 'assets/images/5-eksen/hero.png',
+    summary: 'Karmaşık geometrili parçaları tek bağlamada, yüksek doğruluk ve yüzey kalitesiyle işliyoruz.',
+    points: ['Karmaşık yüzeyler', 'Tek bağlamada çok yönlü işleme', 'Havacılık ve savunma uyumu'],
+  },
+  {
+    title: 'CNC Frezeleme',
+    href: '/hizmetler/cnc-frezeleme/',
+    image: 'assets/images/cnc-freze/hero.png',
+    summary: 'Alüminyum, çelik, paslanmaz, pirinç ve plastik malzemelerde prototipten seri üretime CNC frezeleme.',
+    points: ['3, 4 ve 5 eksen frezeleme', 'Dar toleranslı yüzeyler', 'Hızlı prototip üretimi'],
+  },
+  {
+    title: 'CNC Tornalama',
+    href: '/hizmetler/cnc-tornalama/',
+    image: 'assets/images/cnc-torna/hero.png',
+    summary: 'Mil, burç, flanş ve döner geometriye sahip teknik parçaları hassas toleranslarla üretiyoruz.',
+    points: ['Silindirik parça üretimi', 'İç ve dış çap işleme', 'Tekil ve seri imalat'],
+  },
+  {
+    title: 'Mastar ve Fikstür İmalatı',
+    href: '/hizmetler/mastar-fikstur/',
+    image: 'assets/images/anasayfa/mastar-fikstur.png',
+    summary: 'Üretim ve kalite kontrol süreçleri için özel bağlama fikstürü, kontrol mastarı ve montaj aparatı üretimi.',
+    points: ['Kontrol mastarları', 'Bağlama fikstürleri', 'Operatör dostu aparat tasarımı'],
+  },
+  {
+    title: 'Hassas Talaşlı İmalat',
+    href: '/hizmetler/hassas-talasli-imalat/',
+    image: 'assets/images/anasayfa/hassas-talasli.png',
+    summary: 'Teknik resme ve tolerans gereksinimlerine uygun hassas metal ve plastik parça üretimi.',
+    points: ['Teknik resme uygun üretim', 'CMM ile kalite kontrol', 'Prototip ve seri üretim'],
+  },
+  {
+    title: 'Parça Montajı',
+    href: '/hizmetler/parca-montaji/',
+    image: 'assets/images/montaj/hero_new.png',
+    summary: 'İşlenmiş parçaların mekanik montajı, alt montaj grupları ve teslimata hazır üretim paketleri.',
+    points: ['Alt montaj grupları', 'Fonksiyon kontrolü', 'Sevke hazır paketleme'],
+  },
+  {
+    title: 'Yüzey İşleme',
+    href: '/hizmetler/yuzey-isleme/',
+    image: 'assets/images/yuzey/hero.png',
+    summary: 'Eloksal, kumlama, polisaj, kaplama ve boya gibi yüzey işlemleriyle parçalarınızı kullanıma hazır hale getiriyoruz.',
+    points: ['Eloksal ve kaplama', 'Kumlama ve polisaj', 'Korozyon dayanımı'],
+  },
+  {
+    title: 'Sac Şekillendirme',
+    href: '/hizmetler/sac-sekillendirme/',
+    image: 'assets/images/sac/hero_new.png',
+    summary: 'Büküm, kesim ve şekillendirme operasyonlarıyla endüstriyel sac parça ihtiyaçlarına çözüm sunuyoruz.',
+    points: ['Hassas büküm', 'Kesim ve form verme', 'Proje bazlı üretim'],
+  },
+  {
+    title: 'Dişli İmalatı',
+    href: '/hizmetler/disli-imalati/',
+    image: 'assets/images/disli/hero_new.png',
+    summary: 'Makine ve aktarım sistemleri için özel dişli, mil ve hareket aktarım parçaları imalatı.',
+    points: ['Özel dişli parçaları', 'Aktarım elemanları', 'Makine yedek parçaları'],
+  },
+];
+
+const processSteps = [
+  ['01', 'Teknik İnceleme', 'Çizim, numune veya 3D model üzerinden ölçü, malzeme ve tolerans gereksinimleri değerlendirilir.'],
+  ['02', 'Üretim Planı', 'Uygun tezgah, bağlama yöntemi, takım yolu ve kalite kontrol adımları belirlenir.'],
+  ['03', 'Hassas İmalat', 'CNC işleme, tel erozyon, fikstür veya yüzey işlem operasyonları kontrollü şekilde yürütülür.'],
+  ['04', 'Kontrol ve Teslim', 'Kritik ölçüler kontrol edilir, parçalar korunarak paketlenir ve teslimata hazırlanır.'],
+];
 ---
 
 <BaseLayout title={title} description={description} keywords={keywords}>
-  <Fragment slot="head">
-    <link rel="stylesheet" href="/assets/tpl-common/common/css/swiper7.css">
-    <link rel="stylesheet" href="/assets/tpl-common/common/css/jquery.fancybox.css">
-    <link rel="stylesheet" href="/assets/tpl-common/common/css/form.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\arshine2_company_intro_1765869939561296\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\arshine2_company_intro_1767060779815915\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\arshine2_company_intro_1767063330274871\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\arshine2_company_intro_1767071324237084\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\arshine2_company_intro_1767072527454083\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\arshine_certificate_1760490750838307\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\arshine_factory_1762334054357411\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\arshine_factory_1765786836171031\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\arshine_factory_1765787479981493\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\arshine_factory_1765787688392635\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\arshine_factory_1765787860451295\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\arshine_factory_1765788789678663\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\arshine_factory_1767073301666327\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\azela_service_1763521538984907\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\bobo_about_1760402969241155\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\bobo_certificate_1760403740453223\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\bobo_company_intro_1760403430795121\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\bobo_indicator_1760402993615052\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\bobo_indicator_1760403448459444\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\bobo_keywords_box_1763524342327740\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\bobo_keywords_box_1763603416511056\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\bobo_pic_text2_1760403005557830\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\bobo_pic_text2_1760493088856705\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\bobo_quality_1760403062921993\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\bobo_text_display_1760493015757401\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\bobo_text_display_1766390473245915\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\bobo_text_display_1767062646746213\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\bobo_text_display_1767064639389907\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\carcity_team_1762934178196425\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\custom_inquiry_form_1760402916484423\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\custom_inquiry_form_1760403310954581\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\custom_inquiry_form_1760403555365943\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\custom_inquiry_form_1764126809483333\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\custom_inquiry_form_1764127474745834\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\custom_inquiry_form_1764128051928873\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\custom_inquiry_form_1764296970571634\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\custom_inquiry_form_1765787017645025\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\custom_inquiry_form_1765787458447859\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\custom_inquiry_form_1765787750208197\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\custom_inquiry_form_1765787904351801\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\custom_inquiry_form_1765788194652924\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\custom_inquiry_form_1765789020687489\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\custom_inquiry_form_1767162044577484\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\custom_pop_inquiry_form_1760403310701189\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\custom_pop_inquiry_form_1760403555855802\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\custom_pop_inquiry_form_1764126809814631\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\custom_pop_inquiry_form_1764127474420061\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\custom_pop_inquiry_form_1764128051349624\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\custom_pop_inquiry_form_1764296970651450\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\custom_pop_inquiry_form_1765787017946733\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\custom_pop_inquiry_form_1765787458266546\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\custom_pop_inquiry_form_1765787750746033\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\custom_pop_inquiry_form_1765787904632060\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\custom_pop_inquiry_form_1765788194968737\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\custom_pop_inquiry_form_1765789020560037\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\custom_pop_inquiry_form_1767162044970915\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\deus_side_bar_1767162044631331\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\factry_working_process_1765854760420846\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\factry_working_process_1767074243590192\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\factry_working_process_1767074698440263\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\guanxiang_quality_1767063914567701\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\guanxiang_sidebanner_1768291700758452\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\guanxiang_sidebanner_1768291814166953\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\guanxiang_sidebanner_1768291859967354\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\guanxiang_sidebanner_1768291897640982\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\guanxiang_sidebanner_1768291934389144\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\guanxiang_sidebanner_1768291958107267\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\guanxiang_sidebanner_1768291989355217\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\guanxiang_sidebanner_1768292024976572\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\guanxiang_sidebanner_1768292047497294\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\guanxiang_sidebanner_1768292074503458\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\guanxiang_sidebanner_1768292107399491\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\guanxiang_sidebanner_1768292131840144\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\guanxiang_sidebanner_1768292153707785\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\guanxiang_sidebanner_1768292180726175\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\guanxiang_sidebanner_1768292207902615\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\guanxiang_sidebanner_1768292387814915\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\guanxiang_sidebanner_1768292413278465\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\huake_banner_1761527394356428\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\insucom_what_our_1760403798460951\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\kuangke_advantage_1765786942139270\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\kuangke_advantage_1765787513346083\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\kuangke_advantage_1765787710893142\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\kuangke_advantage_1765787880570512\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\kuangke_advantage_1765788166496644\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\kuangke_advantage_1765788978254134\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\lang_selector_1760403311325535\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\qianhe_goods_price_1765870008544672\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\qianhe_page_faq_1760493557967951\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\qili_about_1763521576434919\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\qili_application_1765787334723422\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\qili_application_1765787634205641\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\qili_application_1765787813651836\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\qili_application_1765788007827158\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\qili_application_1765788663858868\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\qili_application_1765873926477239\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\qili_application_1765874002778800\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\qili_application_1765949464611194\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\qili_application_1767056256315373\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\qili_application_1767056429904621\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\qili_application_1767056458850849\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\qili_application_1767056661518475\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\qili_application_1767056704657004\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\qili_application_1767057118392317\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\qili_application_1767057361928002\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\qili_application_1767057379855259\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\qili_application_1767057403470730\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\qili_news_list_1760402715643864\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\qili_news_read_1760402771609578\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\qinew_application_1767055530987488\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\qinew_inquiry_form_1765787017454539\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\qinew_inquiry_form_1765787458828833\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\qinew_inquiry_form_1765787750582109\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\qinew_inquiry_form_1765787904506483\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\qinew_inquiry_form_1765788194288553\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\qinew_inquiry_form_1765789020587298\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\qing_application_1764127213306773\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\qing_application_1764127460928460\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\qing_application_1764127723345960\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\qing_application_1764127844967732\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\rentaly_do_you_have_1765786973225826\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\rentaly_do_you_have_1765787419315669\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\rentaly_do_you_have_1765787726415495\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\rentaly_do_you_have_1765787930935812\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\rentaly_do_you_have_1765788117694859\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\rentaly_do_you_have_1765788999503156\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\rightint_contact_1760402916323376\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\rightint_foot\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\rightint_map_1760402940996527\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\san_home_choose_1760402498909976\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\song_aboutus_1762830186214216\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\sung_about_1764126218613915\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\sung_about_1764127367908724\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\sung_about_1764127680266223\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\sung_about_1764127858563052\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\sung_news_1760403655895355\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\sung_subscribe_1760403616878437\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\sung_text_1764126809378467\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\sung_text_1764127474838952\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\sung_text_1764128051641994\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\sung_text_1764296970735372\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\sutong_cases_1765951009402606\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\sutong_head\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\sutong_pic_text2_1760403555313057\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\taskoit_service_1760495813395700\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\taskoit_service_1765787308647236\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\taskoit_service_1765787796846583\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\taskoit_service_1765787992268384\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\taskoit_service_1765788624445409\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\transpak_service_1765786793214791\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\transpak_service_1765787365558074\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\transpak_service_1765787651196799\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\transpak_service_1765787841510414\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\transpak_service_1765788087501661\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\transpak_service_1765788725132729\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\zhu_about_us_1765870097983860\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\zhu_about_us_1767061252832099\index.css">
-    <link rel="stylesheet" href="/assets/inst\3579\4204\482129\sections\zhu_about_us_1767063380596888\index.css">
-  </Fragment>
-  <section class="small-banner-guanxiang">
-<div class="container" style="display: none">
-<h1>HİZMETLER</h1>
-</div>
-<a href="/iletisim/"> <OptimizedImage alt="Hizmetler" src="assets/images/9122630b665f7abd07a57c4acd08cf82/1.jpg"/></a>
-</section>
-<section class="crumbs-guanxiang left">
-<div class="container">
-<a href="/" rel="nofollow">Ana Sayfa&gt;</a>
-<a aria-label="Hizmetler" href="/hizmetler/">Hizmetler</a>
-</div>
-</section>
-<div class="arshine2_company_intro">
-<div class="container">
-<div class="txt">
-<h3 class="wow fadeInUp">5 Eksen CNC İşleme Nedir?</h3>
-<div class="t wow fadeInUp rich-text" data-wow-delay="0.2s">
-<p></p>
-<p>Beş eksenli CNC işleme, modern yüksek kaliteli üretimin temel teknolojilerinden biridir. Geleneksel üç eksene (X, Y, Z doğrusal hareket) iki dönel eksen (tipik olarak A, C eksenleri veya B, C eksenleri) eklenerek, takım iş parçasına neredeyse herhangi bir yönden yaklaşabilir ve karmaşık geometrilerin tek seferde hassas işlenmesini sağlar. Havacılık, otomotiv ve medikal ekipman gibi sektörler, son derece yüksek hassasiyet gerektiren karmaşık bileşenleri üretmek için beş eksenli işleme hizmetlerine güvenmektedir.</p>
-</div>
-</div>
-<div class="pic wow fadeInRight">
-<picture>
-<source media="(max-width: 480px)"/>
-<source media="(max-width: 768px)"/>
-<source media="(max-width: 1200px)"/>
-<OptimizedImage alt="5 Eksen CNC İşleme Nedir?" src="assets/images/2e2f11f5b4a744c7db54d2af75d12112/%e5%9b%be%e7%89%87%201.png"/>
-</picture>
-</div>
-</div>
-</div>
-<section class="qianhe-goods-pricing section-wrap">
-<div class="container">
-<div class="title">
-<h3>
-         Kabiliyetler ve Avantajlara Genel Bakış
-      </h3>
-<p></p>
-<table class="ztable"><tbody>
-<tr>
-<td>Temel İşleme Kabiliyeti:</td>
-<td>Temel Teknik Avantajlar:</td>
-</tr>
-<tr>
-<td>Karmaşık yüzeylerin verimli işlenmesi</td>
-<td>Hassasiyet ve doğrulukta iyileştirme</td>
-</tr>
-<tr>
-<td>Çok açılı özellik entegrasyon işleme</td>
-<td>Üretim verimliliğinde artış</td>
-</tr>
-<tr>
-<td>İnce cidarlı parçaların stabil işlenmesi</td>
-<td>Daha geniş işleme kapasitesi</td>
-</tr>
-<tr>
-<td>Yüksek hassasiyetli girişim kaçınma</td>
-<td>Malzeme ve takım maliyetlerinin optimizasyonu</td>
-</tr>
-<tr>
-<td>Yüksek kaliteli yüzey oluşturma</td>
-<td>Tasarım özgürlüğünde çığır açma</td>
-</tr>
-</tbody></table>
-</div>
-<div>
-</div>
-</div>
-</section>
+  <section class="services-hero">
+    <div class="hero-image">
+      <OptimizedImage alt="TARGET MAKİNA CNC işleme hizmetleri" src="assets/images/anasayfa/cnc-tanitim.png" loading="eager" />
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <p class="breadcrumb"><a href="/">Ana Sayfa</a> / Hizmetler</p>
+      <h1>CNC İşleme ve Hassas Üretim Hizmetleri</h1>
+      <p>İzmir merkezli üretim altyapımızla prototip, özel parça, mastar, fikstür ve seri imalat ihtiyaçlarınız için uçtan uca teknik çözüm sunuyoruz.</p>
+      <div class="hero-actions">
+        <a class="primary-action quote-trigger" href="#teklif">Teklif Al</a>
+        <a class="secondary-action" href="/makina-parkuru/">Makina Parkurunu Gör</a>
+      </div>
+    </div>
+  </section>
 
-<div class="zhuli-about_us">
-<div class="container">
-<div class="txt wow fadeInLeft">
-<h3 class="wow fadeInUp">CNC 5 Eksen İşleme</h3>
-<div class="t">
-<p></p>
-<p>İş parçası ve takımın eş zamanlı dönme ve hareketi sayesinde, birden fazla yön ve açıda aynı anda çalışarak iş parçasının birden fazla yüzeyini hassas bir şekilde işleyebilir. Karmaşık geometrik şekillerin ve yüksek hassasiyetli parçaların işlenmesinde belirgin avantajlara sahiptir.</p> <p>Target Makina, CNC 5 eksen işlemede zengin deneyime, profesyonel 5 eksen programlama ve üretim ekibine sahiptir. İşleme ekipmanlarının uzman operasyonu ile müşterilerine tasarım optimizasyonundan (DFM) seri üretime kadar tek elden hizmet sunabilmektedir.</p>
-</div>
-</div>
-<div class="pic wow fadeInRight">
-<OptimizedImage alt="CNC 5 Eksen İşleme" src="assets/images/3bef283c0864efe48abccd9c5525b800/image.png"/>
-</div>
-</div>
-</div>
+  <section class="metric-band">
+    <div class="container metric-grid">
+      <div><strong>±0.005 mm</strong><span>kritik tolerans hedefi</span></div>
+      <div><strong>5 eksen</strong><span>karmaşık geometri işleme</span></div>
+      <div><strong>CMM</strong><span>ölçüm ve kalite kontrol</span></div>
+      <div><strong>1+ adet</strong><span>prototipten seri üretime</span></div>
+    </div>
+  </section>
 
+  <section class="services-section">
+    <div class="container">
+      <div class="section-head">
+        <span>Hizmetlerimiz</span>
+        <h2>İhtiyacınıza göre doğru üretim yöntemi</h2>
+        <p>Her hizmet sayfası ilgili üretim kabiliyetini, kullanım alanını ve teknik avantajları ayrıntılı anlatır.</p>
+      </div>
+      <div class="service-grid">
+        {services.map((service) => (
+          <article class="service-card">
+            <a class="image-link" href={service.href} aria-label={service.title}>
+              <OptimizedImage alt={service.title} src={service.image} />
+            </a>
+            <div class="card-body">
+              <h3><a href={service.href}>{service.title}</a></h3>
+              <p>{service.summary}</p>
+              <ul>
+                {service.points.map((point) => <li>{point}</li>)}
+              </ul>
+              <a class="more-link" href={service.href}>Detayları İncele</a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
 
-<div class="qili-iframe2" style="background-image:url(assets/images/41f65bae3335f4e655e1fe1022ab5401/%e6%9c%aa%e6%a0%87%e9%a2%98-1%20%e6%8b%b7%e8%b4%9d.jpg)">
-<div class="container">
-<div class="indextit">
-<h2>CNC Metal Malzemeler</h2>
-</div>
-<ul class="row">
-<li class="active col-6 col-lg-3">
-<div class="box">Alüminyum</div>
-</li>
-<li class="col-6 col-lg-3">
-<div class="box">Paslanmaz Çelik</div>
-</li>
-<li class="col-6 col-lg-3">
-<div class="box">Çelik</div>
-</li>
-<li class="col-6 col-lg-3">
-<div class="box">Titanyum</div>
-</li>
-<li class="col-6 col-lg-3">
-<div class="box">Pirinç</div>
-</li>
-<li class="col-6 col-lg-3">
-<div class="box">Bakır</div>
-</li>
-<li class="col-6 col-lg-3">
-<div class="box">Bronz</div>
-</li>
-<li class="col-6 col-lg-3">
-<div class="box">Magnezyum</div>
-</li>
-</ul>
-<div class="list">
-<div class="box" style="display: block;">
-<div class="item">
-<div class="txt">
-<h3>Alüminyum</h3>
-<p>Düşük yoğunluk, hafif ağırlık, yüksek mukavemet, iyi elektrik ve ısı iletkenliği, mükemmel korozyon direnci, güzel görünüm ve CNC işleme kolaylığı.</p>
-</div>
-<div class="img">
-<OptimizedImage alt="Alüminyum" src="assets/images/8871ec31323d17796dbf01857ef9dddf/image.png"/>
-</div>
-</div>
-</div>
-<div class="box" style="display: none;">
-<div class="item">
-<div class="txt">
-<h3>Paslanmaz Çelik</h3>
-<p>Yüksek sertlik ve korozyon direnci, mükemmel kaynak performansı, çeşitli yüzey işlemlere uygunluk, CNC işleme kolaylığı, geniş uygulama alanı.</p>
-</div>
-<div class="img">
-<OptimizedImage alt="Paslanmaz Çelik" src="assets/images/5ef5038af0dee726e04751a502ba863b/image.png"/>
-</div>
-</div>
-</div>
-<div class="box" style="display: none;">
-<div class="item">
-<div class="txt">
-<h3>Çelik</h3>
-<p>Yüksek sertlik ve rijitlik, önemli maliyet avantajları, geniş kalite yelpazesi, iyi ısı dayanımı ve plastisite, geniş endüstriyel alanlarda uygulama.</p>
-</div>
-<div class="img">
-<OptimizedImage alt="Çelik" src="assets/images/66acec1593c4fe606aeb364467fe7eb1/image.png"/>
-</div>
-</div>
-</div>
-<div class="box" style="display: none;">
-<div class="item">
-<div class="txt">
-<h3>Titanyum</h3>
-<p>Yüksek mukavemet-ağırlık oranı, son derece güçlü korozyon direnci, yüksek sıcaklık stabilitesi ve biyouyumluluk — havacılık ve medikal alanlarda kullanılan malzemelerin temel özellikleri.</p>
-</div>
-<div class="img">
-<OptimizedImage alt="Titanyum" src="assets/images/d626b7f4110cfd878a4dcc31bc1e49b6/image.png"/>
-</div>
-</div>
-</div>
-<div class="box" style="display: none;">
-<div class="item">
-<div class="txt">
-<h3>Pirinç</h3>
-<p>İyi elektrik iletkenliği, korozyon direnci, çekici renk, mükemmel işlenebilirlik.</p>
-</div>
-<div class="img">
-<OptimizedImage alt="Pirinç" src="assets/images/2153c57cf9682a53367df29115aec944/image.png"/>
-</div>
-</div>
-</div>
-<div class="box" style="display: none;">
-<div class="item">
-<div class="txt">
-<h3>Bakır</h3>
-<p>Mükemmel elektrik iletkenliği ve ısı iletkenliği, korozyon direnci, yüksek işlenebilirlik, iyi yüzey pürüzsüzlüğü, elektronik ve elektrikli cihaz sektörlerinde geniş uygulama.</p>
-</div>
-<div class="img">
-<OptimizedImage alt="Bakır" src="assets/images/c6840d1fb15490ab39467f165272cbad/image.png"/>
-</div>
-</div>
-</div>
-<div class="box" style="display: none;">
-<div class="item">
-<div class="txt">
-<h3>Bronz</h3>
-<p>Mükemmel elektrik ve ısı iletkenliği, aşınma direnci, korozyon direnci, yüksek mukavemet ve sertlik, iyi çevresel uyum, kimya ve denizcilik sektörlerine uygunluk.</p>
-</div>
-<div class="img">
-<OptimizedImage alt="Bronz" src="assets/images/91842762875edaaf8018695e9f128ffc/image.png"/>
-</div>
-</div>
-</div>
-<div class="box" style="display: none;">
-<div class="item">
-<div class="txt">
-<h3>Magnezyum</h3>
-<p>En düşük yoğunluğa sahip metal, yüksek mukavemet, iyi rijitlik ve tokluk, talaşlı işleme süreçleri için mükemmel işlenebilirlik.</p>
-</div>
-<div class="img">
-<OptimizedImage alt="Magnezyum" src="assets/images/06f377cdbcbd6339c4b101a697d6070d/image.png"/>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+  <section class="process-section">
+    <div class="container">
+      <div class="section-head compact">
+        <span>Çalışma Süreci</span>
+        <h2>Tekliften teslimata kontrollü üretim</h2>
+      </div>
+      <div class="process-grid">
+        {processSteps.map(([no, title, text]) => (
+          <div class="process-card">
+            <strong>{no}</strong>
+            <h3>{title}</h3>
+            <p>{text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
 
-<div class="qili-iframe3" style="background-image:url(assets/images/41f65bae3335f4e655e1fe1022ab5401/%e6%9c%aa%e6%a0%87%e9%a2%98-1%20%e6%8b%b7%e8%b4%9d.jpg)">
-<div class="container">
-<div class="indextit">
-<h2>CNC Plastik Malzemeler</h2>
-</div>
-<ul class="row">
-<li class="active col-6 col-md-3">
-<div class="box">ABS</div>
-</li>
-<li class="col-6 col-md-3">
-<div class="box">PC</div>
-</li>
-<li class="col-6 col-md-3">
-<div class="box">POM</div>
-</li>
-<li class="col-6 col-md-3">
-<div class="box">PP</div>
-</li>
-<li class="col-6 col-md-3">
-<div class="box">PA</div>
-</li>
-<li class="col-6 col-md-3">
-<div class="box">PMMA (Akrilik)</div>
-</li>
-<li class="col-6 col-md-3">
-<div class="box">PE</div>
-</li>
-<li class="col-6 col-md-3">
-<div class="box">PTFE</div>
-</li>
-<li class="col-6 col-md-3">
-<div class="box">PEEK</div>
-</li>
-<li class="col-6 col-md-3">
-<div class="box">PPS</div>
-</li>
-</ul>
-<div class="list">
-<div class="box" style="display: block;">
-<div class="item">
-<div class="txt">
-<h3>ABS</h3>
-<p>Kolay işleme ve şekillendirme, iyi stabilite, kimyasal korozyona dayanıklılık, mükemmel yüzey kalitesi, iyi mekanik özellikler, darbe ve dış kuvvetlere karşı dayanıklılık.</p>
-</div>
-<div class="img">
-<OptimizedImage alt="ABS" src="assets/images/6ce44f3abde5d9651bdeb1a009722b60/image.png"/>
-</div>
-</div>
-</div>
-<div class="box" style="display: none;">
-<div class="item">
-<div class="txt">
-<h3>PC</h3>
-<p>Üstün optik performans, yüksek şeffaflık, kolay işleme ve şekillendirme, mükemmel ısı dayanımı ve alev geciktirme, kimyasal korozyona karşı iyi direnç. İyi hava koşullarına ve aşınmaya dayanıklılık.</p>
-</div>
-<div class="img">
-<OptimizedImage alt="PC" src="assets/images/e2f476d3eb7f12d76f7c3791dfdca442/image.png"/>
-</div>
-</div>
-</div>
-<div class="box" style="display: none;">
-<div class="item">
-<div class="txt">
-<h3>POM</h3>
-<p>Yüksek performanslı mühendislik plastiği, mükemmel mekanik işleme özellikleri, yüksek rijitlik ve mukavemet, stabil boyutlar ve iyi aşınma direnci, yüksek hassasiyetli parçalar için uygundur.</p>
-</div>
-<div class="img">
-<OptimizedImage alt="POM" src="assets/images/06eb8e12f3d1e7252134e09d740c76f2/image.png"/>
-</div>
-</div>
-</div>
-<div class="box" style="display: none;">
-<div class="item">
-<div class="txt">
-<h3>PP</h3>
-<p>Termoplastik plastik, kimyasal stabilite, ısı dayanımı, düşük yoğunluk ve yüksek mukavemet, iyi hava koşullarına dayanıklılık, karmaşık şekil ve yapıların üretimi için uygundur.</p>
-</div>
-<div class="img">
-<OptimizedImage alt="PP" src="assets/images/d2a435658050a46d9b86c0e8fe8fbf41/image.png"/>
-</div>
-</div>
-</div>
-<div class="box" style="display: none;">
-<div class="item">
-<div class="txt">
-<h3>PA</h3>
-<p>Mükemmel fiziksel özellikler, yüksek mekanik mukavemet ve tokluk, yüksek çekme ve eğilme mukavemeti, darbe dayanımı, yüksek maliyet etkinliği ve işleme esnekliği, endüstriyel uygulamalar için tercih edilen plastik malzemedir.</p>
-</div>
-<div class="img">
-<OptimizedImage alt="PA" src="assets/images/0f6a2a6f75c8e678202962a31d4e5141/image.png"/>
-</div>
-</div>
-</div>
-<div class="box" style="display: none;">
-<div class="item">
-<div class="txt">
-<h3>PMMA (Akrilik)</h3>
-<p>Mükemmel şeffaflık ve ışık geçirgenliği, üstün hava koşullarına dayanıklılık, mükemmel aşınma direnci, darbe dayanımı, düşük yoğunluk ve hafif ağırlık, iyi işleme performansı, yüksek şeffaflık gereken parçalar için uygundur.</p>
-</div>
-<div class="img">
-<OptimizedImage alt="PMMA (Akrilik)" src="assets/images/04c98b9ddd2989d4c7140233a889c938/image.png"/>
-</div>
-</div>
-</div>
-<div class="box" style="display: none;">
-<div class="item">
-<div class="txt">
-<h3>PE</h3>
-<p>Darbe dayanımı, aşınma direnci, yüksek sıcaklık ve yüksek basınç direnci, korozyon direnci, elektrik yalıtım performansı, boyutsal stabilite, gıda güvenliği, çeşitli alanlara uygulanabilirlik.</p>
-</div>
-<div class="img">
-<OptimizedImage alt="PE" src="assets/images/530ce14c3a057cc1695d0660014cc9c3/image.png"/>
-</div>
-</div>
-</div>
-<div class="box" style="display: none;">
-<div class="item">
-<div class="txt">
-<h3>PTFE</h3>
-<p>Kimyasal stabilite, tolerans, korozyon direnci, yüksek ve düşük sıcaklık stabilitesi, düşük sürtünme katsayısı, mükemmel elektrik yalıtım performansı, iyi yapışmazlık özelliği, boru vanalar, havacılık ve elektronik alanları için uygundur.</p>
-</div>
-<div class="img">
-<OptimizedImage alt="PTFE" src="assets/images/edbc6495237fbe0d5ab4f85e94f512f2/image.png"/>
-</div>
-</div>
-</div>
-<div class="box" style="display: none;">
-<div class="item">
-<div class="txt">
-<h3>PEEK</h3>
-<p>Yüksek mukavemet, yüksek sertlik, mükemmel aşınma direnci, kimyasal korozyon direnci, elektrik yalıtımı, boyutsal stabilite ve iyi işleme performansı.</p>
-</div>
-<div class="img">
-<OptimizedImage alt="PEEK" src="assets/images/be52e3938741afe632b7d94f74b9b6b6/image.png"/>
-</div>
-</div>
-</div>
-<div class="box" style="display: none;">
-<div class="item">
-<div class="txt">
-<h3>PPS</h3>
-<p>İyi boyutsal stabilite, mükemmel mekanik özellikler, yüksek darbe dayanımı, yüksek sıcaklık direnci, iyi sızdırmazlık performansı ve mükemmel alev geciktirme.</p>
-</div>
-<div class="img">
-<OptimizedImage alt="PPS" src="assets/images/94b9715bdbe81150550687b9fa67ba43/image.png"/>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+  <section class="quality-section">
+    <div class="container quality-wrap">
+      <div class="quality-copy">
+        <span>Kalite Yaklaşımı</span>
+        <h2>Parçanın ölçüsü kadar kullanım amacı da önemlidir</h2>
+        <p>Üretim öncesinde parça geometrisi, malzeme, yüzey işlemi, montaj uyumu ve kritik ölçüler birlikte değerlendirilir. Gerektiğinde üretilebilirlik analiziyle tasarım iyileştirme önerileri sunulur.</p>
+        <p>Bu yaklaşım, tekrar eden üretimlerde fireyi azaltır, teslimat sürecini hızlandırır ve parçanın sahadaki performansını güvence altına alır.</p>
+      </div>
+      <div class="quality-image">
+        <OptimizedImage alt="TARGET MAKİNA kalite kontrol ve hassas üretim" src="assets/images/anasayfa/kalite.png" />
+      </div>
+    </div>
+  </section>
 
-<div class="transpak_service_area">
-<div class="container">
-<div class="witr_section_title">
-<div class="witr_section_title_inner text-center">
-<h3>5 Eksen CNC İşleme Parçaları İçin Yüzey İşlem Seçenekleri</h3>
-<p>Target Makina, 5 eksen CNC parçalarının yüzey işlemi için geniş bir yelpazede seçenek sunmaktadır. Temel amaç, belirli fonksiyonel gereksinimleri karşılamak, görünüm rengini iyileştirmek ve parça yüzeyinin kimyasal ve korozyon direncini artırmaktır.</p>
-</div>
-</div>
-</div>
-<div class="container">
-<div class="row">
-<div class="col-md-6 col-lg-3 p-10">
-<div class="single_service">
-<div class="single_service_inner">
-<div class="service_desc">
-<OptimizedImage alt="Anodizasyon" src="assets/images/b6f4ae6fd3daee0513ab98924d4f50cb/image.png"/>
-<h3>Anodizasyon (Tip-3 Sert Anodizasyon)</h3>
-<p>Metal ürünlerin yüzeyinde koruyucu bir oksit tabakası oluşturulur; korozyona, aşınmaya dayanıklı, çeşitli renk seçenekleri ve güzel görünüm sunar. En yaygın alüminyum alaşım malzemeleri için kullanılır.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="col-md-6 col-lg-3 p-10">
-<div class="single_service">
-<div class="single_service_inner">
-<div class="service_desc">
-<OptimizedImage alt="Kumlama" src="assets/images/d6adbc2c84d4301f7254adc18d74a416/image.png"/>
-<h3>Kumlama</h3>
-<p>Yüksek hızlı kum akışının darbe etkisi kullanılarak parçaların yüzeyi temizlenir ve pürüzlendirilir; belirli bir temizlik derecesi ve farklı pürüzlülükler elde edilir, hem metal hem de plastik malzemeler için uygundur.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="col-md-6 col-lg-3 p-10">
-<div class="single_service">
-<div class="single_service_inner">
-<div class="service_desc">
-<OptimizedImage alt="Siyah Oksit" src="assets/images/5eed7aa5bbb62e27d519572c4605be6a/image.png"/>
-<h3>Siyah Oksit (QPQ)</h3>
-<p>Yüksek konsantrasyonlu kimyasal çözeltide ısıtılarak yoğun bir koruyucu film oluşturulur; korozyon direncini artırmak, görünümü iyileştirmek ve ışık yansımasını en aza indirmek için kullanılır. Çelik ve paslanmaz çelik malzemeler için yaygındır.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="col-md-6 col-lg-3 p-10">
-<div class="single_service">
-<div class="single_service_inner">
-<div class="service_desc">
-<OptimizedImage alt="Toz Boya" src="assets/images/cff3d71ad9a33d2cd8e8011920785147/image.png"/>
-<h3>Toz Boya</h3>
-<p>Toz boyanın parçalara yapışması sağlanarak yüzeyde sert bir kaplama filmi oluşturulur. Kaplama kalınlığı düzgün ve aşınmaya dayanıklıdır. Metal parçalar için yaygın olarak kullanılır.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="col-md-6 col-lg-3 p-10">
-<div class="single_service">
-<div class="single_service_inner">
-<div class="service_desc">
-<OptimizedImage alt="Boyama" src="assets/images/6cc7c807ce6c388722b8f3752728cbe4/image.png"/>
-<h3>Boyama</h3>
-<p>Sıvı boya basınçlı hava ile parçaların yüzeyine püskürtülür. Otomotiv ve elektronik gibi ürünlerin yüzey kaplamalarında yaygın kullanılır, hem metal hem de plastik malzemeler için uygundur.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="col-md-6 col-lg-3 p-10">
-<div class="single_service">
-<div class="single_service_inner">
-<div class="service_desc">
-<OptimizedImage alt="Elektrokaplama" src="assets/images/ba0f0e982490e21e12a4c2fbbf710b05/image.png"/>
-<h3>Elektrokaplama</h3>
-<p>Metal parçanın yüzeyine nikel, krom, altın, çinko kaplama gibi başka bir metal tabakası kaplanır; korozyona, aşınmaya dayanıklı ve güzel görünümlüdür. Metal parçalar için uygundur.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="col-md-6 col-lg-3 p-10">
-<div class="single_service">
-<div class="single_service_inner">
-<div class="service_desc">
-<OptimizedImage alt="Akımsız Kaplama" src="assets/images/704b1062d5cc1ac544bdcf9e939c5aaa/image.png"/>
-<h3>Akımsız Kaplama</h3>
-<p>Kimyasal kaplama çözeltisi ile yüzey işlemi yapılarak, parçalar kaplama çözeltisine daldırılır ve elektrik kullanmadan metal film oluşturulur. Metaller ve bazı plastik malzemeler (ABS, PP, PC) için uygundur.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="col-md-6 col-lg-3 p-10">
-<div class="single_service">
-<div class="single_service_inner">
-<div class="service_desc">
-<OptimizedImage alt="Elektroforez" src="assets/images/8f2365868fdbe43f394a4a2ab91e2c99/image.png"/>
-<h3>Elektroforez</h3>
-<p>Çözeltideki yüklü parçacıklar kullanılarak parçaların yüzeyinde düzgün bir kaplama oluşturulur. Metal parçalar için uygundur.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="col-md-6 col-lg-3 p-10">
-<div class="single_service">
-<div class="single_service_inner">
-<div class="service_desc">
-<OptimizedImage alt="Polisaj" src="assets/images/5ee18d3cd381e3ef5a09531b50d57618/image.png"/>
-<h3>Polisaj (Ayna Polisaj)</h3>
-<p>Parçaların yüzey pürüzlülüğü azaltılarak parlak, pürüzsüz ve ayna benzeri bir yüzey efekti elde edilir. Metal ve plastik parçalar için uygundur.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="col-md-6 col-lg-3 p-10">
-<div class="single_service">
-<div class="single_service_inner">
-<div class="service_desc">
-<OptimizedImage alt="Fırçalama" src="assets/images/a284f32a316dfc563f79d280a563783f/image.png"/>
-<h3>Fırçalama</h3>
-<p>Parçaların yüzeyi aşındırılarak çizgiler oluşturulur, ince ve parlak bir etki elde edilir. Metal parçalar için uygundur.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="col-md-6 col-lg-3 p-10">
-<div class="single_service">
-<div class="single_service_inner">
-<div class="service_desc">
-<OptimizedImage alt="Lazer Kazıma" src="assets/images/1b238d92baa9dbad1c3918324b37649c/image.png"/>
-<h3>Lazer Kazıma</h3>
-<p>Yüksek enerji yoğunluklu lazerler ile parçaların belirli alanları ışınlanarak özel işaretler bırakılır. Metal ve plastik parçalar için uygundur.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="col-md-6 col-lg-3 p-10">
-<div class="single_service">
-<div class="single_service_inner">
-<div class="service_desc">
-<OptimizedImage alt="Serigrafi" src="assets/images/5d248e0b52dd359e434861e5b1a80d0c/image.png"/>
-<h3>Serigrafi</h3>
-<p>Grafik ve metin içeren serigrafi kalıpları parçaların yüzeyine basılır; geniş renk seçenekleri sunar. Metal ve plastik parçalar için uygundur.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="arshine-pic-list">
-<div class="container">
-<h3>Target Makina 5 Eksen CNC Karmaşık Parça Örnekleri</h3>
-<div class="list">
-<div class="swiper">
-<div class="swiper-wrapper">
-<div class="swiper-slide">
-<a aria-label="" data-fancybox="images" href="assets/images/518615323a118f52e0af72784fb9f061/%e5%9b%be%e7%89%87%202.jpg">
-<OptimizedImage alt="5 Eksen CNC Parça 1" src="assets/images/518615323a118f52e0af72784fb9f061/%e5%9b%be%e7%89%87%202.jpg"/>
-</a>
-</div>
-<div class="swiper-slide">
-<a aria-label="" data-fancybox="images" href="assets/images/1e55ed9bcefd4d9cd9201bf2cb3b7f56/%e5%9b%be%e7%89%87%203.jpg">
-<OptimizedImage alt="5 Eksen CNC Parça 2" src="assets/images/1e55ed9bcefd4d9cd9201bf2cb3b7f56/%e5%9b%be%e7%89%87%203.jpg"/>
-</a>
-</div>
-<div class="swiper-slide">
-<a aria-label="" data-fancybox="images" href="assets/images/0ccb1b30ecdf05e92222f65aa722beb2/%e5%9b%be%e7%89%87%204.jpg">
-<OptimizedImage alt="5 Eksen CNC Parça 3" src="assets/images/0ccb1b30ecdf05e92222f65aa722beb2/%e5%9b%be%e7%89%87%204.jpg"/>
-</a>
-</div>
-<div class="swiper-slide">
-<a aria-label="" data-fancybox="images" href="assets/images/51a2ae88aad6f1514becc656efebdcd4/%e5%9b%be%e7%89%87%205.jpg">
-<OptimizedImage alt="5 Eksen CNC Parça 4" src="assets/images/51a2ae88aad6f1514becc656efebdcd4/%e5%9b%be%e7%89%87%205.jpg"/>
-</a>
-</div>
-<div class="swiper-slide">
-<a aria-label="" data-fancybox="images" href="assets/images/c1d13c7323cfcc151351c3d768ba411b/%e5%9b%be%e7%89%87%206.jpg">
-<OptimizedImage alt="5 Eksen CNC Parça 5" src="assets/images/c1d13c7323cfcc151351c3d768ba411b/%e5%9b%be%e7%89%87%206.jpg"/>
-</a>
-</div>
-<div class="swiper-slide">
-<a aria-label="" data-fancybox="images" href="assets/images/94b28e2e291aa93ecfee6eef79bb8ce3/%e5%9b%be%e7%89%87%207.jpg">
-<OptimizedImage alt="5 Eksen CNC Parça 6" src="assets/images/94b28e2e291aa93ecfee6eef79bb8ce3/%e5%9b%be%e7%89%87%207.jpg"/>
-</a>
-</div>
-<div class="swiper-slide">
-<a aria-label="" data-fancybox="images" href="assets/images/1a386635205d34c99adca5d891411029/%e5%9b%be%e7%89%87%208.jpg">
-<OptimizedImage alt="5 Eksen CNC Parça 7" src="assets/images/1a386635205d34c99adca5d891411029/%e5%9b%be%e7%89%87%208.jpg"/>
-</a>
-</div>
-<div class="swiper-slide">
-<a aria-label="" data-fancybox="images" href="assets/images/5ddbbc31ce560c98382c5e0451fb4f77/%e5%9b%be%e7%89%87%209.jpg">
-<OptimizedImage alt="5 Eksen CNC Parça 8" src="assets/images/5ddbbc31ce560c98382c5e0451fb4f77/%e5%9b%be%e7%89%87%209.jpg"/>
-</a>
-</div>
-<div class="swiper-slide">
-<a aria-label="" data-fancybox="images" href="assets/images/1f7a47afbad1dacb5aad0d85f2fe173e/%e5%9b%be%e7%89%87%2010.jpg">
-<OptimizedImage alt="5 Eksen CNC Parça 9" src="assets/images/1f7a47afbad1dacb5aad0d85f2fe173e/%e5%9b%be%e7%89%87%2010.jpg"/>
-</a>
-</div>
-<div class="swiper-slide">
-<a aria-label="" data-fancybox="images" href="assets/images/701f2b61da7812db0d6f061a9d9de2fd/%e5%9b%be%e7%89%87%2011.jpg">
-<OptimizedImage alt="5 Eksen CNC Parça 10" src="assets/images/701f2b61da7812db0d6f061a9d9de2fd/%e5%9b%be%e7%89%87%2011.jpg"/>
-</a>
-</div>
-</div>
-</div>
-<div class="swiper-pagination"></div>
-</div>
-</div>
-</div>
-
-
-
-<div class="bobo-service1">
-<div class="container">
-<h3 class="wow fadeInUp">İşleme Boyutları ve ISO 2768 Toleransları</h3>
-<p class="wow fadeInUp" data-wow-delay=".2s"></p>
-<p>Target Makina'nın 5 eksen CNC işleme standart toleransları, plastik işleme için ISO 2768 (orta) ve metal işleme için ISO 2768 (ince) standartlarına uygundur. Müşterinin daha sıkı toleranslar için özel gereksinimleri varsa, lütfen tam tolerans özelliklerini içeren bir 2D teknik mühendislik çizimi sağlayın. Mühendislik ekibimiz, kritik boyut toleransları hakkında sizinle iletişime geçecek ve mümkün olan en yüksek doğruluğu sunacaktır.</p>
-<p>Müşterilerimiz için birinci sınıf boyutsal stabilite ile yüksek kaliteli ve hassas karmaşık 5 eksen CNC parçaları üretiyoruz.</p>
-<table border="1" cellspacing="0">
-<tbody>
-<tr>
-<td valign="top">
-<p>Maksimum işleme boyutları: Maksimum çap 350mm.</p>
-</td>
-</tr>
-<tr>
-<td valign="top">
-<p>Minimum işleme boyutları: Minimum çap 25mm.</p>
-</td>
-</tr>
-<tr>
-<td valign="top">
-<p>Genel tolerans: ±0.1mm, en iyi tolerans ±0.005mm'ye ulaşabilir.</p>
-</td>
-</tr>
-<tr>
-<td valign="top">
-<p>Üretim süresi: Basit küçük 5 eksen parçalar genellikle 5 gün içinde tamamlanabilir. Büyük boyutlu karmaşık yapısal bileşenler genellikle 8 ila 10 gün sürer.</p>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<section class="kuangke-advantage-section" style="background-image: url('assets/inst/3579/4204/482129/sections/kuangke_advantage_1765786942139270/advantage_bg.jpg');">
-<div class="container">
-<div class="kuangke-advantage-wrapper">
-<div class="kuangke-advantage-header">
-<h2 class="section-title wow fadeInUp">5 Eksen CNC İşleme Hizmeti İçin Neden Target Makina'yı Tercih Etmelisiniz?</h2>
-<p class="section-subtitle wow fadeInUp"></p>
-</div>
-<div class="kuangke-advantage-grid wow fadeInUp">
-<div class="kuangke-advantage-card swiper-slidelists">
-<div class="card-content">
-<div class="icon-content">
-<div class="content-area">
-<h3 class="advantage-title">01  Kaliteli Parçalar</h3>
-<p class="advantage-description">Target Makina, müşterilerine tolerans gereksinimlerini karşılayan yüksek standartlı parçalar sunmaktadır. Profesyonel işleme ekipmanları ve teknikleri, parçaların çizimlerde belirtilen toleranslara uygunluğunu garanti eder. En iyi tolerans ±0.01mm'ye, yüzey pürüzlülüğü Ra0.8'e ulaşabilir.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="kuangke-advantage-card swiper-slidelists">
-<div class="card-content">
-<div class="icon-content">
-<div class="content-area">
-<h3 class="advantage-title">02  Hızlı Teslimat</h3>
-<p class="advantage-description">Target Makina'nın profesyonel ekibi hızlı teklif, programlama ve üretim planlaması sağlayabilir. Özel acil zaman gereksinimleri durumunda, en kısa teslimat süresi 3 gün içinde tamamlanabilir. Bu, müşterilerin kritik teslim tarihlerini karşılamalarına yardımcı olur.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="kuangke-advantage-card swiper-slidelists">
-<div class="card-content">
-<div class="icon-content">
-<div class="content-area">
-<h3 class="advantage-title">03  Mühendislik Teknik Desteği</h3>
-<p class="advantage-description">Target Makina, tüm proje sürecinde sabırlı iletişim, rekabetçi fiyatlar, malzeme ve yüzey işlem danışmanlığı, tersine mühendislik hizmetleri ve en iyi işleme çözümlerini sunacaktır.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="kuangke-advantage-card swiper-slidelists">
-<div class="card-content">
-<div class="icon-content">
-<div class="content-area">
-<h3 class="advantage-title">04  Profesyonel İletişim</h3>
-<p class="advantage-description">Target Makina, teklif, teknoloji, üretim ve satış sonrası hizmet gibi konularda müşterilerle sabırlı ve olumlu iletişim kurabilen profesyonel bir satış ekibine sahiptir. Müşterilerin dil iletişimi endişelerini gidermektedir.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-
-<div class="sutong-cases">
-<div class="container">
-<div class="top">
-<div class="t wow fadeInLeft">
-<h3>CNC 5 Eksen İşleme Parçalarının Uygulama Alanları</h3>
-</div>
-<div class="txt wow fadeInRight">
-<p>Beş eksenli işleme parçaları; havacılık (kanatçıklar, gövde çerçeveleri), sağlık (implantlar, diş parçaları), otomotiv (kalıplar, karmaşık parçalar), enerji (türbin kanatları) ve kalıp imalatı (ayakkabı kalıpları, plastik kalıplar) gibi çeşitli zorlu alanlarda yaygın olarak kullanılmaktadır.</p>
-</div>
-</div>
-<ul>
-<li class="wow fadeInUp" data-wow-delay="0.2s">
-<a aria-label="Havacılık" href="javascript:void(0)">
-<OptimizedImage alt="Havacılık" src="assets/images/da8ac051414412c046d6ba4ffc870d73/%e5%9b%be%e7%89%87%2012.jpg"/>
-<div class="txt">
-<h6>Havacılık</h6>
-<p>Uçak motoru türbin kanatları, rotorlar, gövdeler, uydu bileşenleri, uçak gövdesinin karmaşık yapısal parçaları vb. — hafiflik, yüksek mukavemet ve yüksek hassasiyet gerektirir.</p>
-<div class="more">
-<i class="qico qico-right2"></i>Daha fazla bilgi</div>
-</div>
-</a>
-</li>
-<li class="wow fadeInUp" data-wow-delay="0.2s">
-<a aria-label="Medikal Cihazlar" href="javascript:void(0)">
-<OptimizedImage alt="Medikal Cihazlar" src="assets/images/7519bdf32e8956960cafabf9e6f49dbb/%e5%9b%be%e7%89%87%2013.jpg"/>
-<div class="txt">
-<h6>Medikal Cihazlar</h6>
-<p>Yapay eklemler (kalça eklemi, diz eklemi), ortopedik implantlar (vidalar, omurga sabitleyiciler), diş ortodontik apareyler — son derece yüksek hassasiyet ve biyouyumluluk hedeflenmektedir.</p>
-<div class="more">
-<i class="qico qico-right2"></i>Daha fazla bilgi</div>
-</div>
-</a>
-</li>
-<li class="wow fadeInUp" data-wow-delay="0.2s">
-<a aria-label="Otomotiv Üretimi" href="javascript:void(0)">
-<OptimizedImage alt="Otomotiv Üretimi" src="assets/images/c7d1e8dd55bfe72bcfb1e5973620ffb6/%e5%9b%be%e7%89%87%2014.jpg"/>
-<div class="txt">
-<h6>Otomotiv Üretimi</h6>
-<p>Motor bloğu/silindir kapağı, krank mili, biyel kolu, şasi karmaşık bileşenleri — performans artırma ve ağırlık azaltma.</p>
-<div class="more">
-<i class="qico qico-right2"></i>Daha fazla bilgi</div>
-</div>
-</a>
-</li>
-<li class="wow fadeInUp" data-wow-delay="0.2s">
-<a aria-label="Kalıp İmalatı" href="javascript:void(0)">
-<OptimizedImage alt="Kalıp İmalatı" src="assets/images/51c861932c7353b5213ff934aa6d5f80/%e5%9b%be%e7%89%87%2015.jpg"/>
-<div class="txt">
-<h6>Kalıp İmalatı</h6>
-<p>Üst düzey enjeksiyon kalıpları ve şişirme kalıpları için karmaşık boşluklar — yüksek yüzey kalitesi elde edilmesi.</p>
-<div class="more">
-<i class="qico qico-right2"></i>Daha fazla bilgi</div>
-</div>
-</a>
-</li>
-<li class="wow fadeInUp" data-wow-delay="0.2s">
-<a aria-label="Enerji Sektörü" href="javascript:void(0)">
-<OptimizedImage alt="Enerji Sektörü" src="assets/images/7f1d7c5c5791fc296c380f0f7187219e/%e5%9b%be%e7%89%87%2016.jpg"/>
-<div class="txt">
-<h6>Enerji Sektörü</h6>
-<p>Rüzgar türbini kanatları, kompresör kanatları, petrol sondaj ekipmanlarının karmaşık bileşenleri, güneş enerjisi ekipmanlarının hassas parçaları.</p>
-<div class="more">
-<i class="qico qico-right2"></i>Daha fazla bilgi</div>
-</div>
-</a>
-</li>
-<li class="wow fadeInUp" data-wow-delay="0.2s">
-<a aria-label="Robotik Sektörü" href="javascript:void(0)">
-<OptimizedImage alt="Robotik Sektörü" src="assets/images/148a1592ddabcfccaf62eece63fb93cb/%e5%9b%be%e7%89%87%2017.jpg"/>
-<div class="txt">
-<h6>Robotik Sektörü</h6>
-<p>Direksiyon mafsalları, bağlantı kolları ve diğer yüksek hassasiyetli ve karmaşık bileşenler.</p>
-<div class="more">
-<i class="qico qico-right2"></i>Daha fazla bilgi</div>
-</div>
-</a>
-</li>
-</ul>
-</div>
-</div>
-
- SSS Bölümü 
-<div class="rentaly-do-you-have-block">
-<div class="container">
-<div class="row">
-<div class="col text-center">
-<h2>Sıkça Sorulan Sorular</h2>
-<div class="spacer-20"></div>
-</div>
-</div>
-<div class="g-custom-x">
-<div class="wow fadeInUp">
-<div class="accordion secondary row" id="accordionExample1">
-<div class="col-md-6">
-<div aria-controls="collapse-1" aria-expanded="true" class="sectionWrap collapsed" data-target="#collapse-1" data-toggle="collapse">
-<div class="accordion-section-title" id="heading-1">
-<span class="text">5 eksen CNC işleme nedir?</span>
-<div class="arrowBox">
-<div class="arrow"></div>
-</div>
-</div>
-<div aria-labelledby="heading-1" class="collapse" data-parent="#accordionExample1" id="collapse-1">
-<div class="accordion-section-content">CNC 5 eksen işleme; iş parçası ve takımın eş zamanlı dönme ve hareketi sayesinde birden fazla yön ve açıda aynı anda çalışarak iş parçasının birden fazla yüzeyini hassas bir şekilde işleyebilir. Karmaşık geometrik şekillerin ve yüksek hassasiyetli parçaların işlenmesinde belirgin avantajlara sahiptir.</div>
-</div>
-</div>
-<div aria-controls="collapse-3" aria-expanded="true" class="sectionWrap collapsed" data-target="#collapse-3" data-toggle="collapse">
-<div class="accordion-section-title" id="heading-3">
-<span class="text">5 eksen CNC işlemenin toleransı nedir?</span>
-<div class="arrowBox">
-<div class="arrow"></div>
-</div>
-</div>
-<div aria-labelledby="heading-3" class="collapse" data-parent="#accordionExample1" id="collapse-3">
-<div class="accordion-section-content">Target Makina'nın 5 eksen CNC işleme standart toleransları, plastik işleme için ISO 2768 (orta) ve metal işleme için ISO 2768 (ince) standartlarına uygundur. Müşterinin daha sıkı toleranslar için özel gereksinimleri varsa, lütfen tam tolerans özelliklerini içeren bir 2D teknik mühendislik çizimi sağlayın. Mühendislik ekibimiz, kritik boyut toleransları hakkında sizinle iletişime geçecek ve mümkün olan en yüksek doğruluğu sunacaktır.</div>
-</div>
-</div>
-<div aria-controls="collapse-5" aria-expanded="true" class="sectionWrap collapsed" data-target="#collapse-5" data-toggle="collapse">
-<div class="accordion-section-title" id="heading-5">
-<span class="text">5 eksen işleme için minimum sipariş miktarı nedir?</span>
-<div class="arrowBox">
-<div class="arrow"></div>
-</div>
-</div>
-<div aria-labelledby="heading-5" class="collapse" data-parent="#accordionExample1" id="collapse-5">
-<div class="accordion-section-content">Minimum sipariş miktarımız 1 adettir, ancak müşterilerimiz için prototip üretiminden küçük ve büyük seri üretime kadar hizmet sunabiliyoruz.</div>
-</div>
-</div>
-</div>
-<div class="col-md-6">
-<div aria-controls="collapse-2" aria-expanded="true" class="sectionWrap collapsed" data-target="#collapse-2" data-toggle="collapse">
-<div class="accordion-section-title" id="heading-2">
-<span class="text">Hangi parçalar 5 eksen işleme gerektirir?</span>
-<div class="arrowBox">
-<div class="arrow"></div>
-</div>
-</div>
-<div aria-labelledby="heading-2" class="collapse" data-parent="#accordionExample1" id="collapse-2">
-<div class="accordion-section-content">Beş eksenli işleme gerektiren bileşenlerin tasarımı genellikle karmaşık eğri yüzeyler (kanatlar, kalıp boşlukları gibi), çoklu açı işleme gereksinimleri (eğik delikler, eğik yüzeyler gibi), yüksek hassasiyet ve yüksek yüzey kalitesi standartları (medikal implantlar, havacılık parçaları gibi) ve kompozit malzeme işleme (karbon fiber yapısal bileşenler gibi) özelliklerini içerir. Temel avantaj, tek bir kurulumda çok yüzlü işlemeyi tamamlayarak doğruluk ve tutarlılığı sağlarken verimliliği önemli ölçüde artırma kabiliyetinde yatar.</div>
-</div>
-</div>
-<div aria-controls="collapse-4" aria-expanded="true" class="sectionWrap collapsed" data-target="#collapse-4" data-toggle="collapse">
-<div class="accordion-section-title" id="heading-4">
-<span class="text">5 eksen CNC işleme fiyatı nasıl hesaplanır?</span>
-<div class="arrowBox">
-<div class="arrow"></div>
-</div>
-</div>
-<div aria-labelledby="heading-4" class="collapse" data-parent="#accordionExample1" id="collapse-4">
-<div class="accordion-section-content">İlk faktör malzeme maliyetidir. Beş eksenli CNC hassas bileşenler, alüminyum alaşım, paslanmaz çelik, titanyum alaşım gibi çeşitli malzeme türlerinden yapılabilir. İkinci faktör işleme zorluğudur. Üçüncü faktör bileşenlerin boyutu ve şeklidir. Daha büyük bileşenler genellikle daha büyük makineler ve daha uzun işleme süreleri gerektirirken, daha karmaşık şekiller daha fazla işlem adımı ve daha yüksek teknik zorluk gerektirir. Dördüncü faktör işleme miktarıdır. İşleme miktarı arttıkça bileşen başına maliyet düşer. Beşinci faktör işleme hassasiyet gereksinimidir. İşleme fabrikaları genellikle müşterilerin sağladığı bileşen çizimlerine ve teknik gereksinimlere göre değerlendirme ve fiyat teklifi yapar.</div>
-</div>
-</div>
-<div aria-controls="collapse-6" aria-expanded="true" class="sectionWrap collapsed" data-target="#collapse-6" data-toggle="collapse">
-<div class="accordion-section-title" id="heading-6">
-<span class="text">5 eksen işlemenin avantaj ve dezavantajları nelerdir?</span>
-<div class="arrowBox">
-<div class="arrow"></div>
-</div>
-</div>
-<div aria-labelledby="heading-6" class="collapse" data-parent="#accordionExample1" id="collapse-6">
-<div class="accordion-section-content">
-<p>Beş eksenli işlemenin avantajları:</p> <p>1. Karmaşık şekiller için güçlü işleme kabiliyeti: Karmaşık eğri yüzeyleri ve çok açılı parçaları işleyebilir.</p> <p>2. Üretim verimliliğini artırır: Beş eksen işleme, işleme sırasında takım değişikliği ve yeniden bağlama sayısını azaltır.</p> <p>3. Çok yönlü işleme imkânı: Beş eksen işlemenin iş mili birçok yönde dönebilir ve eğilebilir, herhangi bir açıda kesim yapabilir.</p> <p>Beş eksenli işlemenin dezavantajları:</p> <p>1. Yüksek ekipman yatırım maliyeti: Beş eksen işleme ekipmanının yatırım maliyeti nispeten yüksektir.</p> <p>2. Zor programlama ve operasyon: Beş eksen işlemenin programlanması ve işletilmesi oldukça zorludur.</p> <p>3. Takımlar için yüksek gereksinimler ve takım aşınması: Beş eksen işlemede takımların kalitesi ve ömrü konusunda yüksek standartlar beklenir.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="qi-inquiry-form">
-<a class="cd-popup-trigger" href="javascript:void(0);">
-<OptimizedImage alt="Teklif alın" src="assets/images/88f577e07192a792fc165881ed68236e/%e9%85%8d%e4%bb%b6.jpg"/></a>
-</div>
- popup 
-<section class="click-popup custom-pop-inquiry">
-<div class="div_info">
-<a aria-label="close" class="cd-popup-close img-replace qico qico-guanbi" href="javascript:void(0)" title="close"></a>
-<div class="crm_inquiry_form_boxcustom_inquiry_form_1765787017645025" data-attr-download-pop="false">
-<div class="container">
-<div class="row">
-<div class="col-lg-12 inqury_title_box text-center">
-<h2 class="inqury_title_text" style="margin-bottom: 10px;">Ücretsiz Teklif Alın</h2>
-<div class="inqury_titl_desc">Temsilcimiz en kısa sürede sizinle iletişime geçecektir.</div>
-</div>
-</div>
-<div class="row">
-<div class="col-lg-12">
-<form action="javascript:void(0)" class="inqury-form form" id="inqury-form" novalidate="">
-<input hidden="" name="form_id" title="form_id" type="hidden" value="64172332903379"/>
-<input id="pagetitle" name="pagetitle" title="pagetitle" type="hidden" value=""/>
-<div class="input-wrap text-wrap full">
-<div class="input-label required">E-posta</div>
-<div class="input-wrap-box">
-<input class="one-line-input" maxlength="100" name="email" placeholder="Lütfen e-posta adresinizi girin" required="" title="email" type="text"/>
-<div class="char-count"></div>
-</div>
-</div>
-<div class="input-wrap text-wrap full">
-<div class="input-label">Ad Soyad</div>
-<div class="input-wrap-box">
-<input class="one-line-input" maxlength="100" name="name" placeholder="Lütfen adınızı girin" title="name" type="text"/>
-<div class="char-count"></div>
-</div>
-</div>
-<div class="input-wrap phone-wrap full">
-<div class="input-label required">Telefon</div>
-<div class="d-flex input-wrap-box">
-<select class="selectpicker form-control" data-container="body" data-hide-disabled="true" data-live-search="true" data-size="10" id="phoneCode" name="code" required="" title="Kod"></select>
-<div class="phone-wrap-input-content">
-<input class="phone_number" maxlength="16" name="mobile" placeholder="Lütfen telefon numaranızı girin" required="" title="mobile" type="number"/>
-<div class="char-count"></div>
-</div>
-</div>
-</div>
-<div class="input-wrap text-wrap full">
-<div class="input-label">Firma Adı</div>
-<div class="input-wrap-box">
-<input class="one-line-input" maxlength="200" name="company" placeholder="Lütfen firma adınızı girin" title="company" type="text"/>
-<div class="char-count"></div>
-</div>
-</div>
-<div class="input-wrap textarea-wrap full">
-<div class="input-label required">Mesaj</div>
-<textarea class="textarea-input" cols="30" maxlength="1000" name="message" placeholder="Lütfen mesajınızı buraya yazın" required="" rows="10" title="message"></textarea>
-<span class="char-count">0/1000</span>
-</div>
-<div class="input-wrap full">
-<div class="text-center">
-<button aria-label="submit" class="inqury_submit submit create-form-submit" type="submit">Gönder</button>
-</div>
-</div>
-</form>
-</div>
-</div>
-</div>
-</div>
-
-
-</div>
-</section>
+  <section class="cta-section">
+    <div class="container">
+      <h2>Üretilecek parçanız veya teknik çiziminiz hazır mı?</h2>
+      <p>Dosyanızı paylaşın; malzeme, tolerans, yüzey işlemi ve teslim süresine göre hızlıca teklif hazırlayalım.</p>
+      <a class="primary-action quote-trigger" href="#teklif">Hızlı Teklif Al</a>
+    </div>
+  </section>
 </BaseLayout>
+
+<style>
+  .services-hero{position:relative;min-height:520px;display:flex;align-items:center;overflow:hidden;background:linear-gradient(135deg,#7f1f0d 0%,#C93715 58%,#e04a28 100%)}
+  .hero-image{position:absolute;inset:0}
+  .hero-image img{width:100%;height:100%;object-fit:cover;opacity:.2;filter:saturate(.9) contrast(1.08);mix-blend-mode:multiply}
+  .hero-image :global(img){width:100%;height:100%;object-fit:cover;opacity:.2;filter:saturate(.9) contrast(1.08);mix-blend-mode:multiply}
+  .hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(92,18,7,.98),rgba(201,55,21,.9),rgba(201,55,21,.7))}
+  .hero-content{position:relative;color:#fff;max-width:800px;text-shadow:0 2px 16px rgba(0,0,0,.22)}
+  .breadcrumb{font-size:14px;margin-bottom:18px;color:rgba(255,255,255,.86)}
+  .breadcrumb a{color:#fff;text-decoration:none}
+  .services-hero h1{font-size:48px;line-height:1.12;margin:0 0 18px;font-weight:800;letter-spacing:0;color:#fff}
+  .services-hero p:not(.breadcrumb){font-size:18px;line-height:1.7;max-width:720px;margin:0 0 28px;color:rgba(255,255,255,.94)}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+  .primary-action,.secondary-action{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 24px;border-radius:6px;font-weight:700;text-decoration:none;transition:background .2s,transform .2s,border-color .2s}
+  .primary-action{background:#C93715;color:#fff}
+  .primary-action:hover{background:#a92f13;color:#fff;transform:translateY(-1px)}
+  .secondary-action{border:1px solid rgba(255,255,255,.55);color:#fff;background:rgba(255,255,255,.08)}
+  .secondary-action:hover{border-color:#fff;background:rgba(255,255,255,.15);color:#fff}
+  .metric-band{background:#171717;color:#fff;padding:28px 0}
+  .metric-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  .metric-grid div{border-left:3px solid #C93715;padding-left:16px}
+  .metric-grid strong{display:block;font-size:24px;margin-bottom:4px}
+  .metric-grid span{display:block;color:#bbb;font-size:14px}
+  .services-section,.quality-section{padding:78px 0;background:#fff}
+  .section-head{text-align:center;max-width:760px;margin:0 auto 42px}
+  .section-head.compact{margin-bottom:30px}
+  .section-head span,.quality-copy span{display:inline-block;color:#C93715;font-size:13px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:12px}
+  .section-head h2,.quality-copy h2,.cta-section h2{font-size:34px;line-height:1.25;color:#1a1a1a;margin:0 0 14px;font-weight:800}
+  .section-head p,.quality-copy p,.cta-section p{color:#555;line-height:1.75;margin:0}
+  .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .service-card{background:#fff;border:1px solid #e8e8e8;border-radius:8px;overflow:hidden;box-shadow:0 8px 26px rgba(0,0,0,.05);display:flex;flex-direction:column;min-height:100%}
+  .image-link{display:block;aspect-ratio:16/10;background:#f2f2f2;overflow:hidden}
+  .image-link img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .25s}
+  .service-card:hover .image-link img{transform:scale(1.04)}
+  .card-body{padding:24px;display:flex;flex-direction:column;flex:1}
+  .card-body h3{font-size:21px;margin:0 0 10px;color:#1a1a1a}
+  .card-body h3 a{color:inherit;text-decoration:none}
+  .card-body p{font-size:15px;line-height:1.7;color:#555;margin:0 0 16px}
+  .card-body ul{margin:0 0 20px;padding-left:18px;color:#555;line-height:1.65;font-size:14px}
+  .more-link{margin-top:auto;color:#C93715;font-weight:800;text-decoration:none}
+  .more-link:hover{text-decoration:underline}
+  .process-section{padding:74px 0;background:#f7f7f7}
+  .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  .process-card{background:#fff;border:1px solid #e7e7e7;border-radius:8px;padding:24px;min-height:220px}
+  .process-card strong{display:block;color:#C93715;font-size:24px;margin-bottom:18px}
+  .process-card h3{font-size:19px;color:#1a1a1a;margin:0 0 10px}
+  .process-card p{font-size:14px;color:#555;line-height:1.7;margin:0}
+  .quality-wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(320px,.9fr);gap:44px;align-items:center}
+  .quality-copy p + p{margin-top:14px}
+  .quality-image{border-radius:8px;overflow:hidden;box-shadow:0 16px 40px rgba(0,0,0,.12)}
+  .quality-image img{width:100%;height:420px;object-fit:cover;display:block}
+  .cta-section{background:#171717;color:#fff;text-align:center;padding:72px 0}
+  .cta-section h2{color:#fff}
+  .cta-section p{color:#ccc;max-width:680px;margin:0 auto 24px}
+  @media (max-width: 980px){
+    .services-hero h1{font-size:36px}
+    .metric-grid,.service-grid,.process-grid,.quality-wrap{grid-template-columns:1fr 1fr}
+  }
+  @media (max-width: 640px){
+    .services-hero{min-height:500px}
+    .services-hero h1{font-size:30px}
+    .metric-grid,.service-grid,.process-grid,.quality-wrap{grid-template-columns:1fr}
+    .quality-image img{height:300px}
+  }
+</style>
