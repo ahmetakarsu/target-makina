@@ -18,11 +18,256 @@ const keywords = "CNC işleme, CNC frezeleme, CNC tornalama, hassas üretim, end
     <link rel="stylesheet" href="/assets/inst/3579/4204/482129/sections/bobo_company_intro_1760403430795121/index.css">
     <link rel="stylesheet" href="/assets/inst/3579/4204/482129/sections/bobo_indicator_1760403448459444/index.css">
     <link rel="stylesheet" href="/assets/inst/3579/4204/482129/sections/song_aboutus_1762830186214216/index.css">
-    <link rel="stylesheet" href="/assets/inst/3579/4204/482129/sections/sung_subscribe_1760403616878437/index.css">
     <link rel="stylesheet" href="/assets/inst/3579/4204/482129/sections/san_home_choose_1760402498909976/index.css">
     <link rel="stylesheet" href="/assets/inst/3579/4204/482129/sections/bobo_certificate_1760403740453223/index.css">
-    <link rel="stylesheet" href="/assets/inst/3579/4204/482129/sections/insucom_what_our_1760403798460951/index.css">
     <link rel="stylesheet" href="/assets/inst/3579/4204/482129/sections/sung_news_1760403655895355/index.css">
+    <style is:global>
+      .sutong-pic-text2 {
+        background: #f7f8fa;
+      }
+
+      .sutong-pic-text2 .container,
+      .san-home-choose .container {
+        width: min(1180px, calc(100% - 96px));
+        max-width: 1180px;
+      }
+
+      .sutong-pic-text2 .top {
+        align-items: flex-end;
+        gap: 24px;
+      }
+
+      .sutong-pic-text2 .more {
+        height: 48px;
+        padding: 0 26px;
+        border-color: rgba(201, 55, 21, 0.24);
+        border-radius: 8px;
+        background: #fff;
+        color: #c93715;
+        box-shadow: 0 12px 28px rgba(16, 24, 40, 0.06);
+      }
+
+      .sutong-pic-text2 .more span {
+        width: 8px;
+        height: 8px;
+        border-radius: 2px;
+        margin-right: 7px;
+      }
+
+      .sutong-pic-text2 .more span:last-child {
+        margin-right: 16px;
+      }
+
+      .sutong-pic-text2 ul {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 24px;
+        margin: 50px 0 0;
+      }
+
+      .sutong-pic-text2 ul li {
+        width: auto;
+        padding: 0;
+      }
+
+      .sutong-pic-text2 ul li::before,
+      .sutong-pic-text2 ul li::after,
+      .sutong-pic-text2 ul li .dot {
+        display: none !important;
+      }
+
+      .sutong-pic-text2 ul li .box {
+        height: 100%;
+        padding: 18px;
+        text-align: left;
+        background: #fff;
+        border: 1px solid #e8edf2;
+        border-bottom: 1px solid #e8edf2;
+        border-radius: 8px;
+        box-shadow: 0 18px 45px rgba(16, 24, 40, 0.07);
+        transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+      }
+
+      .sutong-pic-text2 ul li:hover .box {
+        transform: translateY(-6px);
+        border-color: rgba(201, 55, 21, 0.32);
+        box-shadow: 0 24px 60px rgba(16, 24, 40, 0.11);
+      }
+
+      .sutong-pic-text2 ul li .box::after {
+        display: none;
+      }
+
+      .sutong-pic-text2 ul li .ico {
+        position: relative;
+        width: 100%;
+        height: 150px;
+        overflow: hidden;
+        display: block;
+        border-radius: 8px;
+        background: #eef2f6;
+      }
+
+      .sutong-pic-text2 ul li .ico::after {
+        position: absolute;
+        right: 12px;
+        bottom: 12px;
+        width: 42px;
+        height: 42px;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        background: #c93715;
+        color: #fff;
+        font-size: 13px;
+        font-weight: 800;
+        box-shadow: 0 10px 22px rgba(201, 55, 21, 0.28);
+      }
+
+      .sutong-pic-text2 ul li:nth-child(1) .ico::after { content: "01"; }
+      .sutong-pic-text2 ul li:nth-child(2) .ico::after { content: "02"; }
+      .sutong-pic-text2 ul li:nth-child(3) .ico::after { content: "03"; }
+      .sutong-pic-text2 ul li:nth-child(4) .ico::after { content: "04"; }
+
+      .sutong-pic-text2 ul li .ico img {
+        width: 100%;
+        height: 100%;
+        max-width: none;
+        max-height: none;
+        object-fit: cover;
+        filter: none;
+        transition: transform 0.35s ease;
+      }
+
+      .sutong-pic-text2 ul li:hover .ico img {
+        transform: scale(1.04);
+      }
+
+      .sutong-pic-text2 ul li h5 {
+        margin: 20px 0 0;
+        line-height: 1.25;
+        color: #1d2733;
+      }
+
+      .sutong-pic-text2 ul li p {
+        color: #5d6876;
+      }
+
+      .san-home-choose {
+        background: #fff;
+      }
+
+      .san-home-choose .title {
+        width: min(100%, 960px);
+        margin-top: 0;
+      }
+
+      .san-home-choose .title p {
+        max-width: 900px;
+        color: #5d6876;
+      }
+
+      .san-home-choose .wpa {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 24px;
+        margin-top: 38px;
+      }
+
+      .san-home-choose .lg-04 li,
+      .san-home-choose .lg-04 li:nth-child(4n+1) {
+        width: auto;
+        margin-left: 0;
+      }
+
+      .san-home-choose ul li {
+        overflow: hidden;
+        padding: 0;
+        background: #fff;
+        border: 1px solid #e8edf2;
+        border-bottom: 1px solid #e8edf2;
+        border-radius: 8px;
+        box-shadow: 0 18px 45px rgba(16, 24, 40, 0.07);
+        transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+      }
+
+      .san-home-choose ul li:hover {
+        transform: translateY(-6px);
+        border-color: rgba(201, 55, 21, 0.32);
+        box-shadow: 0 24px 60px rgba(16, 24, 40, 0.11);
+      }
+
+      .san-home-choose ul li::after {
+        display: none;
+      }
+
+      .san-home-choose ul li span {
+        width: 100%;
+        height: 156px;
+        margin: 0;
+        overflow: hidden;
+        display: block;
+        background: #eef2f6;
+      }
+
+      .san-home-choose ul li span img {
+        width: 100%;
+        height: 100%;
+        max-width: none;
+        max-height: none;
+        object-fit: cover;
+        filter: none;
+        transition: transform 0.35s ease;
+      }
+
+      .san-home-choose ul li:hover span img {
+        transform: scale(1.04);
+      }
+
+      .san-home-choose ul li h3 {
+        min-height: auto;
+        margin: 22px 22px 0;
+        color: #1d2733;
+        line-height: 1.3;
+      }
+
+      .san-home-choose ul li p {
+        margin: 14px 22px 24px;
+        color: #5d6876;
+      }
+
+      @media screen and (max-width: 992px) {
+        .sutong-pic-text2 .container,
+        .san-home-choose .container {
+          width: 100%;
+        }
+
+        .sutong-pic-text2 ul,
+        .san-home-choose .wpa {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .sutong-pic-text2 .top {
+          display: block;
+        }
+      }
+
+      @media screen and (max-width: 576px) {
+        .sutong-pic-text2 ul,
+        .san-home-choose .wpa {
+          grid-template-columns: 1fr;
+        }
+
+        .sutong-pic-text2 ul {
+          margin-top: 28px;
+        }
+
+        .sutong-pic-text2 ul li .ico,
+        .san-home-choose ul li span {
+          height: 180px;
+        }
+      }
+    </style>
   </Fragment>
 
 <div id="huake-banner" style="position: relative;">
@@ -227,14 +472,14 @@ const keywords = "CNC işleme, CNC frezeleme, CNC tornalama, hassas üretim, end
 <ul class="wow fadeInUp" data-wow-delay="0.4s">
 <li>
 <div class="box">
-<div class="ico"><OptimizedImage alt="Teknik Çizimlerinizi Gönderin" src="assets/images/98e9460574d3e5fb374d1611eed33004/%e4%b8%8a%e4%bc%a0%e5%9b%be%e7%ba%b8.png"/></div>
+<div class="ico"><OptimizedImage alt="Teknik Çizimlerinizi Gönderin" src="assets/images/anasayfa/muhendis.png"/></div>
 <h5>Teknik Çizimlerinizi Gönderin</h5>
 <p>2D çiziminizi veya 3D dosyanızı (STEP, IGES, DWG, PDF) tolerans, diş açma ve özel gereksinimlerinizle birlikte bize iletin.</p>
 </div>
 </li>
 <li>
 <div class="box">
-<div class="ico"><OptimizedImage alt="Hızlı Teklif Alın" src="assets/images/f722e6232fbbd1e08599b90e9020ff58/%e8%8e%b7%e5%8f%96%e6%8a%a5%e4%bb%b7.png"/></div>
+<div class="ico"><OptimizedImage alt="Hızlı Teklif Alın" src="assets/images/anasayfa/ekipman.png"/></div>
 <h5>Hızlı Teklif Alın</h5>
 <p>Malzeme, adet, yüzey işlemi ve özel notlarınızı belirtin; size doğru fiyat teklifi ve üretilebilirlik (DFM) analizi sunalım.</p>
 </div>
@@ -242,7 +487,7 @@ const keywords = "CNC işleme, CNC frezeleme, CNC tornalama, hassas üretim, end
 </li>
 <li>
 <div class="box">
-<div class="ico"><OptimizedImage alt="Siparişinizi Onaylayın" src="assets/images/ef760f89e6795a7a7c135f4db0338735/%e8%ae%a2%e5%8d%95%e7%a1%ae%e8%ae%a4.png"/></div>
+<div class="ico"><OptimizedImage alt="Siparişinizi Onaylayın" src="assets/images/5-eksen/islem.png"/></div>
 <h5>Siparişinizi Onaylayın</h5>
 <p>Sipariş onayınızın ardından üretime başlıyoruz. Üretim sürecini düzenli olarak sizinle paylaşıyoruz.</p>
 </div>
@@ -250,7 +495,7 @@ const keywords = "CNC işleme, CNC frezeleme, CNC tornalama, hassas üretim, end
 </li>
 <li>
 <div class="box">
-<div class="ico"><OptimizedImage alt="Parçalarınız Teslim Edilir" src="assets/images/6bdeced7d146c4b10465e753c168a663/%e5%9b%bd%e9%99%85%e8%bf%90%e8%be%93.png"/></div>
+<div class="ico"><OptimizedImage alt="Parçalarınız Teslim Edilir" src="assets/images/makine/screw_shaft.jpg"/></div>
 <h5>Parçalarınız Teslim Edilir</h5>
 <p>Üretim tamamlanıp kalite kontrol sürecinden geçen parçalarınız, güvenli paketlenerek adresinize teslim edilir.</p>
 </div>
@@ -289,19 +534,6 @@ const keywords = "CNC işleme, CNC frezeleme, CNC tornalama, hassas üretim, end
 </ul>
 </div>
 </section>
-<div class="sung-subscribe" style="background-image: url(/assets/images/anasayfa/cta-arkaplan.png);">
-<div class="container">
-<h2 class="col-lg-8">Projeniz İçin Hemen Ücretsiz Teklif Alın</h2>
-<form name="hizli-teklif" action="/tesekkurler/" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="col-lg-8 form-box" data-wow-delay="0.2s">
-<input type="hidden" name="form-name" value="hizli-teklif"/>
-<p class="hidden"><label>Bunu doldurmayın: <input name="bot-field"/></label></p>
-<input class="submit_text" name="email" placeholder="E-posta Adresiniz" required="" type="text"/>
-<button aria-label="Gönder" class="submit_btn" type="submit">
-<i class="qico qico-feiji1"></i>
-</button>
-</form>
-</div>
-</div>
 <div class="bobo-cert-list">
 <div class="container">
 <div class="index-tit wow fadeInUp">
@@ -319,74 +551,6 @@ const keywords = "CNC işleme, CNC frezeleme, CNC tornalama, hassas üretim, end
 <div class="swiper-button-next"><i class="qico qico-right7"></i></div>
 </div>
 <div class="swiper-pagination"></div>
-</div>
-</div>
-<div class="insucom-what-our-block">
-<div class="container">
-<div class="big-warp">
-<div class="headline-wrap">
-<h2 class="headline">Müşterilerimiz Ne Diyor?</h2>
-</div>
-<div class="test-two-swiper-wrapper">
-<div class="swiper-wrapper">
-<div class="swiper-slide">
-<div class="test-item">
-<div class="title-wrap"><p class="item-title">Tel erozyon ve CNC frezeleme konusunda son derece memnun kaldık. Parçaların kalitesi mükemmel, toleranslar tam tuttu. Teslim süreleri çok hızlı. Kesinlikle tekrar çalışacağız.</p></div>
-<div class="start"><div class="start-wrap"><span class="iconfont"></span><span class="iconfont"></span><span class="iconfont"></span><span class="iconfont"></span><span class="iconfont"></span></div></div>
-<div class="avatar-wrap"><div class="avatar"><OptimizedImage alt="Ahmet Yılmaz" src="assets/images/36fb6782ef5b9a075e6ac914af0ac0fc/1.jpg"/></div></div>
-<h2 class="username">Ahmet Yılmaz</h2>
-<p class="positions">Otomotiv Sektörü — İstanbul</p>
-</div>
-</div>
-<div class="swiper-slide">
-<div class="test-item">
-<div class="title-wrap"><p class="item-title">Mastar ve fikstür imalatında gerçekten profesyonel bir ekip. Teknik çizimlerimize birebir uygun üretim yaptılar. İletişimleri çok güçlü, her aşamada bilgilendirme yapıyorlar.</p></div>
-<div class="start"><div class="start-wrap"><span class="iconfont"></span><span class="iconfont"></span><span class="iconfont"></span><span class="iconfont"></span><span class="iconfont"></span></div></div>
-<div class="avatar-wrap"><div class="avatar"><OptimizedImage alt="Mehmet Kaya" src="assets/images/592e1ed4d681bd6ce9605ee92679bee0/2.jpg"/></div></div>
-<h2 class="username">Mehmet Kaya</h2>
-<p class="positions">Savunma Sanayi — Ankara</p>
-</div>
-</div>
-<div class="swiper-slide">
-<div class="test-item">
-<div class="title-wrap"><p class="item-title">5 eksen CNC işleme ile ürettiğimiz havacılık parçaları mükemmel kalitede çıktı. Yüzey kalitesi beklentimizin üzerindeydi. Fiyat-performans açısından piyasadaki en iyi seçenek.</p></div>
-<div class="start"><div class="start-wrap"><span class="iconfont"></span><span class="iconfont"></span><span class="iconfont"></span><span class="iconfont"></span><span class="iconfont"></span></div></div>
-<div class="avatar-wrap"><div class="avatar"><OptimizedImage alt="Elif Demir" src="assets/images/fa0575cc0552df16b71613edb472037a/3.jpg"/></div></div>
-<h2 class="username">Elif Demir</h2>
-<p class="positions">Havacılık Sektörü — İzmir</p>
-</div>
-</div>
-<div class="swiper-slide">
-<div class="test-item">
-<div class="title-wrap"><p class="item-title">Hassas talaşlı imalat projemizde Target Makina'yla çalışmak büyük kolaylık sağladı. CAD çizimlerimize tam uygun üretim, hızlı prototipleme ve seri üretimde hiç sorun yaşamadık.</p></div>
-<div class="start"><div class="start-wrap"><span class="iconfont"></span><span class="iconfont"></span><span class="iconfont"></span><span class="iconfont"></span><span class="iconfont"></span></div></div>
-<div class="avatar-wrap"><div class="avatar"><OptimizedImage alt="Burak Şentürk" src="assets/images/1049ca683853875b8b748f201249617c/4.png"/></div></div>
-<h2 class="username">Burak Şentürk</h2>
-<p class="positions">Makine İmalat — Bursa</p>
-</div>
-</div>
-<div class="swiper-slide">
-<div class="test-item">
-<div class="title-wrap"><p class="item-title">Acil siparişimiz için inanılmaz hızlı dönüş yaptılar. Tel erozyon parçalarımız 3 gün içinde hazırdı. Kalite kontrol raporları da eksiksiz gönderildi. Teşekkürler Target Makina ekibi!</p></div>
-<div class="start"><div class="start-wrap"><span class="iconfont"></span><span class="iconfont"></span><span class="iconfont"></span><span class="iconfont"></span><span class="iconfont"></span></div></div>
-<div class="avatar-wrap"><div class="avatar"><OptimizedImage alt="Serkan Aydın" src="assets/images/1c53894fc3ce5b39a61fe8af5a524a76/5.png"/></div></div>
-<h2 class="username">Serkan Aydın</h2>
-<p class="positions">Enerji Sektörü — Manisa</p>
-</div>
-</div>
-<div class="swiper-slide">
-<div class="test-item">
-<div class="title-wrap"><p class="item-title">Küçük işletmemiz için özel fikstür ve mastar üretiminde Target Makina'yı tercih ettik. Detaylara gösterdikleri özen ve mühendislik desteği gerçekten etkileyici. Kesinlikle tavsiye ediyoruz!</p></div>
-<div class="start"><div class="start-wrap"><span class="iconfont"></span><span class="iconfont"></span><span class="iconfont"></span><span class="iconfont"></span><span class="iconfont"></span></div></div>
-<div class="avatar-wrap"><div class="avatar"><OptimizedImage alt="Zeynep Koç" src="assets/images/078456afe17cf02c6f08c2470addb96e/6.png"/></div></div>
-<h2 class="username">Zeynep Koç</h2>
-<p class="positions">Medikal Sektör — Ankara</p>
-</div>
-</div>
-</div>
-<div class="swiper-pagination"></div>
-</div>
-</div>
 </div>
 </div>
   <Fragment slot="scripts">
