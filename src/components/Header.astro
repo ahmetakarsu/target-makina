@@ -26,7 +26,6 @@ const navItems = [
 ---
 
 <header class="w-full z-50 relative">
-  <!-- Top Bar -->
   <div class="bg-dark text-white text-sm hidden md:block">
     <div class="max-w-7xl mx-auto px-4 flex justify-between items-center h-10">
       <div class="flex items-center gap-6">
@@ -50,57 +49,69 @@ const navItems = [
     </div>
   </div>
 
-  <!-- Main Nav -->
   <nav class="bg-white shadow-md sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 flex items-center justify-between h-16 lg:h-20">
-      <!-- Logo -->
       <a href="/" class="flex-shrink-0">
         <img src="/images/target-makina-logo.png" alt="TARGET MAKİNA" class="h-10 lg:h-12 w-auto" loading="eager">
       </a>
 
-      <!-- Desktop Nav -->
       <ul class="hidden lg:flex items-center gap-1">
         {navItems.map((item) => (
-          <li class="relative group">
-            <a
-              href={item.href}
-              class:list={[
-                'px-3 py-2 text-sm font-medium rounded-md transition-colors',
-                currentPath === item.href || currentPath.startsWith(item.href + '/') ? 'text-primary' : 'text-dark hover:text-primary',
-              ]}
-            >
-              {item.label}
-              {item.children && (
-                <svg class="w-3 h-3 inline ml-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-              )}
-            </a>
-            {item.children && (
-              <ul class="absolute left-0 top-full mt-0 w-64 bg-white shadow-xl rounded-lg py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 border border-gray-100">
-                {item.children.map((child) => (
+          <li class:list={['relative', item.children ? 'nav-dropdown group' : ''] } data-nav-dropdown={item.children ? '' : undefined}>
+            {item.children ? (
+              <>
+                <button
+                  type="button"
+                  data-nav-toggle
+                  aria-expanded="false"
+                  class:list={[
+                    'px-3 py-2 text-sm font-medium rounded-md transition-colors inline-flex items-center gap-1',
+                    currentPath === item.href || currentPath.startsWith(item.href) ? 'text-primary' : 'text-dark hover:text-primary',
+                  ]}
+                >
+                  {item.label}
+                  <svg class="w-3 h-3 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                </button>
+                <ul class="nav-dropdown-panel absolute left-0 top-full mt-0 w-72 bg-white shadow-xl rounded-lg py-2 transition-all duration-200 z-50 border border-gray-100">
                   <li>
-                    <a href={child.href} class="block px-4 py-2 text-sm text-dark-muted hover:text-primary hover:bg-primary-light transition-colors">
-                      {child.label}
+                    <a href={item.href} class="block px-4 py-2 text-sm font-semibold text-primary hover:bg-primary-light transition-colors">
+                      Tüm Hizmetler
                     </a>
                   </li>
-                ))}
-              </ul>
+                  {item.children.map((child) => (
+                    <li>
+                      <a href={child.href} class="block px-4 py-2 text-sm text-dark-muted hover:text-primary hover:bg-primary-light transition-colors">
+                        {child.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </>
+            ) : (
+              <a
+                href={item.href}
+                class:list={[
+                  'px-3 py-2 text-sm font-medium rounded-md transition-colors',
+                  currentPath === item.href || (item.href !== '/' && currentPath.startsWith(item.href)) ? 'text-primary' : 'text-dark hover:text-primary',
+                ]}
+              >
+                {item.label}
+              </a>
             )}
           </li>
         ))}
       </ul>
 
-      <!-- CTA + Mobile Toggle -->
       <div class="flex items-center gap-3">
         <a href="#teklif" class="quote-trigger hidden sm:inline-flex items-center px-5 py-2.5 bg-primary text-white text-sm font-semibold rounded-lg hover:bg-primary-hover transition-colors">
           Teklif Al
         </a>
-        <button id="mobile-toggle" class="lg:hidden p-2 text-dark" aria-label="Menüyü aç">
+        <button id="mobile-toggle" class="lg:hidden p-2 text-dark" aria-label="Menüyü aç" aria-expanded="false">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
         </button>
       </div>
     </div>
 
-    <!-- Mobile Nav -->
     <div id="mobile-menu" class="lg:hidden hidden bg-white border-t border-gray-100 shadow-lg">
       <div class="px-4 py-4 space-y-1">
         {navItems.map((item) => (
@@ -127,8 +138,70 @@ const navItems = [
   </nav>
 </header>
 
+<style>
+  @media (min-width: 1024px) {
+    .nav-dropdown-panel {
+      opacity: 0;
+      visibility: hidden !important;
+      pointer-events: none;
+      transform: translateY(8px);
+    }
+
+    .nav-dropdown:hover .nav-dropdown-panel,
+    .nav-dropdown:focus-within .nav-dropdown-panel,
+    .nav-dropdown.is-open .nav-dropdown-panel {
+      opacity: 1;
+      visibility: visible !important;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    .nav-dropdown.is-open [data-nav-toggle] svg,
+    .nav-dropdown:hover [data-nav-toggle] svg,
+    .nav-dropdown:focus-within [data-nav-toggle] svg {
+      transform: rotate(180deg);
+    }
+  }
+</style>
+
 <script>
   const toggle = document.getElementById('mobile-toggle');
   const menu = document.getElementById('mobile-menu');
-  toggle?.addEventListener('click', () => menu?.classList.toggle('hidden'));
+
+  toggle?.addEventListener('click', () => {
+    const isOpen = !menu?.classList.contains('hidden');
+    menu?.classList.toggle('hidden');
+    toggle.setAttribute('aria-expanded', String(!isOpen));
+  });
+
+  const dropdowns = document.querySelectorAll('[data-nav-dropdown]');
+  const closeDropdowns = (except?: Element) => {
+    dropdowns.forEach((dropdown) => {
+      if (dropdown === except) return;
+      dropdown.classList.remove('is-open');
+      dropdown.querySelector('[data-nav-toggle]')?.setAttribute('aria-expanded', 'false');
+    });
+  };
+
+  dropdowns.forEach((dropdown) => {
+    const navToggle = dropdown.querySelector('[data-nav-toggle]');
+
+    navToggle?.addEventListener('click', (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      const shouldOpen = !dropdown.classList.contains('is-open');
+      closeDropdowns(dropdown);
+      dropdown.classList.toggle('is-open', shouldOpen);
+      navToggle.setAttribute('aria-expanded', String(shouldOpen));
+    });
+
+    dropdown.addEventListener('keydown', (event) => {
+      if (event instanceof KeyboardEvent && event.key === 'Escape') {
+        dropdown.classList.remove('is-open');
+        navToggle?.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+
+  document.addEventListener('click', () => closeDropdowns());
 </script>

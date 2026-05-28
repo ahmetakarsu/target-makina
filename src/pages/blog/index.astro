@@ -2,43 +2,240 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import OptimizedImage from '../../components/OptimizedImage.astro';
 
-const title = "Blog | TARGET MAKİNA - CNC İşleme ve Talaşlı İmalat Sektöründeki Gelişmeler";
-const description = "TARGET MAKİNA Blog sayfası. Yüksek teknoloji hassas işleme, sanayide CNC parça imalatına olan küresel talep ve talaşlı imalat teknolojilerindeki son gelişmeler hakkında sektörel makaleler.";
-const keywords = "Telerezyon, İzmir Telerezyon, CNC 5 Eksen, Mastar İmalatı, Fikstür İmalatı, Talaşlı İmalat, Hassas Talaşlı imalat, CNC işleme, blog, Target Makina";
+const title = 'Blog | TARGET MAKİNA - CNC İşleme ve Talaşlı İmalat Sektöründeki Gelişmeler';
+const description = 'TARGET MAKİNA Blog sayfası. Hassas CNC işleme, talaşlı imalat teknolojileri ve endüstriyel üretim hakkında sektörel makaleler.';
+const keywords = 'CNC işleme, hassas talaşlı imalat, CNC blog, Target Makina, İzmir CNC';
+
+const posts = [
+  {
+    title: 'Yüksek Teknoloji İmalatında Hassas İşlemenin Önemi',
+    href: '/blog/hassas-isleme/',
+    date: '18.05.2026',
+    image: 'assets/images/haberler/blog_precision.png',
+    alt: 'Hassas CNC işleme ve kalite kontrol',
+    excerpt: 'Hassas işleme; otomotiv, savunma, medikal ve makine imalatı gibi sektörlerde parça kalitesini, ölçü tutarlılığını ve üretim güvenilirliğini doğrudan etkiler.',
+  },
+  {
+    title: 'Endüstriyel Uygulamalarda CNC ile İşlenmiş Parçalara Küresel Talep',
+    href: '/blog/cnc-kuresel-talep/',
+    date: '14.05.2026',
+    image: 'assets/images/anasayfa/hassas-talasli.png',
+    alt: 'CNC işleme tezgahında üretim',
+    excerpt: 'CNC teknolojileri, yüksek hassasiyetli metal ve plastik parçalara duyulan ihtiyacı karşılayarak prototipten seri üretime kadar geniş bir üretim alanı sunar.',
+  },
+];
 ---
 
 <BaseLayout title={title} description={description} keywords={keywords}>
-  <div class="container main">
-<div class="newslist">
-<h1 style="display:none">Blog</h1>
-<ul>
-<li>
-<a class="pic" href="/blog/hassas-isleme/" title="Yüksek Teknoloji İmalatında Hassas İşlemenin Önemi">
-<OptimizedImage alt="Yüksek Teknoloji İmalatında Hassas İşlemenin Önemi" src="assets/images/haberler/blog_precision.png"/>
-</a>
-<div class="t">
-<h5>
-<a href="/blog/hassas-isleme/" title="Yüksek Teknoloji İmalatında Hassas İşlemenin Önemi">Yüksek Teknoloji İmalatında Hassas İşlemenin Önemi</a>
-</h5>
-<span><i class="qico qico-calendar"></i> 18.05.2026 12:16:41</span>
-<p>Hassas işleme, yüksek teknolojiye sahip ürünlerin üretiminde hayati bir rol oynamaktadır. Metal veya plastik gibi malzemelerin son derece hassas bir şekilde kesilmesi, şekillendirilmesi ve yüzeylerinin işlenmesi anlamına gelir. Target Makina olarak...</p>
-<a class="more" href="/blog/hassas-isleme/">DAHA FAZLA OKU</a>
-</div>
-</li>
-<li>
-<a class="pic" href="/blog/cnc-kuresel-talep/" title="Endüstriyel Uygulamalarda CNC ile İşlenmiş Parçalara Küresel Talep">
-<OptimizedImage alt="Endüstriyel Uygulamalarda CNC ile İşlenmiş Parçalara Küresel Talep" src="assets/images/anasayfa/hassas-talasli.png"/>
-</a>
-<div class="t">
-<h5>
-<a href="/blog/cnc-kuresel-talep/" title="Endüstriyel Uygulamalarda CNC ile İşlenmiş Parçalara Küresel Talep">Endüstriyel Uygulamalarda CNC ile İşlenmiş Parçalara Küresel Talep</a>
-</h5>
-<span><i class="qico qico-calendar"></i> 14.05.2026 12:43:28</span>
-<p>Günümüzde CNC işleme sanayi için son derece önemlidir. Bilgisayarlı Sayısal Kontrol (Computer Numerical Control) anlamına gelen bu teknoloji, makinelerin bilgisayar kontrolüyle son derece hassas parçalar üretmesini sağlar. Dünya çapındaki tüm endüstriler...</p>
-<a class="more" href="/blog/cnc-kuresel-talep/">DAHA FAZLA OKU</a>
-</div>
-</li>
-</ul>
-</div>
-</div>
+  <Fragment slot="head">
+    <style is:global>
+      .blog-page {
+        background: #f7f8fa;
+      }
+
+      .blog-hero {
+        background: linear-gradient(135deg, #c93715 0%, #e04a28 100%);
+        color: #fff;
+        padding: 72px 0 58px;
+      }
+
+      .blog-container {
+        width: min(1180px, calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      .blog-kicker {
+        margin-bottom: 12px;
+        color: rgba(255, 255, 255, 0.78);
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0;
+        text-transform: uppercase;
+      }
+
+      .blog-hero h1 {
+        max-width: 780px;
+        margin: 0;
+        color: #fff;
+        font-size: 42px;
+        line-height: 1.15;
+      }
+
+      .blog-hero p {
+        max-width: 760px;
+        margin: 18px 0 0;
+        color: rgba(255, 255, 255, 0.92);
+        font-size: 17px;
+        line-height: 1.75;
+      }
+
+      .blog-list-section {
+        padding: 64px 0 78px;
+      }
+
+      .blog-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 28px;
+      }
+
+      .blog-card {
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        min-height: 100%;
+        background: #fff;
+        border: 1px solid #e8edf2;
+        border-radius: 8px;
+        box-shadow: 0 18px 45px rgba(16, 24, 40, 0.08);
+        transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+      }
+
+      .blog-card:hover {
+        transform: translateY(-5px);
+        border-color: rgba(201, 55, 21, 0.32);
+        box-shadow: 0 24px 60px rgba(16, 24, 40, 0.12);
+      }
+
+      .blog-card-media {
+        display: block;
+        height: 280px;
+        overflow: hidden;
+        background: #e8edf2;
+      }
+
+      .blog-card-media img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.35s ease;
+      }
+
+      .blog-card:hover .blog-card-media img {
+        transform: scale(1.04);
+      }
+
+      .blog-card-body {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        padding: 28px;
+      }
+
+      .blog-card-date {
+        margin-bottom: 12px;
+        color: #c93715;
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      .blog-card h2 {
+        margin: 0;
+        color: #1d2733;
+        font-size: 23px;
+        line-height: 1.3;
+      }
+
+      .blog-card h2 a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .blog-card p {
+        margin: 16px 0 24px;
+        color: #5d6876;
+        font-size: 15px;
+        line-height: 1.75;
+      }
+
+      .blog-card-link {
+        align-self: flex-start;
+        margin-top: auto;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: #c93715;
+        font-size: 14px;
+        font-weight: 800;
+        text-decoration: none;
+      }
+
+      .blog-card-link:hover {
+        color: #a82d11;
+      }
+
+      @media (max-width: 900px) {
+        .blog-hero {
+          padding: 56px 0 44px;
+        }
+
+        .blog-hero h1 {
+          font-size: 34px;
+        }
+
+        .blog-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .blog-card-media {
+          height: 240px;
+        }
+      }
+
+      @media (max-width: 560px) {
+        .blog-hero h1 {
+          font-size: 30px;
+        }
+
+        .blog-hero p {
+          font-size: 15px;
+        }
+
+        .blog-list-section {
+          padding: 42px 0 56px;
+        }
+
+        .blog-card-body {
+          padding: 22px;
+        }
+      }
+    </style>
+  </Fragment>
+
+  <div class="blog-page">
+    <section class="blog-hero">
+      <div class="blog-container">
+        <div class="blog-kicker">TARGET MAKİNA BLOG</div>
+        <h1>CNC işleme ve hassas üretim üzerine sektörel yazılar</h1>
+        <p>
+          Talaşlı imalat, kalite kontrol, üretim süreçleri ve endüstriyel uygulamalara dair kısa ve okunabilir teknik içerikler.
+        </p>
+      </div>
+    </section>
+
+    <section class="blog-list-section">
+      <div class="blog-container">
+        <div class="blog-grid">
+          {posts.map((post) => (
+            <article class="blog-card">
+              <a class="blog-card-media" href={post.href} aria-label={post.title}>
+                <OptimizedImage alt={post.alt} src={post.image} />
+              </a>
+              <div class="blog-card-body">
+                <div class="blog-card-date">{post.date}</div>
+                <h2>
+                  <a href={post.href}>{post.title}</a>
+                </h2>
+                <p>{post.excerpt}</p>
+                <a class="blog-card-link" href={post.href}>
+                  Devamını Oku
+                  <span aria-hidden="true">→</span>
+                </a>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  </div>
 </BaseLayout>
