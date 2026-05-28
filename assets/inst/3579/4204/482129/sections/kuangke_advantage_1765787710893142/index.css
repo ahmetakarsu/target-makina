@@ -1,0 +1,216 @@
+.kuangke-advantage-section {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 80px 0;
+  position: relative;
+}
+
+.kuangke-advantage-wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+/* ÃƒÆ’Ã‚Â¦Ãƒâ€šÃ‚Â ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡ÃƒÆ’Ã‚Â©Ãƒâ€šÃ‚Â¢Ãƒâ€¹Ã…â€œÃƒÆ’Ã‚Â¥Ãƒâ€¦Ã¢â‚¬â„¢Ãƒâ€šÃ‚ÂºÃƒÆ’Ã‚Â¥Ãƒâ€¦Ã‚Â¸Ãƒâ€¦Ã‚Â¸ */
+.kuangke-advantage-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.kuangke-advantage-header .section-title {
+  font-size: clamp(24px, 1.9vw, 36px);
+  line-height: 1.17;
+  color: var(--title-text-color, #000000);
+  margin-bottom: 20px;
+}
+
+.kuangke-advantage-header .section-subtitle {
+  font-family: var(--font-family, 'Roboto');
+  font-weight: var(--subtitle-font-weight);
+  font-size: var(--subtitle-font-size);
+  line-height: 1.17;
+  color: var(--text-color, #000000);
+  margin-bottom: 0;
+}
+
+/* ÃƒÆ’Ã‚Â¤Ãƒâ€šÃ‚Â¼Ãƒâ€¹Ã…â€œÃƒÆ’Ã‚Â¥Ãƒâ€¦Ã‚Â Ãƒâ€šÃ‚Â¿ÃƒÆ’Ã‚Â¥Ãƒâ€šÃ‚ÂÃƒâ€šÃ‚Â¡ÃƒÆ’Ã‚Â§ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â°ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡ÃƒÆ’Ã‚Â§Ãƒâ€šÃ‚Â½ÃƒÂ¢Ã¢â€šÂ¬Ã‹Å“ÃƒÆ’Ã‚Â¦Ãƒâ€šÃ‚Â Ãƒâ€šÃ‚Â¼ */
+.kuangke-advantage-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 1440px;
+}
+
+/* ÃƒÆ’Ã‚Â¥Ãƒâ€šÃ‚ÂÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÆ’Ã‚Â¤Ãƒâ€šÃ‚Â¸Ãƒâ€šÃ‚ÂªÃƒÆ’Ã‚Â¤Ãƒâ€šÃ‚Â¼Ãƒâ€¹Ã…â€œÃƒÆ’Ã‚Â¥Ãƒâ€¦Ã‚Â Ãƒâ€šÃ‚Â¿ÃƒÆ’Ã‚Â¥Ãƒâ€šÃ‚ÂÃƒâ€šÃ‚Â¡ÃƒÆ’Ã‚Â§ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â°ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡ */
+.kuangke-advantage-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 30px;
+  min-height: 320px !important;
+  box-shadow: 0px 0px 10px rgba(185, 209, 230, 0.3);
+  border: 3px solid transparent;
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.kuangke-advantage-card:hover {
+  transform: translateY(-5px);
+  background-image: linear-gradient(white, white),
+    linear-gradient(
+      180deg,
+      rgba(21, 84, 163, 0) 79.99%,
+      rgb(172 109 42) 80%
+    );
+  box-shadow: 0px 8px 20px 0px rgba(185, 209, 230, 0.4);
+}
+
+.kuangke-advantage-card .card-content {
+  /* height: 100%; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* ÃƒÆ’Ã‚Â¥ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂºÃƒâ€šÃ‚Â¾ÃƒÆ’Ã‚Â¦Ãƒâ€šÃ‚Â ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¡ÃƒÆ’Ã‚Â¥ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢Ãƒâ€¦Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¥ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦ÃƒÆ’Ã‚Â¥Ãƒâ€šÃ‚Â®Ãƒâ€šÃ‚Â¹ÃƒÆ’Ã‚Â¥Ãƒâ€¦Ã¢â‚¬â„¢Ãƒâ€šÃ‚ÂºÃƒÆ’Ã‚Â¥Ãƒâ€¦Ã‚Â¸Ãƒâ€¦Ã‚Â¸ */
+.kuangke-advantage-card .icon-content {
+  flex: 1;
+}
+
+.kuangke-advantage-card .advantage-icon {
+  margin-bottom: 20px;
+}
+
+.kuangke-advantage-card .advantage-icon i {
+  font-size: 42px;
+  color: var(--color-primary, #ac6d2a);
+}
+
+.kuangke-advantage-card .advantage-icon-img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  display: block;
+}
+
+.kuangke-advantage-card .advantage-title {
+  font-family: var(--title-font-family, 'Roboto');
+  font-weight: var(--font-weight-500);
+  font-size: clamp(18px, 1.3vw, 24px);
+  line-height: 1.17;
+  color: var(--title-text-color, #000000);
+  margin-bottom: 10px;
+}
+
+.kuangke-advantage-card .advantage-description {
+  margin-top: 20px;
+  font-size: 18px;
+  line-height: 36px;
+  color: #808080;
+  margin-bottom: 0;
+}
+
+/* ÃƒÆ’Ã‚Â§Ãƒâ€šÃ‚Â®Ãƒâ€šÃ‚Â­ÃƒÆ’Ã‚Â¥Ãƒâ€šÃ‚Â¤Ãƒâ€šÃ‚Â´ÃƒÆ’Ã‚Â¦Ãƒâ€¦Ã¢â‚¬â„¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â°ÃƒÆ’Ã‚Â©ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢Ãƒâ€šÃ‚Â® */
+.kuangke-advantage-card .arrow-button {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.kuangke-advantage-card .arrow-circle {
+  width: 42px;
+  height: 42px;
+  background: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0px 4px 10px rgba(185, 209, 230, 0.3);
+}
+
+.kuangke-advantage-card .arrow-circle:hover {
+  background-color: var(--btn-hover, #1554a3);
+}
+
+.kuangke-advantage-card .arrow-circle:hover svg path {
+  fill: #ffffff;
+}
+
+.kuangke-advantage-card .arrow-circle i {
+  color: #ffffff;
+  font-size: 16px;
+}
+
+/* ÃƒÆ’Ã‚Â¥Ãƒâ€šÃ‚Â¹Ãƒâ€šÃ‚Â³ÃƒÆ’Ã‚Â¦Ãƒâ€šÃ‚ÂÃƒâ€šÃ‚Â¿ÃƒÆ’Ã‚Â§Ãƒâ€šÃ‚Â«Ãƒâ€šÃ‚Â¯ÃƒÆ’Ã‚Â¥ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œÃƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¥Ãƒâ€šÃ‚ÂºÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÆ’Ã‚Â¥Ãƒâ€šÃ‚Â¼Ãƒâ€šÃ‚Â */
+@media (max-width: 1200px) {
+  .kuangke-advantage-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+
+}
+
+@media (max-width: 1500px) {
+  .kuangke-advantage-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ÃƒÆ’Ã‚Â§Ãƒâ€šÃ‚Â§Ãƒâ€šÃ‚Â»ÃƒÆ’Ã‚Â¥Ãƒâ€¦Ã‚Â Ãƒâ€šÃ‚Â¨ÃƒÆ’Ã‚Â§Ãƒâ€šÃ‚Â«Ãƒâ€šÃ‚Â¯ÃƒÆ’Ã‚Â¥ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œÃƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¥Ãƒâ€šÃ‚ÂºÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÆ’Ã‚Â¥Ãƒâ€šÃ‚Â¼Ãƒâ€šÃ‚Â */
+@media (max-width: 768px) {
+  .kuangke-advantage-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .kuangke-advantage-card {
+    padding: 25px;
+  }
+
+  .kuangke-advantage-header .section-title {
+
+    margin-bottom: 15px;
+  }
+
+  .kuangke-advantage-header .section-subtitle {
+    /* font-size: 15px; */
+  }
+
+  .kuangke-advantage-card .advantage-title {
+    /* font-size: 22px; */
+  }
+
+  .kuangke-advantage-card .advantage-description {
+    /* font-size: 14px; */
+  }
+
+  .kuangke-advantage-card .content-area {
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .kuangke-advantage-section {
+    padding: 40px 0;
+  }
+}
+
+@media screen and (max-width: 552px) {
+  .kuangke-advantage-card {
+    min-height: min-content !important;
+  }
+}
+
+@media(max-width:1280px){
+.kuangke-advantage-card .advantage-description {font-size: 16px; line-height: 28px;}
+.kuangke-advantage-header {margin-bottom: 50px;}
+}
+
+@media(max-width:991px){
+  .kuangke-advantage-section { padding: 30px 0;}
+  .kuangke-advantage-header {margin-bottom: 20px;}
+  .kuangke-advantage-card .advantage-description {font-size: 14px; line-height: 24px;}
+}

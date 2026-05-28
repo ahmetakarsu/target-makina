@@ -1,0 +1,114 @@
+#huake-banner {
+    position: relative;
+}
+
+#huake-banner img {
+    width: 100%;
+}
+
+#huake-banner .swiper-container-horizontal>.swiper-pagination-bullets {
+    bottom: 20px;
+}
+
+#huake-banner .swiper-pagination-bullet {
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
+    background: #fff;
+    border-radius: 50%;
+    opacity: 1;
+    box-sizing: border-box;
+}
+
+#huake-banner .swiper-pagination-bullet-active {
+    width: 30px;
+    border-radius: 20px;
+    background: #fff;
+}
+
+#huake-banner .swiper-button-prev,
+#huake-banner .swiper-button-next {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .3);
+    margin-top: -30px;
+    text-align: center;
+}
+
+#huake-banner .swiper-button-prev i,
+#huake-banner .swiper-button-next i {
+    font-size: 16px;
+    line-height: 60px;
+    color: #f8f6f5;
+}
+
+#huake-banner .swiper-button-prev,
+#huake-banner .swiper-container-rtl .swiper-button-next {
+    left: 20px;
+    right: auto;
+}
+
+#huake-banner .swiper-button-next,
+#huake-banner .swiper-container-rtl .swiper-button-prev {
+    right: 20px;
+    left: auto;
+}
+
+#huake-banner .swiper-button-prev::after,
+#huake-banner .swiper-button-next::after {
+    display: none
+}
+
+#huake-banner .swiper-button-prev:hover,
+#huake-banner .swiper-button-next:hover {
+    background: var(--bg-color);
+}
+
+#huake-banner .swiper-button-prev:hover i,
+#huake-banner .swiper-button-next:hover i {
+    color: #f8f6f5;
+}
+
+
+@media screen and (max-width:768px) {
+    #huake-banner .swiper-container-horizontal>.swiper-pagination-bullets {
+        bottom: 10px;
+    }
+
+    #huake-banner .swiper-pagination-bullet {
+        height: 10px;
+        width: 10px;
+        margin: 0 2px;
+        border-radius: 50%;
+    }
+
+    #huake-banner .swiper-pagination-bullet-active {
+        width: 10px;
+        border-radius: 50%;
+        background: var(--color-primary);
+    }
+
+    #huake-banner .swiper-button-prev,
+    #huake-banner .swiper-button-next {
+        width: 30px;
+        height: 30px;
+        margin-top: -15px;
+    }
+
+    #huake-banner .swiper-button-prev i,
+    #huake-banner .swiper-button-next i {
+        font-size: 12px;
+        line-height: 30px;
+    }
+
+    #huake-banner .swiper-button-prev,
+    #huake-banner .swiper-container-rtl .swiper-button-next {
+        left: 5px;
+    }
+
+    #huake-banner .swiper-button-next,
+    #huake-banner .swiper-container-rtl .swiper-button-prev {
+        right: 5px;
+    }
+}

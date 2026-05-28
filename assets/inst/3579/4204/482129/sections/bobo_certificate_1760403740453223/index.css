@@ -1,0 +1,181 @@
+
+.bobo-cert-list {
+  padding: 85px 0;
+  background: #fff
+}
+
+.bobo-cert-list .index-tit {
+  text-align: center;
+}
+
+.bobo-cert-list .index-tit h2 {
+  font-size: clamp(24px, 1.98vw, 38px);
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+.bobo-cert-list {
+  padding: 80px 0;
+  background: #fff
+}
+
+.bobo-cert-list .list {
+  margin: 45px 0 0;
+  position: relative
+}
+
+.bobo-cert-list .swiper {
+  padding: 15px 0
+}
+
+.bobo-cert-list .swiper-slide {
+  width: 378px;
+  padding: 17px;
+  background: #fff;
+  box-sizing: border-box;
+  box-shadow: 0 0 10px rgba(4, 0, 0, 0.24)
+}
+
+.bobo-cert-list .swiper-slide img {
+  display: block
+}
+
+.bobo-cert-list .swiper-button-prev,
+.bobo-cert-list .swiper-button-next {
+  width: 48px;
+  height: 48px;
+  overflow: hidden;
+  border-radius: 0;
+  background:  var(--color-primary);
+  margin-top: -24px;
+  text-align: center;
+  color: #fff
+}
+
+.bobo-cert-list .swiper-button-prev i,
+.bobo-cert-list .swiper-button-next i {
+  color: inherit;
+  font-size: 24px;
+  line-height: 48px
+}
+
+.bobo-cert-list .swiper-button-prev,
+.bobo-cert-list .swiper-container-rtl .swiper-button-next {
+  left: -97px;
+  right: auto
+}
+
+.bobo-cert-list .swiper-button-next,
+.bobo-cert-list .swiper-container-rtl .swiper-button-prev {
+  right: -97px;
+  left: auto
+}
+
+.bobo-cert-list .swiper-button-prev::after,
+.bobo-cert-list .swiper-button-next::after {
+  display: none;
+}
+
+.bobo-cert-list .swiper-button-prev:hover,
+.bobo-cert-list .swiper-button-next:hover {
+  background-color: #ac6d2ac2
+}
+
+.bobo-cert-list .swiper-pagination {
+  position: static;
+  width: 100%;
+  margin-top: 30px;
+  display: none
+}
+
+.bobo-cert-list .swiper-pagination-bullet {
+  height: 10px;
+  width: 10px;
+  margin: 0 10px;
+  background: #ccc;
+  border-radius: 0;
+  opacity: 1;
+  box-sizing: border-box
+}
+
+.bobo-cert-list .swiper-pagination-bullet-active {
+  background: var(--color-primary)
+}
+
+@media screen and (max-width: 1500px) {
+  .bobo-cert-list .swiper-button-prev,
+  .bobo-cert-list .swiper-button-next {
+    width: 40px;
+    height: 40px;
+    margin-top: -20px
+  }
+
+  .bobo-cert-list .swiper-button-prev i,
+  .bobo-cert-list .swiper-button-next i {
+    font-size: 21px;
+    line-height: 40px
+  }
+
+  .bobo-cert-list .swiper-button-prev,
+  .bobo-cert-list .swiper-container-rtl .swiper-button-next {
+    left: -55px
+  }
+
+  .bobo-cert-list .swiper-button-next,
+  .bobo-cert-list .swiper-container-rtl .swiper-button-prev {
+    right: -55px
+  }
+}
+
+@media screen and (max-width: 1280px) {
+
+  .bobo-cert-list .swiper-button-prev,
+  .bobo-cert-list .swiper-container-rtl .swiper-button-next {
+    left: 0
+  }
+
+  .bobo-cert-list .swiper-button-next,
+  .bobo-cert-list .swiper-container-rtl .swiper-button-prev {
+    right: 0
+  }
+
+  .bobo-cert-list .swiper-slide {
+    width: 330px;
+    padding: 15px
+  }
+
+  .bobo-cert-list {
+    padding: 50px 0;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .bobo-cert-list {
+    padding: 30px 0
+  }
+
+
+  .bobo-cert-list .list {
+    margin: 25px -10px 0
+  }
+
+  .bobo-cert-list .swiper {
+    padding: 10px
+  }
+
+  .bobo-cert-list .swiper-slide {
+    width: 378px;
+    padding: 10px;
+    box-shadow: 0 0 6px rgba(4, 0, 0, 0.24)
+  }
+
+  .bobo-cert-list .swiper-button-prev,
+  .bobo-cert-list .swiper-button-next {
+    display: none
+  }
+
+  .bobo-cert-list .swiper-pagination {
+    display: block
+  }
+}
+

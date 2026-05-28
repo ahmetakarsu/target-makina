@@ -1,0 +1,255 @@
+.indexC-sengong {
+  background: var(--bg-color);
+  padding: 80px 0;
+  display: block !important;
+}
+
+.indexC-sengong .tit {
+  text-align: center;
+  /* float: left; */
+  /* padding: 0 0 10px 9%; */
+  /* white-space: nowrap; */
+}
+
+.indexC-sengong .tit h5 {
+  font-size: 25px;
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.indexC-sengong .tit h3 {
+  font-size: clamp(24px, 1.98vw, 38px);
+  line-height: 1.2;
+}
+
+.indexC-sengong .tit p {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.indexC-sengong .tit p:after {
+  /* content: ""; */
+  height: 6px;
+  width: 170px;
+  background: var(--color-primary);
+  display: block;
+  margin-top: 15px;
+}
+
+.indexC-sengong .tit::after {
+  /* content: ''; */
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  width: 55%;
+  background: var(--bg-color);
+}
+
+.indexC-sengong .content {
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-between;
+  -webkit-justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.indexC-sengong .box {
+  width: 50%;
+  position: relative;
+}
+
+.indexC-sengong-aboutus-content.rich-text {
+  /* margin-top: -120px; */
+}
+
+.indexC-sengong .box img {
+  /* margin: 80px 0; */
+  width: 100%;
+}
+
+.indexC-sengong .box a {
+  height: 100px;
+  display: block;
+  width: 100px;
+  background: #ffffffcc;
+  text-align: center;
+  border-radius: 50%;
+  position: absolute;
+  left: calc(50% - 50px);
+  top: calc(50% - 50px);
+}
+
+.indexC-sengong .box a i {
+  color: var(--color-primary);
+  font-size: 45px;
+  line-height: 100px;
+}
+
+.indexC-sengong .txt {
+  width: 45%;
+}
+
+.indexC-sengong .txt p {
+  font-size: 16px;
+  line-height: 30px;
+}
+
+.indexC-sengong .txt h3 {
+  font-size: 48px;
+  margin: 30px 0;
+  line-height: 1em;
+}
+
+.indexC-sengong .txt a.btn {
+  font-size: 18px;
+  background: #fff;
+  border-radius: var(--button-radius);
+  padding: 10px 80px;
+  margin-top: 40px;
+  color: var(--color-primary);
+}
+
+.indexC-sengong .txt a.btn:hover {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.indexC-sengong-aboutus-content ul {
+  list-style: unset;
+}
+.indexC-sengong-aboutus-content ol {
+  list-style: decimal;
+}
+
+@media screen and (max-width:1499px) {
+.indexC-sengong .txt p {font-size: 15px;line-height: 24px;}
+.indexC-sengong .txt {width: 47%;}
+}
+
+
+@media screen and (max-width:1440px) {
+
+
+  .indexC-sengong .txt h3 {
+    font-size: 36px;
+    margin: 20px 0;
+  }
+}
+
+@media screen and (max-width:1280px) {
+  .indexC-sengong {
+    padding: 50px 0;
+  }
+
+  .bobo_company_intro .txt .t p {
+    font-size: 14px;
+  }
+
+  .indexC-sengong .tit h5 {
+    font-size: 16px;
+    letter-spacing: 6px;
+  }
+
+
+  .indexC-sengong .tit p {
+    font-size: 14px;
+  }
+
+  .indexC-sengong .tit p::after {
+    width: 140px;
+    margin-top: 10px;
+  }
+
+  .indexC-sengong .txt {
+    margin-top: -20px;
+  }
+
+  .indexC-sengong .txt p {
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  .indexC-sengong .txt h3 {
+    font-size: 32px;
+  }
+
+  .indexC-sengong .txt a.btn {
+    font-size: 16px;
+    padding: 6px 50px;
+  }
+
+  .indexC-sengong .txt div {
+    margin-top: 25px;
+  }
+}
+
+@media screen and (max-width:991px) {
+  .indexC-sengong {
+    padding: 30px 0;
+  }
+
+  .indexC-sengong .tit {
+    width: 100%;
+    padding: 0;
+    margin: 0 0 30px;
+    background: none;
+    text-align: center;
+  }
+
+  .indexC-sengong .tit p::after {
+    width: 100px;
+    margin: 10px auto 0;
+  }
+
+  .indexC-sengong .content {
+    display: block;
+    margin-top: 20px;
+  }
+
+  .indexC-sengong .box {
+    margin-top: 30px;
+    float: none;
+    width: 100%;
+  }
+  .indexC-sengong .box img{
+    margin: 0;
+  }
+
+  .indexC-sengong .txt {
+    margin-top: 0;
+    width: 100%;
+    margin-bottom: 0;
+    text-align: center;
+  }
+
+  .indexC-sengong .txt h3 {
+    font-size: 24px;
+    margin: 10px 0;
+  }
+
+  .indexC-sengong .txt a.btn {
+    margin-top: 30px;
+    text-align: center;
+  }
+}
+
+
+@media screen and (max-width:480px) {
+  .indexC-sengong .box a {
+    height: 70px;
+    width: 70px;
+    left: calc(50% - 35px);
+    top: calc(50% - 35px);
+  }
+
+  .indexC-sengong .box a i {
+    font-size: 36px;
+    line-height: 70px;
+  }
+
+
+
+}

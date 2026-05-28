@@ -1,0 +1,282 @@
+:root {
+  --bobo-quality-p: 100px 0;
+  --bobo-quality-text-size: 18px;
+  --bobo-quality-title-size: 36px;
+}
+
+.bobo-quality {
+  padding: var(--bobo-quality-p);
+  background: #f8f8f8;
+}
+
+.bobo-quality .index-tit {
+  text-align: center;
+}
+
+.bobo-quality .index-tit h2 {
+  font-size: clamp(24px, 1.9vw, 36px);
+  line-height: 1;
+}
+
+.bobo-quality .index-tit p {
+  font-size: var(--bobo-quality-text-size);
+  margin-top: 30px;
+}
+
+.bobo-quality .list {
+  margin: 60px 0 0;
+  position: relative
+}
+
+.bobo-quality .swiper-slide {
+  position: relative
+}
+
+.bobo-quality .swiper-slide img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  aspect-ratio: 426 / 404;
+}
+
+.bobo-quality .swiper-slide h6 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(rgba(0,0,0,0.00001),rgba(0,0,0,0.6));
+  font-size: 24px;
+  color: #fff;
+  line-height: 1;
+  font-weight: 700;
+  padding: 30px 15px;
+  text-align: center
+}
+
+.bobo-quality .swiper-slide .t {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  padding: 0 35px;
+  text-align: center;
+  background: var(--color-primary);
+  opacity: 0.85;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  opacity: 0;
+  -webkit-transition: opacity 0.2s, -webkit-transform 0.35s;
+  transition: opacity 0.2s, transform 0.35s;
+  -webkit-transform: scale(0);
+  transform: scale(0)
+}
+
+.bobo-quality .swiper-slide .t h5 {
+  font-size: 24px;
+  color: #fff;
+  line-height: 1;
+  font-weight: 700
+}
+
+.bobo-quality .swiper-slide .t p {
+  font-size: 18px;
+  color: #fff;
+  line-height: 2;
+  margin: 50px 0 0
+}
+
+.bobo-quality .swiper-slide:hover .t {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1)
+}
+
+.bobo-quality .swiper-slide:hover h6 {
+  opacity: 0
+}
+
+.bobo-quality .swiper-button-prev,
+.bobo-quality .swiper-button-next {
+  width: 48px;
+  height: 48px;
+  overflow: hidden;
+  border-radius: 0;
+  background:  var(--color-primary);
+  margin-top: -24px;
+  text-align: center;
+  color: #fff
+}
+
+.bobo-quality .swiper-button-prev i,
+.bobo-quality .swiper-button-next i {
+  color: inherit;
+  font-size: 24px;
+  line-height: 48px
+}
+
+.bobo-quality .swiper-button-prev,
+.bobo-quality .swiper-container-rtl .swiper-button-next {
+  left: -97px;
+  right: auto
+}
+
+.bobo-quality .swiper-button-next,
+.bobo-quality .swiper-container-rtl .swiper-button-prev {
+  right: -97px;
+  left: auto
+}
+
+.bobo-quality .swiper-button-prev::after,
+.bobo-quality .swiper-button-next::after {
+  display: none;
+}
+
+.bobo-quality .swiper-button-prev:hover,
+.bobo-quality .swiper-button-next:hover {
+  background-color: var(--color-primary)
+}
+
+.bobo-quality .swiper-pagination {
+  position: static;
+  width: 100%;
+  margin-top: 30px;
+  display: none
+}
+
+.bobo-quality .swiper-pagination-bullet {
+  height: 10px;
+  width: 10px;
+  margin: 0 10px;
+  background: #ccc;
+  border-radius: 0;
+  opacity: 1;
+  box-sizing: border-box
+}
+
+.bobo-quality .swiper-pagination-bullet-active {
+  background: var(--color-primary)
+}
+
+@media screen and (max-width: 1500px) {
+  :root {
+    --bobo-quality-p: 85px 0;
+    --bobo-quality-text-size: 16px;
+    --bobo-quality-title-size: 32px;
+  }
+
+  .bobo-quality .list {
+    margin: 50px 0 0;
+  }
+
+  .bobo-quality .swiper-button-prev,
+  .bobo-quality .swiper-button-next {
+    width: 40px;
+    height: 40px;
+    margin-top: -20px
+  }
+
+  .bobo-quality .swiper-button-prev i,
+  .bobo-quality .swiper-button-next i {
+    font-size: 21px;
+    line-height: 40px
+  }
+
+  .bobo-quality .swiper-button-prev,
+  .bobo-quality .swiper-container-rtl .swiper-button-next {
+    left: -55px
+  }
+
+  .bobo-quality .swiper-button-next,
+  .bobo-quality .swiper-container-rtl .swiper-button-prev {
+    right: -55px
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  :root {
+    --bobo-quality-p: 70px 0;
+    --bobo-quality-text-size: 14px;
+    --bobo-quality-title-size: 28px;
+  }
+
+  .bobo-quality .list {
+    margin: 40px 0 0;
+  }
+
+  .bobo-quality .swiper-slide h6 {
+    font-size: 20px;
+    padding: 20px 15px
+  }
+
+  .bobo-quality .swiper-slide .t p {
+    font-size: 17px;
+    line-height: 1.7;
+    margin: 30px 0 0
+  }
+
+  .bobo-quality .swiper-button-prev,
+  .bobo-quality .swiper-container-rtl .swiper-button-next {
+    left: 0
+  }
+
+  .bobo-quality .swiper-button-next,
+  .bobo-quality .swiper-container-rtl .swiper-button-prev {
+    right: 0
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .bobo-quality .list {
+    margin-top: 30px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .bobo-quality {
+    padding: 30px 0
+  }
+
+
+
+  .bobo-quality .index-tit p {
+    margin-top: 15px;
+  }
+
+  .bobo-quality {
+    padding: 30px 0
+  }
+
+  .bobo-quality .list {
+    margin: 30px 0 0
+  }
+
+  .bobo-quality .swiper-slide h6 {
+    font-size: 20px;
+    padding: 15px 10px
+  }
+
+  .bobo-quality .swiper-slide .t {
+    display: none
+  }
+
+  .bobo-quality .swiper-slide:hover h6 {
+    opacity: 1
+  }
+
+  .bobo-quality .swiper-button-prev,
+  .bobo-quality .swiper-button-next {
+    display: none
+  }
+
+  .bobo-quality .swiper-pagination {
+    display: block
+  }
+}
+

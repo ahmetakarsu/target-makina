@@ -1,0 +1,113 @@
+:root {
+  --qi-inquiry-h: 236px;
+  --qi-inquiry-title-fs: 48px;
+  --qi-inquiry-btn-fs: 24px;
+  --qi-inquiry-btn-p: 16px 20px;
+}
+
+.qi-inquiry-form {
+  background-color: var(--color-primary);
+}
+
+.qi-inquiry-form .container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 200px;
+}
+.qi-inquiry-form .text-area {
+  flex: 1;
+}
+
+.qi-inquiry-form .text-area h2 {
+  color: #fff;
+  font-size: 36px;
+  line-height: 1.4;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.qi-inquiry-form .btn-area a {
+  padding: var(--qi-inquiry-btn-p);
+  color: #fff;
+  border: 1px solid #fff;
+  font-size: var(--qi-inquiry-btn-fs);
+  line-height: 1.5;
+  cursor: pointer;
+  border-radius: 99px;
+}
+
+.qi-inquiry-form .btn-area a:hover {
+  background-color: #fff;
+  color: var(--color-primary);
+}
+
+@media(max-width: 1500px) {
+  :root {
+    --qi-inquiry-h: 216px;
+    --qi-inquiry-title-fs: 42px;
+    --qi-inquiry-btn-fs: 22px;
+    --qi-inquiry-btn-p: 16px 20px;
+  }
+}
+
+@media(max-width: 1280px) {
+  :root {
+    --qi-inquiry-h: 196px;
+    --qi-inquiry-title-fs: 36px;
+    --qi-inquiry-btn-fs: 20px;
+    --qi-inquiry-btn-p: 14px 18px;
+  }
+}
+
+@media(max-width: 1200px) {
+  :root {
+    --qi-inquiry-h: 186px;
+    --qi-inquiry-title-fs: 32px;
+    --qi-inquiry-btn-fs: 18px;
+    --qi-inquiry-btn-p: 14px 18px;
+  }
+}
+
+@media(max-width:992px) {
+  :root {
+    --qi-inquiry-h: 166px;
+    --qi-inquiry-title-fs: 28px;
+    --qi-inquiry-btn-fs: 16px;
+    --qi-inquiry-btn-p: 12px 15px;
+  }
+}
+
+@media(max-width:768px) {
+  :root {
+    --qi-inquiry-h: 150px;
+    --qi-inquiry-title-fs: 24px;
+    --qi-inquiry-btn-fs: 15px;
+    --qi-inquiry-btn-p: 10px 12px;
+  }
+
+  .qi-inquiry-form .container {
+    justify-content: space-between;
+  }
+}
+
+@media(max-width:576px) {
+  :root {
+    --qi-inquiry-h: unset;
+    --qi-inquiry-title-fs: 22px;
+    --qi-inquiry-btn-fs: 14px;
+    --qi-inquiry-btn-p: 8px 10px;
+  }
+
+  .qi-inquiry-form {
+    padding: 20px 0;
+  }
+
+  .qi-inquiry-form .container {
+    flex-direction: column;
+  }
+
+  .qi-inquiry-form .btn-area {
+    margin-top: 20px;
+  }
+}

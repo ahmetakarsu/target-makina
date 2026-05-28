@@ -1,0 +1,209 @@
+/* Montserrat Regular (400) */
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Ew-.ttf) format('truetype');
+}
+/* Montserrat SemiBold (600) */
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCu170w-.ttf) format('truetype');
+}
+/* Montserrat Bold (700) */
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCuM70w-.ttf) format('truetype');
+}
+/* Montserrat_Bold alias → same Bold 700 file */
+@font-face {
+  font-family: "Montserrat_Bold";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCuM70w-.ttf) format('truetype');
+}
+
+/*********** Reset **************/
+body {
+  color: var(--text-color, #666);
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: 400;
+  text-align: left;
+  background: #ffffff;
+  font-family: var(--font-family);
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+body * {
+  margin: 0;
+  padding: 0;
+  outline: none !important;
+  line-height: 1.4;
+}
+
+button, input, textarea {
+  border: none;
+}
+
+/*********** Typography **************/
+h1, .h1 {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--title-text-color, #000);
+  font-family: var(--title-font-family);
+}
+h2, .h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--title-text-color, #000);
+  font-family: var(--title-font-family);
+}
+h3, .h3 {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--title-text-color, #000);
+  font-family: var(--title-font-family);
+}
+h4, .h4 {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--text-color, #555);
+  font-family: var(--title-font-family);
+}
+h5, .h5 {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text-color, #888);
+  font-family: var(--title-font-family);
+}
+
+@media only screen and (max-width: 767px) {
+  h1, .h1 { font-size: 22px; }
+  h2, .h2 { font-size: 20px; }
+  h3, .h3 { font-size: 18px; }
+}
+
+/*********** CSS Variables **************/
+:root {
+  --color-primary:#C93715;
+  --color-primary-rgb:201,55,21;
+  --color-second:#e8694a;
+  --color-second-rgb:232,105,74;
+  --bg-color: #f8f8f8;
+  --btn-hover: #a82d11;
+  --button-radius: 0px;
+  --font-family: Montserrat;
+  --title-font-family: Montserrat_Bold;
+  --text-color: #333333;
+  --text-color-rgb: 51,51,51;
+  --title-text-color: #000000;
+  --title-text-color-rgb: 0,0,0;
+}
+
+/*********** Links **************/
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+  color: var(--color-primary);
+}
+
+ol, ul {
+  list-style: none;
+}
+
+i, em {
+  font-style: normal;
+}
+
+/*********** Rich Text **************/
+.rich-text ol {
+  list-style: decimal;
+  width: fit-content;
+  text-align: left;
+  padding-left: 38px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.rich-text ul {
+  list-style: disc;
+  width: fit-content;
+  text-align: left;
+  padding-left: 38px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.rich-text ul li {
+  list-style: disc;
+}
+
+.rich-text em {
+  font-style: italic;
+}
+
+/*********** Images **************/
+img {
+  max-width: 100%;
+}
+:not(.rich-text) img {
+  width: auto;
+  height: auto;
+}
+
+/*********** Utility Classes **************/
+.fr, .float-right {
+  float: right;
+}
+
+.fl, .float-left {
+  float: left;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+html[dir="rtl"] body {
+  text-align: right;
+}
+
+.cl {
+  zoom: 1;
+}
+
+.cl:before,
+.cl:after {
+  display: table;
+  content: " ";
+}
+
+.cl:after {
+  clear: both;
+}
+
+/*********** Rich Text Image Sizes **************/
+.mce-img-32 {width: 32px;height: auto;}
+.mce-img-64 {width: 64px;height: auto;}
+.mce-img-240 {width: 240px;height: auto;}
+.mce-img-480 {width: 480px;height: auto;}
+.mce-img-600 {width: 600px;height: auto;}
+.mce-img-1024 {width: 1024px;height: auto;}
+.mce-img-2048 {width: 2048px;height: auto;}
+.mce-img-w-100 {width: 100%;height: auto;}
+

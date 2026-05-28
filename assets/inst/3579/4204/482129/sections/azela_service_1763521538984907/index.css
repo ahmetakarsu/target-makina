@@ -1,0 +1,195 @@
+.az_ser_area {
+  /* background-color: var(--color-second); */
+  padding: 0 0 80px;
+  margin: 0 0 0 34%;
+  width: 60%;
+}
+.az_ser_area h3 a {
+  font-family: var(--title-font-family);
+  font-style: normal;
+  line-height: 1.2;
+  font-weight: 700;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  margin-bottom: 5px;
+  color: #04001e;
+  font-size: clamp(20px, 1.6vw, 30px);
+}
+.az_ser_area a:hover {
+  text-decoration: none;
+  color: var(--color-primary);
+}
+.az_ser_area p {
+  color: var(--text-color);
+  font-size: 18px;
+}
+.az_ser_area .witr_section_title {
+  margin-bottom: 34px;
+}
+.az_ser_area .em-service2.sleft {
+  text-align: left;
+  margin-bottom: 50px;
+  border: 1px solid #e5e5e5;
+}
+.az_ser_area .witr_s_flex {
+  display: flex;
+}
+.az_ser_area .service_top_text {
+  display: block;
+  width: 35%;
+}
+.az_ser_area .em-service2.sleft .em-service-icon {/* background: #fafaf6; */width: 100%;height: auto;}
+.az_ser_area .em-service-icon img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: contain;
+}
+.az_ser_area .em-service2 .em-service-inner {
+  overflow: hidden;
+  width: 100%;
+}
+.az_ser_area .em-service-title {
+  overflow: hidden;
+}
+.az_ser_area .em-service-title h3 {
+  transition: 0.5s;
+  margin-bottom: 30px;
+}
+.az_ser_area .service-btn {
+  position: relative;
+  transition: 0.5s;
+}
+.az_ser_area .service-btn a {
+  font-weight: 400;
+  padding: 0;
+  border-radius: 0px;
+  font-size: 16px;
+  font-family: var(--font-family);
+  display: inline-block;
+  transition: 0.5s;
+  color: var(--color-primary);
+}
+.az_ser_area .service-btn a:hover {
+  color: var(--title-text-color);
+}
+.az_ser_area .ser_bttom_border {
+  border-style: solid;
+  border-width: 0px 0px 1px 0px;
+  /* border-color: var(--title-text-color); */
+  transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+  padding: 0px 0px 24px 0px;
+}
+.az_ser_area .ser_page_service {
+  padding: 115px 0px 85px 0px;
+}
+/* ===== Service Area CSS ===== */
+
+.az_ser_area .witr_s_flex {
+  display: flex;
+}
+.az_ser_area .em-service2 .em-service-inner {
+  overflow: hidden;
+  flex: 1;
+  margin-left: 100px;
+  align-content: center;
+}
+.az_ser_area .witr_section_title {
+  margin-bottom: 34px;
+}
+.az_ser_area .witr_section_title_inner h2,
+.az_ser_area .witr_section_title_inner h3 {
+  font-size: 40px;
+  margin: auto;
+  font-weight: 700;
+  line-height: 1.4;
+}
+.az_ser_area .witr_section_title_inner h2 {
+  font-size: 16px;
+  display: inline-block;
+  color: var(--color-primary);
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .az_ser_area .witr_section_title_inner h3 {
+    font-size: 38px;
+  }
+  .az_ser_area .service_witr_inner {
+    margin: 0px 0 0 15px;
+  }
+  .az_ser_area .em-service2.sleft.all_color_service {
+    margin-bottom: 20px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .az_ser_area .witr_s_flex {
+    display: inherit;
+  }
+  .az_ser_area .witr_section_title_inner h3 {
+    font-size: 32px;
+  }
+  .az_ser_area .em-service2 .em-service-inner {
+    text-align: center;
+  }
+  .az_ser_area .em-service2 .em-service-icon i {
+    margin-bottom: 10px;
+  }
+  .az_ser_area .witr_s_flex {
+    display: inherit;
+  }
+}
+@media (max-width: 767px) {
+  .az_ser_area .witr_s_flex {
+    display: inherit;
+  }
+  .az_ser_area .witr_section_title {
+    text-align: center;
+  }
+  .az_ser_area .witr_section_title .text-right {
+    text-align: center !important;
+  }
+  .az_ser_area .witr_section_title_inner h2 {
+    font-size: 16px !important;
+    padding-top: 10px;
+  }
+  .az_ser_area .witr_section_title_inner h2,
+  .az_ser_area .witr_section_title_inner h3 {
+    font-size: 28px;
+  }
+  .az_ser_area .em-service2 .em-service-icon i {
+    margin-bottom: 15px;
+  }
+}
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  .az_ser_area .witr_section_title_inner h2,
+  .az_ser_area .witr_section_title_inner h3 {
+    font-size: 25px;
+  }
+}
+
+
+
+@media(max-width:1600px){
+.bobo-keyword-box {margin-left: 7%;}
+.az_ser_area {margin: 0 0 0 30%;width: 65%;}
+.az_ser_area .em-service2 .em-service-inner {margin:0 55px;}
+}
+
+@media(max-width:1280px){
+.az_ser_area p {font-size: 16px;}
+}
+
+@media(max-width:1200px){
+.bobo-keyword-box {width: 25%;}
+}
+
+
+@media(max-width:991px){
+.bobo-keyword-box {width: 100%;float: none;margin-left: 0;background-color: #fff;}
+.bobo-keyword-box .container {background-color: #f9f9f9;}
+.bobo-keyword-box.affix {position: static;}
+.az_ser_area p {font-size: 14px;}
+.az_ser_area .em-service-title h3 {margin-bottom: 10px;}
+.az_ser_area {padding: 0;margin: 0;width: 100%;}
+.az_ser_area .service_top_text {width: 100%;}
+.az_ser_area .em-service2 .em-service-inner {margin-left: 0;padding: 20px;}
+
+}

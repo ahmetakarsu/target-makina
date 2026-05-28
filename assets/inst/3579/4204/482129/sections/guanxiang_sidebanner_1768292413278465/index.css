@@ -1,0 +1,91 @@
+/*about page*/
+.small-banner-guanxiang {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.small-banner-guanxiang h1,
+.small-banner-guanxiang h2 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.small-banner-guanxiang img {
+  width: 100%;
+}
+
+.small-banner-guanxiang img {
+  vertical-align: middle;
+  -webkit-transition: 1s all;
+  -moz-transition: 1s all;
+  -ms-transition: 1s all;
+  transition: 1s all;
+}
+
+/* å›¾ç‰‡åœ¨å½“å‰è¡Œå†…çš„åž‚ç›´ä½ç½® */
+
+.crumbs-guanxiang {
+  padding: 18px 0;
+  border-bottom: 1px solid #ddd;
+}
+.crumbs-guanxiang.center {
+  text-align: center;
+}
+.crumbs-guanxiang span,
+.crumbs-guanxiang a,
+.crumbs-guanxiang i {
+  font-size: 16px;
+  color: #333;
+}
+
+.crumbs-guanxiang a:hover {
+  text-decoration: underline;
+  color: var(--color-primary);
+}
+
+.crumbs-guanxiang i {
+  font-style: normal;
+  margin: 0 6px;
+}
+
+.crumbs-guanxiang .container {
+  margin: 0 auto;
+}
+
+@media screen and (max-width:1580px) {
+
+  .crumbs-guanxiang .container {
+    width: 78%
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .crumbs-guanxiang .container {
+    width: 88%
+  }
+
+  .small-banner-guanxiang {
+    padding: 60px 0 65px 0;
+  }
+
+  .small-banner-guanxiang {
+    padding: 0;
+    height: 200px;
+    overflow: hidden;
+  }
+
+  .small-banner-guanxiang img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+
+@media(max-width:576px){
+  .small-banner-guanxiang {
+    height: 85px;
+  }
+}
